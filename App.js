@@ -53,7 +53,7 @@ export default function App() {
       await setClientId("dev-123");
       await new Promise((resolve) => setTimeout(resolve, 2000));
       if (alreadyReadTutorial) {
-        setFirstPage("SelectMarket");
+        setFirstPage("Scanner");
       }
     } catch (e) {
       console.warn(e);
