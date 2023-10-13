@@ -1,0 +1,50 @@
+{
+  "expo": {
+    "name": "KipKart",
+    "slug": "kipkart",
+    "version": "1.0.3",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "ios": {
+      "icon": "./assets/icon.png",
+      "supportsTablet": false,
+      "bundleIdentifier": "br.com.kipkart.kipkart",
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "buildNumber": "1.0.9",
+      "config": {
+        "usesNonExemptEncryption": false
+      },
+      "infoPlist": {
+        "NSLocationAlwaysUsageDescription": "O KipKart usa sua localização para achar os supermercados mais próximos de você",
+        "NSCameraUsageDescription": "O KipKart precisa usar a camêra de seu celular para conseguir escanear os produtos do mercado",
+        "NSLocationWhenInUseUsageDescription": "O KipKart usa sua localização para achar os supermercados mais próximos de você"
+      }
+    },
+    "assetBundlePatterns": ["**/*"],
+    "android": {
+      "package": "br.com.kipkart.kipkart",
+      "googleServicesFile": "./google-services.json",
+      "versionCode": 16,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptiveIcon.png",
+        "backgroundColor": "#A7E4F2"
+      },
+      "permissions": ["CAMERA", "ACCESS_FINE_LOCATION", "INTERNET"],
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyCkWADEkYTRbjqcQj5JWyoZXBI5uq_qdf0"
+        }
+      },
+      "jsEngine": "hermes"
+    },
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "description": ""
+  }
+}
