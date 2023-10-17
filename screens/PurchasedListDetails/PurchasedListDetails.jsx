@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { StatusBar, View } from "react-native";
 import {
+  CameraSpacing,
   DateTimeHeader,
   DateTimeItem,
   DateTimeText,
@@ -47,7 +48,7 @@ function PurchasedListDetails({ navigation, route }) {
         setDate(createdAt);
         setTime(timeSpent);
         setLoading(false);
-      }, 2000);
+      }, 1700);
     }
   }, []);
 
@@ -79,6 +80,7 @@ function PurchasedListDetails({ navigation, route }) {
   return (
     <Page>
       <StatusBar hidden />
+      <CameraSpacing />
       <Header>
         <GoBackButton color={colors.mistyBlue} navigation={navigation} />
         <SearchBar

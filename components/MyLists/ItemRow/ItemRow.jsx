@@ -33,7 +33,7 @@ function ItemRow({
           <ItemIcon
             resizeMode="contain"
             source={{
-              uri: item.image_url,
+              uri: `https://kipkart-images-db.s3.sa-east-1.amazonaws.com/${barcode}.png`,
             }}
           />
         </ImageContainer>

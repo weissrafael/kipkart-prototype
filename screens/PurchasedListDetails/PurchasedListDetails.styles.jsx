@@ -9,6 +9,12 @@ export const Page = styled.View`
   background-color: ${colors.mistyBlue};
 `;
 
+export const CameraSpacing = styled.View`
+  width: 100%;
+  height: 32px;
+  background-color: ${colors.mistyBlue};
+`;
+
 export const Header = styled.View`
   width: 100%;
   height: 60px;
@@ -36,7 +42,8 @@ export const MyListHeader = styled.View`
   height: 60px;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-left: 16px;
 `;
 
 export const MyListHeaderList = styled.View`
@@ -122,7 +129,7 @@ export const Title = styled.Text`
   font-size: ${smallDevice ? 18 : 26}px;
   font-weight: bold;
   color: ${colors.darkBlue};
-  max-width: ${smallDevice ? 140 : 250}px;
+  max-width: ${smallDevice ? 190 : 290}px;
 `;
 
 export const ShowListTitle = styled.Text`

@@ -65,18 +65,53 @@ function History({ navigation }) {
             id: 1,
             name: "Lista de compras do mês",
             total: 100,
+            timeSpent: "1 hora e 25 minutos",
             amountOfItems: 10,
             marketLogoImage: 'assets/marketLogos/bazinho.png',
             createdAt: "2020-10-10",
             items: [
                 {
-                    id: 1,
-                    name: "Arroz",
-                    quantity: 1,
-                    price: 10
+                    name: "Toddynho",
+                    quantity: 2,
+                    price: 10.7,
+                    barcode: 7894321722016,
                 },
           ],
-        }
+        },
+          {
+              id: 2,
+              name: "Lista da Dona Maria",
+              total: 100,
+              amountOfItems: 10,
+              timeSpent: "1 hora e 25 minutos",
+              marketLogoImage: 'assets/marketLogos/bazinho.png',
+              createdAt: "2020-10-10",
+              items: [
+                  {
+                      name: "Toddynho",
+                      quantity: 2,
+                      price: 10.7,
+                      barcode: 7894321722016,
+                  },
+              ],
+          },
+          {
+              id: 2,
+              name: "Lista da minha netinha querida",
+              total: 100,
+              amountOfItems: 10,
+              timeSpent: "1 hora e 25 minutos",
+              marketLogoImage: 'assets/marketLogos/bazinho.png',
+              createdAt: "2020-10-10",
+              items: [
+                  {
+                      name: "Toddynho",
+                      quantity: 2,
+                      price: 10.7,
+                      barcode: 7894321722016,
+                  },
+              ],
+          }
       ]
       setMyLists(lists);
       setMyFilteredLists(lists);
