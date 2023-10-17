@@ -3,6 +3,6 @@ import Colors from "../../../constants/Colors";
 
 export const ListContainer = styled.View`
   align-items: center;
-  background-color: ${Colors.secondary};
+  background-color: ${Colors.white};
   width: 100%;
 `;

@@ -14,7 +14,7 @@ export const Page = styled.View`
 export const GreenBlock = styled.View`
   flex: 1;
   align-items: center;
-  background-color: ${Colors.primary};
+  background-color: ${Colors.secondary};
   position: relative;
   z-index: 11;
 `;
@@ -28,13 +28,13 @@ export const TitleContainer = styled.View`
 
 export const PageTitle = styled(MainTextTitle)`
   font-size: ${smallDevice ? 28 : 34}px;
-  color: ${Colors.secondary};
+  color: ${Colors.white};
 `;
 
 export const CircleContainer = styled.View`
   width: ${smallDevice ? 200 : 250}px;
   height: ${smallDevice ? 200 : 250}px;
-  background-color: white;
+  background-color: ${Colors.darkSecondary};
   border-radius: 150px;
   justify-content: center;
   align-items: center;
@@ -44,12 +44,12 @@ export const CircleContainer = styled.View`
 
 export const TotalTitle = styled(MainTextTitle)`
   font-size: ${smallDevice ? 28 : 36}px;
-  color: ${Colors.fifth};
+  color: ${Colors.white};
 `;
 
 export const DarkGreenBlock = styled.View`
   flex: 1;
-  background-color: ${Colors.secondary};
+  background-color: ${Colors.white};
 `;
 
 export const InfoContainer = styled.View`
@@ -62,7 +62,7 @@ export const InfoContainer = styled.View`
 `;
 
 export const InfoText = styled(MainTextTitle)`
-  color: white;
+  color: ${Colors.secondary};
 `;
 
 export const ButtonsContainer = styled.View`
@@ -85,7 +85,7 @@ export const PurchaseSuccessImage = styled.Image`
 export const PurchaseSuccessText = styled.Text`
   font-family: "montserrat-bold";
   font-size: 16px;
-  color: ${colors.primary};
+  color: ${colors.secondary};
   text-align: center;
   margin-bottom: 16px;
   margin-top: 32px;
@@ -93,7 +93,7 @@ export const PurchaseSuccessText = styled.Text`
 
 export const MainButton = styled.TouchableOpacity`
   width: 150px;
-  background-color: white;
+  background-color: ${Colors.secondary};
   justify-content: center;
   align-items: center;
   height: 40px;
@@ -101,14 +101,14 @@ export const MainButton = styled.TouchableOpacity`
 `;
 
 export const ButtonText = styled(MainTextTitle)`
-  color: ${Colors.quaternary};
+  color: ${Colors.white};
 `;
 
 export const FinishButton = styled(MainButton)`
   background-color: transparent;
-  border: 2px solid white;
+  border: 2px solid ${Colors.secondary};
 `;
 
 export const FinishButtonText = styled(MainTextTitle)`
-  color: white;
+  color: ${Colors.secondary};
 `;

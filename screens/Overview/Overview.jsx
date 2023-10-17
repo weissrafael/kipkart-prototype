@@ -21,7 +21,6 @@ import {
   PurchaseSuccessImage,
 } from "./Overview.styles";
 import FinalList from "../../components/Overview/FinalList/FinalList";
-import api from "../../api/api";
 import GenericErrorModal from "../../components/Common/Modals/GenericErrorModal/GenericErrorModal";
 import Colors from "../../constants/Colors";
 import { ActivityIndicatorContainer } from "../../components/SelectMarket/OutsideMarketPage/OutsideMarketPage.styles";
@@ -41,19 +40,6 @@ function Overview({ navigation, route }) {
   const { itemCount } = route.params;
 
   const cartList = useSelector((state) => state.cartReducer.cartList);
-  const market = useSelector((state) => state.cartReducer.market);
-  const token = useSelector((state) => state.userReducer.token);
-
-  function toHHMMSS(secNum) {
-    // const secNum = parseInt(timeInSeconds, 10); // don't forget the second param
-    let hours = Math.floor(secNum / 3600);
-    let minutes = Math.floor((secNum - hours * 3600) / 60);
-    let seconds = secNum - hours * 3600 - minutes * 60;
-    if (hours < 10) hours = `0${hours}`;
-    if (minutes < 10) minutes = `0${minutes}`;
-    if (seconds < 10) seconds = `0${seconds}`;
-    return `${hours}:${minutes}:${seconds}`;
-  }
 
   const purchaseList = () => {
     setLoading(true);
@@ -95,12 +81,6 @@ function Overview({ navigation, route }) {
             <ButtonsContainer>
               <MainButton
                 onPress={() => {
-                  fireEvent(
-                    "list_not_finalized_yet",
-                    "Overview",
-                    "neutral",
-                    "User wants to add more items to the list and will be redirect to Scanner Page"
-                  );
                   navigation.pop(1);
                 }}
               >

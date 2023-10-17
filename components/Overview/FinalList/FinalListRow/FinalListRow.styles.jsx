@@ -7,7 +7,7 @@ export const ListRowContainer = styled.View`
   align-items: center;
   justify-content: space-between;
   border-bottom-width: 1px;
-  border-bottom-color: ${colors.lightGreen};
+  border-bottom-color: ${colors.secondary};
   width: 90%;
   height: 100px;
   padding-left: 20px;
@@ -26,12 +26,11 @@ export const ItemQtyAndName = styled.Text`
   padding-right: 12px;
   overflow: hidden;
   font-size: 20px;
-  color: white;
+  color: ${Colors.secondary};
 `;
 
 export const ItemTotalValue = styled.Text`
   flex: 1;
   text-align: right;
-  color: ${Colors.primary};
-  font-size: 18px;
+  color: ${Colors.secondary};
 `;

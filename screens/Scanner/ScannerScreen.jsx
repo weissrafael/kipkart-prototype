@@ -71,6 +71,11 @@ const mockedItems = {
     price: 10,
     isEligibleInPrizePromotion: false,
   },
+  7894321722016: {
+    name: "Toddynho",
+    price: 12.5,
+    isEligibleInPrizePromotion: false,
+  },
 };
 
 function ScannerScreen({ navigation, route }) {
@@ -103,7 +108,7 @@ function ScannerScreen({ navigation, route }) {
   const market = useSelector((state) => state.cartReducer.market);
   const dispatch = useDispatch();
 
-  const keyboardShown = useKeyboardIsOpen();
+  // const keyboardShown = useKeyboardIsOpen();
   const playSound = useSound();
 
   const resetValues = useCallback(() => {
@@ -613,7 +618,6 @@ function ScannerScreen({ navigation, route }) {
             removeItem={removeItem}
             removeItemFromList={removeItemFromList}
             missingItems={missingItems}
-            keyboardShown={keyboardShown}
             scrollRef={scroll}
             scrollHandler={scrollHandler}
             productIsLoading={productIsLoading}
@@ -638,7 +642,7 @@ function ScannerScreen({ navigation, route }) {
         )}
       </TabsContainer>
       {activeTab === "list" && Object.keys(cartList).length > 0 && (
-        <FinishContainer keyboardShown={keyboardShown}>
+        <FinishContainer>
           <FinishButton onPress={finishHandler} isActive={isActive}>
             <ButtonText>Finalizar lista</ButtonText>
           </FinishButton>

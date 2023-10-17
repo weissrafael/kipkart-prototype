@@ -26,7 +26,6 @@ const ShoppingList = ({
   removeItem,
   removeItemFromList,
   missingItems,
-  keyboardShown,
   productIsLoading,
   scrollHandler,
   scrollRef,
@@ -76,7 +75,7 @@ const ShoppingList = ({
           </EmptyTextContainer>
         )}
 
-        <CartItems show={listArray.length > 0} keyboardShown={keyboardShown}>
+        <CartItems show={listArray.length > 0}>
           <TitleContainer>
             <ListTitle>Meu Carrinho</ListTitle>
           </TitleContainer>
