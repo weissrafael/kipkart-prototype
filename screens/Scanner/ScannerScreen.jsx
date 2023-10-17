@@ -69,7 +69,6 @@ const mockedItems = {
   7891035617959: {
     name: "SBP Multi inseticida",
     price: 10,
-    weight: 0.2,
     isEligibleInPrizePromotion: false,
   },
 };
