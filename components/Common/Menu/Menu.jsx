@@ -6,7 +6,7 @@ import { Title } from "../../../styles/common.styles";
 function Menu({ options, user, setLoginModal }) {
   return (
     <MenuContainer>
-      {!user && <Backdrop onPress={() => setLoginModal(true)} />}
+      {/*{!user && <Backdrop onPress={() => setLoginModal(true)} />}*/}
       {options.map((option, index) => (
         <MenuItem user={user} index={index} key={option.id} {...option} />
       ))}
