@@ -157,23 +157,7 @@ function ScannerScreen({ navigation, route }) {
   );
 
   const finishHandler = useCallback(() => {
-    if (!user) {
-      fireEvent(
-        "finalize_list_not_logged",
-        "Scanner",
-        "neutral",
-        "User wants to finalize list but still not logged in"
-      );
-      setLoginModal(true);
-      return null;
-    }
     if (total !== 0) {
-      fireEvent(
-        "finalize_list",
-        "Scanner",
-        "success",
-        "User finalized the shopping list and will be redirected to the Overview Page"
-      );
       const itemsArray = Object.values(cartList);
       let itemCount = 0;
       itemsArray.map((item) => {

@@ -57,52 +57,15 @@ function Overview({ navigation, route }) {
 
   const purchaseList = () => {
     setLoading(true);
-    const listData = {
-      name: market.name,
-      marketId: market.id,
-      timeSpent: toHHMMSS(timeCount),
-      items: Object.values(cartList).map(
-        ({ name, price, quantity, imageUrl }) => ({
-          name,
-          price,
-          imageUrl,
-          quantity,
-        })
-      ),
-    };
-    api
-      .post("/api/v1/purchase-lists", listData, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then(() => {
-        setLoading(false);
-        setSuccess(true);
-        dispatch(resetAll());
-        setTimeout(() => {
-          navigation.navigate("Scanner");
-          setSuccess(false);
-        }, 2500);
-        fireEvent(
-          "purchase_list_success",
-          "Overview",
-          "success",
-          "User successfully purchased a shopping list",
-          listData
-        );
-      })
-      .catch((e) => {
-        setLoading(false);
-        setGenericError(true);
-        fireEvent(
-          "purchase_list_failed",
-          "Overview",
-          "system error",
-          "Something bad happen when trying to purchase list, API error",
-          listData
-        );
-      });
+    setTimeout(() => {
+      setLoading(false);
+      setSuccess(true);
+      dispatch(resetAll());
+      setTimeout(() => {
+        navigation.navigate("Scanner");
+        setSuccess(false);
+      }, 2500);
+    }, 2500);
   };
 
   function timeConversion() {
