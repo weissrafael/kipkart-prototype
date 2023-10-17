@@ -34,7 +34,7 @@ export const MarketName = styled.Text`
   color: ${colors.mistyBlue};
   font-weight: bold;
   letter-spacing: 0.4px;
-  max-width: ${smallDevice ? 100 : 140}px;
+  max-width: ${smallDevice ? 180 : 240}px;
 `;
 
 export const PurchaseDate = styled.Text`
@@ -58,7 +58,7 @@ export const MarketInfo = styled.View`
   justify-content: space-between;
   height: 44px;
   position: relative;
-  left: -6px;
+  margin-left: 16px;
 `;
 
 export const NumbersContainer = styled.View`

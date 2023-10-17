@@ -28,7 +28,6 @@ import api from "../../api/api";
 import GenericErrorModal from "../../components/Common/Modals/GenericErrorModal/GenericErrorModal";
 import { ErrorMessageWrapper, ErrorSmallMessage } from "../Login/Login.styles";
 import { login } from "../../store/actions/user";
-import { fireEvent } from "../../utils/analytics";
 
 const signupImage = require("../../assets/signupImage.png");
 const successImage = require("../../assets/illustrations/signup-complete.jpg");
@@ -71,32 +70,14 @@ function Signup({ navigation }) {
         .then(() => {
           setSmsSent(true);
           setLoading(false);
-          fireEvent(
-            "cellphone_validation_success_SMS_sent",
-            "Sign Up",
-            "success",
-            "Cellphone validation success, SMS sent to user phone."
-          );
         })
         .catch((err) => {
           if (
             err.response.data.result ===
             "Already exist a identity with this phone number"
           ) {
-            fireEvent(
-              "cellphone_validation_error_user_already_registered",
-              "Sign Up",
-              "user error",
-              "Cellphone validation error, user already registered."
-            );
             setCellphoneAlreadyExists(true);
           } else {
-            fireEvent(
-              "cellphone_validation_server_error",
-              "Sign Up",
-              "system error",
-              "Cellphone validation server error."
-            );
             setError(true);
           }
           setLoading(false);
@@ -136,30 +117,12 @@ function Signup({ navigation }) {
       })
       .then(({ data }) => {
         getUserInfo(data.result.access_token);
-        fireEvent(
-          "cellphone_token_confirmation_sign_up_success",
-          "Sign Up",
-          "success",
-          "Cellphone token confirmation success, user sign up complete."
-        );
       })
       .catch((err) => {
         if (err.response.data.result === "Invalid Token") {
           setInvalidToken(true);
-          fireEvent(
-            "cellphone_token_confirmation_user_error",
-            "Sign Up",
-            "user error",
-            "Sign Up Token confirmation failed, user typed a wrong token."
-          );
         } else {
           setError(true);
-          fireEvent(
-            "cellphone_token_confirmation_system_error",
-            "Sign Up",
-            "system error",
-            "Sign Up Token confirmation failed, system error."
-          );
         }
         setLoading(false);
       });

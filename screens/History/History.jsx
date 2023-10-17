@@ -59,48 +59,30 @@ function History({ navigation }) {
 
   function fetchShoppingLists() {
     setLoading(true);
-    api
-      .get("/api/v1/purchase-lists", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((resp) => {
-        const { result } = resp.data;
-        const lists = result
-          .map((list) => ({
-            ...list,
-            total: list.items.reduce(
-              (total, item) => total + item.price * item.quantity,
-              0
-            ),
-            amountOfItems: list.items.reduce(
-              (sum, item) => sum + item.quantity,
-              0
-            ),
-          }))
-          .reverse();
-        setMyLists(lists);
-        setMyFilteredLists(lists);
-        setLoading(false);
-        setError(false);
-        fireEvent(
-          "successfully_fetched_user_purchased_lists",
-          "History",
-          "success",
-          "Successfully fetched user purchased lists"
-        );
-      })
-      .catch(() => {
-        setError(true);
-        setLoading(false);
-        fireEvent(
-          "failed_to_fetch_purchased_lists",
-          "History",
-          "system error",
-          "Failed to fetch purchased lists, API error"
-        );
-      });
+    setTimeout(() => {
+      const lists = [
+        {
+            id: 1,
+            name: "Lista de compras do mês",
+            total: 100,
+            amountOfItems: 10,
+            marketLogoImage: 'assets/marketLogos/bazinho.png',
+            createdAt: "2020-10-10",
+            items: [
+                {
+                    id: 1,
+                    name: "Arroz",
+                    quantity: 1,
+                    price: 10
+                },
+          ],
+        }
+      ]
+      setMyLists(lists);
+      setMyFilteredLists(lists);
+      setLoading(false);
+      setError(false);
+    }, 1700);
   }
 
   return (
