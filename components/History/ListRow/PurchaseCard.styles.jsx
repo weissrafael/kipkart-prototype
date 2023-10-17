@@ -17,7 +17,7 @@ export const Wrapper = styled.View`
   align-items: center;
   justify-content: space-between;
   background-color: transparent;
-  padding-right: 32px;
+  padding-right: 16px;
   border-bottom-width: 2px;
   border-bottom-color: ${colors.darkBlue};
 `;
@@ -64,7 +64,6 @@ export const MarketInfo = styled.View`
 export const NumbersContainer = styled.View`
   justify-content: space-between;
   height: 52px;
-  width: 60px;
 `;
 
 export const NumberOfItemsRow = styled.View`
