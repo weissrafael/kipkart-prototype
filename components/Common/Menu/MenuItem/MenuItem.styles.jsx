@@ -7,19 +7,12 @@ const smallDevice = Dimensions.get("window").width < 380;
 export const OptionButton = styled.TouchableOpacity`
   border-radius: 10px;
   padding: 16px 0;
-  width: 40%;
+  flex: 1;
   height: ${smallDevice ? (Dimensions.get("window").height / 2) * 0.35 : 140}px;
   max-height: 140px;
   background-color: ${colors.primary};
   align-items: center;
   justify-content: space-between;
-  margin: 8px;
-  ${({ selectMarketButton }) =>
-    selectMarketButton &&
-    `
-    position: relative;
-    z-index: 11;
-  `}
 `;
 
 export const Name = styled.Text`

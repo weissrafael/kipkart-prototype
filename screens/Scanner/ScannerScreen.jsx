@@ -375,18 +375,6 @@ function ScannerScreen({ navigation, route }) {
       onPress: () => navigation.navigate("History"),
       image: historyImage,
     },
-    {
-      id: 3,
-      name: "Trocar Mercado",
-      onPress: selectNewMarket,
-      image: inventory,
-    },
-    {
-      id: 4,
-      name: user ? "Trocar Usuário" : "Fazer Login",
-      onPress: openLogoutModal,
-      image: profile,
-    },
   ];
 
   const limitModalText = (
@@ -549,8 +537,9 @@ function ScannerScreen({ navigation, route }) {
 
       {/* WINNER WINNER CHICKEN DINNER */}
 
-      <WinningModal setModal={setWinningModal} isOpen={winningModal} />
-      <AdModal setModal={setAdModal} isOpen={adModal} />
+      {/*<WinningModal setModal={setWinningModal} isOpen={winningModal} />*/}
+      {/*<AdModal setModal={setAdModal} isOpen={adModal} />*/}
+
       {/* SCREEN */}
       {scanner && (
         <Screen>

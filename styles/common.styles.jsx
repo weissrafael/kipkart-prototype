@@ -15,7 +15,7 @@ export const MainTextTitle = styled.Text`
 export const Title = styled.Text`
   font-family: "montserrat-regular";
   font-size: ${smallDevice ? 14 : 16}px;
-  color: ${({ color }) => color || Colors.primary};
+  color: ${({ color }) => color || Colors.white};
   text-align: center;
 `;
 

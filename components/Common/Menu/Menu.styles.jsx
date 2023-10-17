@@ -7,12 +7,24 @@ const smallDevice = Dimensions.get("window").width < 380;
 
 export const MenuContainer = styled.View`
   background-color: ${colors.secondary};
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
   flex: 1;
-  padding: 8px 8px 60px 8px;
+  padding: 16px;
+`;
+
+export const ButtonsContainer = styled.View`
+  flex-direction: row;
+  background-color: ${colors.secondary};
+  width: 100%;
+  margin-bottom: 16px;
+`;
+
+export const Spacing = styled.View`
+  width: 16px;
+  height: 16px;
 `;
 
 export const Backdrop = styled.TouchableOpacity`
@@ -25,12 +37,11 @@ export const Backdrop = styled.TouchableOpacity`
 
 export const UserContainer = styled.View`
   flex: 1;
-  padding: 0 12px;
-  position: absolute;
-  bottom: ${smallDevice ? 10 : 20}px;
-  height: 30px;
-  border-radius: 11px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: ${colors.secondary};
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding: 16px;
+  width: 100%;
+  border: 1px solid ${colors.white};
+  border-radius: 10px;
 `;
