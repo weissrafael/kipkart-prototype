@@ -17,6 +17,12 @@ export const Header = styled.View`
   background-color: ${colors.mistyBlue};
 `;
 
+export const CameraSpacing = styled.View`
+  width: 100%;
+  height: 50px;
+  background-color: ${colors.mistyBlue};
+`;
+
 export const EmptySpot = styled.View`
   width: 50px;
 `;

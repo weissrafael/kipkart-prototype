@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { StatusBar } from "react-native";
 import {
-  EmptySpot,
-  Header,
-  ListContainer,
-  Page,
-  StyledErrorContainer,
+    CameraSpacing,
+    EmptySpot,
+    Header,
+    ListContainer,
+    Page,
+    StyledErrorContainer,
 } from "./History.styles";
 import GoBackButton from "../../components/Common/GoBackButton/GoBackButton";
 import { colors } from "../../styles/styleGuide";
@@ -78,7 +79,7 @@ function History({ navigation }) {
                 },
           ],
         },
-          {
+        {
               id: 2,
               name: "Lista da Dona Maria",
               total: 100,
@@ -95,9 +96,26 @@ function History({ navigation }) {
                   },
               ],
           },
-          {
-              id: 2,
+        {
+              id: 3,
               name: "Lista da minha netinha querida",
+              total: 100,
+              amountOfItems: 10,
+              timeSpent: "1 hora e 25 minutos",
+              marketLogoImage: 'assets/marketLogos/bazinho.png',
+              createdAt: "2020-10-10",
+              items: [
+                  {
+                      name: "Toddynho",
+                      quantity: 2,
+                      price: 10.7,
+                      barcode: 7894321722016,
+                  },
+              ],
+          },
+        {
+              id: 4,
+              name: "Churrasco do fim de semana",
               total: 100,
               amountOfItems: 10,
               timeSpent: "1 hora e 25 minutos",
@@ -123,6 +141,7 @@ function History({ navigation }) {
   return (
     <Page>
       <StatusBar hidden />
+      <CameraSpacing />
       <Header>
         <GoBackButton navigation={navigation} color={colors.darkMistyBlue} />
         {error ? (

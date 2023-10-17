@@ -11,8 +11,8 @@ export const Page = styled.View`
 
 export const CameraSpacing = styled.View`
   width: 100%;
-  height: 32px;
-  background-color: ${colors.mistyBlue};
+  height: 50px;
+  background-color: ${colors.darkBlue};
 `;
 
 export const Header = styled.View`
