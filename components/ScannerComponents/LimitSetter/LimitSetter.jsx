@@ -91,7 +91,7 @@ const LimitSetter = ({
               limit === 99999 ? setActiveTab("list") : resetLimitValue()
             }
           >
-            {limit === 99999 ? "Agora não" : "Zerar limite"}
+            {limit === 99999 ? "Voltar" : "Zerar limite"}
           </ButtonText>
         </LimitButton>
         <LimitButton onPress={() => confirmLimitHandler()}>

@@ -375,6 +375,18 @@ function ScannerScreen({ navigation, route }) {
       onPress: () => navigation.navigate("History"),
       image: historyImage,
     },
+    {
+      id: 3,
+      name: "Inventário",
+      onPress: () => console.log("inventario"),
+      image: inventory,
+    },
+    {
+      id: 4,
+      name: "Minha Conta",
+      onPress: () => console.log("profile"),
+      image: profile,
+    },
   ];
 
   const limitModalText = (
