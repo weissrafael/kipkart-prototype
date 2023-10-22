@@ -18,8 +18,8 @@ export default function useKeyboardIsOpen() {
 
     // cleanup function
     return () => {
-      Keyboard.removeListener("keyboardDidShow", keyboardDidShow);
-      Keyboard.removeListener("keyboardDidHide", keyboardDidHide);
+      Keyboard.removeAllListeners("keyboardDidShow");
+      Keyboard.removeAllListeners("keyboardDidHide");
     };
   }, []);
 
