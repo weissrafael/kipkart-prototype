@@ -4,7 +4,7 @@ import FontSizes from "../../constants/FontSizes";
 
 export const Screen = styled.View`
   flex: 1;
-  background-color: ${colors.goodSamaritan};
+  background-color: ${colors.graySamaritan};
 `;
 
 export const Container = styled.View`
@@ -35,21 +35,23 @@ export const ContentContainer = styled.View`
 export const FinishContainer = styled.View`
   justify-content: center;
   align-items: center;
+  flex: 1;
 `;
 
 export const FinishButton = styled.TouchableOpacity`
-  width: auto;
   padding: 0 16px;
   height: 50px;
-  background-color: ${({ isActive }) => (isActive ? colors.reefEncounter : "grey")};
+  background-color: ${({ isActive }) => (isActive ? colors.goodSamaritan : "grey")};
   border-radius: 10px;
   justify-content: center;
   align-items: center;
+  flex: 1;
+  width: 100%;
 `;
 
 export const ButtonText = styled.Text`
   font-family: "montserrat-bold";
-  font-size: ${FontSizes.title}px;
+  font-size: ${FontSizes.text}px;
   color: white;
 `;
 

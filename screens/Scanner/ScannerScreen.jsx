@@ -34,6 +34,7 @@ import {
   ListTitle, ShoppingListHeader, TitleContainer, TypeBarcodeWrapper,
 } from "../../components/ScannerComponents/ShoppingList/ShoppingList.styles";
 import Footer from "../../components/Common/Footer/Footer";
+import {Spacing} from "../../components/Common/Menu/Menu.styles";
 
 const mockedItems = {
   7891035617959: {
@@ -364,11 +365,14 @@ function ScannerScreen({ navigation, route }) {
           showFullButton={Object.entries(cartList).length <= 0}
         />
         {Object.keys(cartList).length > 0 && (
-          <FinishContainer keyboardShown={keyboardShown}>
-            <FinishButton onPress={finishHandler} isActive={isActive}>
-              <ButtonText>Finalizar Compra</ButtonText>
-            </FinishButton>
-          </FinishContainer>
+          <>
+            <Spacing />
+            <FinishContainer keyboardShown={keyboardShown}>
+              <FinishButton onPress={finishHandler} isActive={isActive}>
+                <ButtonText>Finalizar Compra</ButtonText>
+              </FinishButton>
+            </FinishContainer>
+          </>
         )}
       </TypeBarcodeWrapper>
       <Footer />
