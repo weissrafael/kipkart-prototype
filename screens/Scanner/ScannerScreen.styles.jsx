@@ -1,15 +1,10 @@
 import styled from "styled-components/native";
-import { Dimensions } from "react-native";
 import { colors } from "../../styles/styleGuide";
-import Colors from "../../constants/Colors";
 import FontSizes from "../../constants/FontSizes";
-import { BoldTitle, LargeTitle, Title } from "../../styles/common.styles";
-
-const { height, width } = Dimensions.get("window");
 
 export const Screen = styled.View`
   flex: 1;
-  background-color: ${colors.white};
+  background-color: ${colors.goodSamaritan};
 `;
 
 export const Container = styled.View`
@@ -24,30 +19,8 @@ export const ImageContainer = styled.View`
   flex: 2;
 `;
 
-export const LogoutTitle = styled(BoldTitle)`
-  margin-top: 16px;
-  font-size: 18px;
-  color: ${colors.secondary};
-`;
-
-export const AlertTitle = styled(BoldTitle)`
-  color: ${colors.secondary};
-  margin-top: 32px;
-`;
-
-export const TotalText = styled(BoldTitle)`
-  color: ${colors.tertiary};
-  font-size: 24px;
-`;
-
 export const Page = styled.ScrollView`
   width: 100%;
-`;
-
-export const TabsContainer = styled.View`
-  min-height: ${height / 2}px;
-  background: ${Colors.secondary};
-  ${({ scanner }) => !scanner && "flex: 1"};
 `;
 
 export const ContentContainer = styled.View`
@@ -84,4 +57,7 @@ export const ShoppingListTotal = styled.Text`
   font-family: "montserrat-regular";
   font-size: ${FontSizes.largeTitle}px;
   color: ${colors.fifth};
+  background-color: ${colors.white};
+  padding: 4px 8px;
+  border-radius: 10px;
 `;

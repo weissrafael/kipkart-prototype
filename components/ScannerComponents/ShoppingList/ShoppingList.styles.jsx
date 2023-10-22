@@ -9,11 +9,10 @@ const smallDevice = Dimensions.get("window").width < 380;
 export const Page = styled.View`
   flex: 1;
   margin-top: 16px;
-  background-color: ${colors.white};
+  background-color: ${colors.goodSamaritan};
 `;
 
 export const ListsContainer = styled.View`
-  background-color: ${colors.white};
   justify-content: flex-start;
   align-items: center;
   height: 100%;
@@ -68,6 +67,7 @@ export const ListTitle = styled.Text`
   font-family: "montserrat-bold";
   font-size: ${FontSizes.title}px;
   text-align: center;
+  color: ${colors.forestBlues};
 `;
 
 export const ListImage = styled.Image`
