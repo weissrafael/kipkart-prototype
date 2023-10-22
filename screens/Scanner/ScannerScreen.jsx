@@ -350,7 +350,7 @@ function ScannerScreen({ navigation, route }) {
         {Object.entries(cartList).length <= 0 &&
           Object.entries(missingItems).length <= 0 && (
             <>
-              <AntDesign name="arrowleft" size={32} color={colors.charcoalGray} />
+              <AntDesign name="arrowleft" size={32} color={colors.gray} />
               <IndicatorTextContainer>
                 <IndicatorText>
                   ou aperte o botão para digitar o cód. de barras

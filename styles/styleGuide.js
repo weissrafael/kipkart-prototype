@@ -16,6 +16,7 @@ export const colors = {
   lightGreen: "#adcec3",
   green2: "#1dad8b",
   charcoalGray: "#473f51",
+  gray: "#605e67",
   scanQRBG: "#DBE1FF",
 
   cream: "#F6EEE0",

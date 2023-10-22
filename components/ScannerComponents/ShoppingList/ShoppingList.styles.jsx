@@ -27,7 +27,7 @@ export const ListsContainer = styled.View`
 
 export const EmptyListText = styled.Text`
   font-family: "montserrat-bold";
-  color: grey;
+  color: ${colors.gray};
   font-size: ${FontSizes.title}px;
   text-align: center;
 `;
