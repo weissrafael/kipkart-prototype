@@ -59,23 +59,13 @@ export const ContentContainer = styled.View`
 `;
 
 export const FinishContainer = styled.View`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  background-color: transparent;
-  ${({ keyboardShown }) =>
-    keyboardShown &&
-    `
-    left: -99999px
-  `}
 `;
 
 export const FinishButton = styled.TouchableOpacity`
-  width: 150px;
+  width: auto;
+  padding: 0 16px;
   height: 50px;
   background-color: ${({ isActive }) => (isActive ? Colors.tertiary : "grey")};
   border-radius: 10px;
@@ -87,4 +77,10 @@ export const ButtonText = styled.Text`
   font-family: "montserrat-bold";
   font-size: ${FontSizes.title}px;
   color: white;
+`;
+
+export const ShoppingListTotal = styled.Text`
+  font-family: "montserrat-regular";
+  font-size: ${FontSizes.largeTitle}px;
+  color: ${colors.fifth};
 `;

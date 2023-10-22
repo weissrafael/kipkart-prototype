@@ -229,8 +229,7 @@ const ListRow = ({
             </ItemNameBox>
           </Animated.View>
           <ItemTotalValue>
-            R$
-            {total.toFixed(2)}
+            R$ {total.toFixed(2)}
           </ItemTotalValue>
         </Animated.View>
         {/* </PanGestureHandler> */}

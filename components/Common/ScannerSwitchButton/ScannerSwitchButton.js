@@ -1,39 +1,21 @@
 import React from "react";
-import { Entypo } from "@expo/vector-icons";
-import { View } from "react-native";
+import { MaterialIcons } from '@expo/vector-icons';
 import { TouchableOpacity } from "react-native-gesture-handler";
-import Colors from "../../../constants/Colors";
+import { colors } from "../../../styles/styleGuide.js";
 
-const ScannerSwitchButton = ({ setScanner }) => (
-  <View
-    style={{
-      width: 60,
-      height: 60,
-      position: "absolute",
-      bottom: 10,
-      right: 10,
-      justifyContent: "center",
-      alignItems: "center",
-      borderRadius: 30,
-      zIndex: 11,
-      backgroundColor: Colors.secondary,
-    }}
-  >
+const ScannerSwitchButton = ({ setScanner, scannerIsOpen }) => (
     <TouchableOpacity
       style={{
         width: 60,
         height: 60,
-
         justifyContent: "center",
         alignItems: "center",
-        borderRadius: 30,
-        backgroundColor: Colors.secondary,
+        backgroundColor: colors.white,
       }}
       onPress={() => setScanner((state) => !state)}
     >
-      <Entypo name="eye" size={24} color="white" />
+      <MaterialIcons name={scannerIsOpen ? "keyboard-arrow-up" : "keyboard-arrow-down"} size={42} color={colors.forestBlues} />
     </TouchableOpacity>
-  </View>
 );
 
 export default ScannerSwitchButton;

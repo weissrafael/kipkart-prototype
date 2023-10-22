@@ -41,6 +41,15 @@ export const TypeBarcodeWrapper = styled.View`
   background-color: ${colors.white};
 `;
 
+export const ShoppingListHeader = styled.View`
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px 0 0;
+  width: 100%;
+  background-color: ${colors.white};
+`;
+
 export const IndicatorTextContainer = styled.View`
   flex-direction: row;
   align-items: flex-start;

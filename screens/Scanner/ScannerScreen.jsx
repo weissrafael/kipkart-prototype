@@ -8,7 +8,7 @@ import {
   Screen,
   FinishButton,
   ButtonText,
-  FinishContainer,
+  FinishContainer, ShoppingListTotal,
 } from "./ScannerScreen.styles";
 import ScrollToTopButton from "../../components/Common/ScrollToTopButton/ScrollToTopButton";
 import ShoppingList from "../../components/ScannerComponents/ShoppingList/ShoppingList";
@@ -34,7 +34,7 @@ import useSound from "../../hooks/useSound";
 import ScannerSwitchButton from "../../components/Common/ScannerSwitchButton/ScannerSwitchButton";
 import {
   IndicatorText,
-  IndicatorTextContainer, TypeBarcodeWrapper,
+  IndicatorTextContainer, ShoppingListHeader, TypeBarcodeWrapper,
 } from "../../components/ScannerComponents/ShoppingList/ShoppingList.styles";
 import Footer from "../../components/Common/Footer/Footer";
 
@@ -324,6 +324,12 @@ function ScannerScreen({ navigation, route }) {
           />
         </Screen>
       )}
+      <ShoppingListHeader>
+        <ScannerSwitchButton setScanner={setScanner} scannerIsOpen={scanner} />
+        <ShoppingListTotal>
+          R$ {total.toFixed(2)}
+        </ShoppingListTotal>
+      </ShoppingListHeader>
       <ShoppingList
         list={cartList}
         simultaneousHandlers={scroll}
@@ -336,20 +342,20 @@ function ScannerScreen({ navigation, route }) {
         scrollHandler={scrollHandler}
         productIsLoading={productIsLoading}
       />
-      {Object.keys(cartList).length > 0 && (
-        <FinishContainer keyboardShown={keyboardShown}>
-          <FinishButton onPress={finishHandler} isActive={isActive}>
-            <ButtonText>Finalizar lista</ButtonText>
-          </FinishButton>
-          {isToTopVisible && <ScrollToTopButton toTopHandler={toTopHandler} />}
-          <ScannerSwitchButton setScanner={setScanner} />
-        </FinishContainer>
-      )}
+
       <TypeBarcodeWrapper>
         <TypeBarcodeButton
           setModalVisible={setTypeBarcodeModal}
           showFullButton={Object.entries(cartList).length <= 0}
         />
+        {Object.keys(cartList).length > 0 && (
+          <FinishContainer keyboardShown={keyboardShown}>
+            <FinishButton onPress={finishHandler} isActive={isActive}>
+              <ButtonText>Finalizar Compra</ButtonText>
+            </FinishButton>
+            {isToTopVisible && <ScrollToTopButton toTopHandler={toTopHandler} />}
+          </FinishContainer>
+        )}
       </TypeBarcodeWrapper>
       <Footer />
     </Screen>
