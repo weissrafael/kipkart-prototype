@@ -34,7 +34,7 @@ import useSound from "../../hooks/useSound";
 import ScannerSwitchButton from "../../components/Common/ScannerSwitchButton/ScannerSwitchButton";
 import {
   IndicatorText,
-  IndicatorTextContainer, ShoppingListHeader, TypeBarcodeWrapper,
+  IndicatorTextContainer, ListTitle, ShoppingListHeader, TitleContainer, TypeBarcodeWrapper,
 } from "../../components/ScannerComponents/ShoppingList/ShoppingList.styles";
 import Footer from "../../components/Common/Footer/Footer";
 
@@ -326,6 +326,9 @@ function ScannerScreen({ navigation, route }) {
       )}
       <ShoppingListHeader>
         <ScannerSwitchButton setScanner={setScanner} scannerIsOpen={scanner} />
+        <TitleContainer>
+          <ListTitle>Meu Carrinho</ListTitle>
+        </TitleContainer>
         <ShoppingListTotal>
           R$ {total.toFixed(2)}
         </ShoppingListTotal>

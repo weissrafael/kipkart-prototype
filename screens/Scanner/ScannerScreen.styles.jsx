@@ -67,7 +67,7 @@ export const FinishButton = styled.TouchableOpacity`
   width: auto;
   padding: 0 16px;
   height: 50px;
-  background-color: ${({ isActive }) => (isActive ? Colors.tertiary : "grey")};
+  background-color: ${({ isActive }) => (isActive ? colors.reefEncounter : "grey")};
   border-radius: 10px;
   justify-content: center;
   align-items: center;

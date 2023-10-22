@@ -22,7 +22,7 @@ const TypeBarcodeButton = ({ setModalVisible, showFullButton }) => {
 
   return (
     <TypeBarcodeContainer onPress={() => setModalVisible(true)}>
-      <AntDesign name="barcode" size={34} color="white" />
+      <AntDesign name="barcode" size={32} color="white" />
     </TypeBarcodeContainer>
   );
 }

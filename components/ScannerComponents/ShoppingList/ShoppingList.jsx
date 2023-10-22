@@ -77,9 +77,6 @@ const ShoppingList = ({
         )}
 
         <CartItems show={listArray.length > 0} keyboardShown={keyboardShown}>
-          <TitleContainer>
-            <ListTitle>Meu Carrinho</ListTitle>
-          </TitleContainer>
           {productIsLoading && (
             <ListContainer>
               <ListRow />
@@ -101,32 +98,6 @@ const ShoppingList = ({
             windowSize={17}
           />
         </CartItems>
-
-        <MissingItems show={missingItemsArray.length > 0}>
-          {missingItemsArray.length > 0 && (
-            <TitleContainer>
-              <MissingItemsTitle>Minha Lista</MissingItemsTitle>
-            </TitleContainer>
-          )}
-
-          {missingItemsArray.length > 0 &&
-            missingItemsArray.map(([barcode, item], key) => (
-              <ListContainer key={item.name}>
-                <Line show={key !== 0} />
-                <ListRow
-                  item={item}
-                  addItem={addItem}
-                  removeItem={removeItem}
-                  barcode={barcode}
-                  isMissingListRow
-                />
-              </ListContainer>
-            ))}
-        </MissingItems>
-
-        {/* {!scanner && ( */}
-        {/* <SuggestedItems cartItems={list} /> */}
-        {/* )} */}
       </ListsContainer>
     </Page>
   );

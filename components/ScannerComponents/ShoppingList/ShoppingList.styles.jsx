@@ -35,7 +35,7 @@ export const EmptyListText = styled.Text`
 export const TypeBarcodeWrapper = styled.View`
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 0 16px 16px 16px;
   width: 100%;
   background-color: ${colors.white};
@@ -86,22 +86,9 @@ export const EmptyTextContainer = styled.View`
 
 export const CartItems = styled.View`
   width: 100%;
-  border-radius: 20px;
-  padding: 10px 5px;
-  background-color: white;
-  elevation: 10;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-  border-width: 2px;
-  border-color: ${Colors.primary};
-  align-items: center;
-  margin-bottom: 10px;
   height: 100%;
+  align-items: center;
   display: ${({ show }) => (show ? "flex" : "none")};
-  ${({ keyboardShown }) =>
-    keyboardShown &&
-    `
-    display: none;
-  `}
 `;
 
 export const ListContainer = styled.View`
@@ -126,13 +113,9 @@ export const MissingItems = styled(CartItems)`
 `;
 
 export const TitleContainer = styled.View`
-  width: 150px;
-  height: 30px;
   background-color: white;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  top: -20px;
 `;
 
 export const MissingItemsTitle = styled.Text`
