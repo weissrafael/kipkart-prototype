@@ -68,8 +68,8 @@ const ShoppingList = ({
               <>
                 <ListImage source={emptyList} resizeMode="contain" />
                 <EmptyListText>
-                  Para começar a adicionar itens no seu carrinho, escaneie o
-                  código de barras do produto,
+                  Para adicionar itens no seu carrinho, escaneie o
+                  código de barras do produto
                 </EmptyListText>
               </>
             )}

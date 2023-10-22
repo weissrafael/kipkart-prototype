@@ -11,7 +11,7 @@ export const TypeBarcodeContainer = styled.TouchableOpacity`
 `;
 
 export const TypeBarcodeFullContainer = styled.TouchableOpacity`
-  width: auto;
+  width: 100%;
   height: 60px;
   padding: 0 16px;
   border-radius: 30px;
@@ -19,4 +19,5 @@ export const TypeBarcodeFullContainer = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  margin-bottom: 16px;
 `;

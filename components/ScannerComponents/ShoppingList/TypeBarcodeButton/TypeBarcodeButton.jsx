@@ -9,10 +9,11 @@ const TypeBarcodeButton = ({ setModalVisible, showFullButton }) => {
     return (
       <TypeBarcodeFullContainer onPress={() => setModalVisible(true)}>
         <Spacing />
-        <AntDesign name="barcode" size={24} color="white" />
+        <AntDesign name="barcode" size={34} color="white" />
+        <Spacing />
         <Spacing />
         <IndicatorText>
-          ou aperte o aqui para digitar o cód. de barras
+          ou aperte aqui para digitar o cód. de barras
         </IndicatorText>
         <Spacing />
       </TypeBarcodeFullContainer>
