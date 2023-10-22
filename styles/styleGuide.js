@@ -27,6 +27,33 @@ export const colors = {
   strongBrownOpacity: "rgba(164, 92, 64, 0.9)",
   megaBrownOpcaity: "rgba(109,60,41,0.9)",
 
+  // french palette
+
+  flatFlash: "#fad390",
+  squashBlossom: "#f6b93b",
+  icelandPoppy: "#fa983a",
+  carrotOrange: "#e58e26",
+
+  melonMelody: "#f8c291",
+  mandarinRed: "#e55039",
+  tomatoRed: "#eb2f06",
+  jalapenoRed: "#b71540",
+
+  livid: "#6a89cc",
+  azraqBlue: "#4a69bd",
+  yueGuangBlue: "#1e3799",
+  darkSapphire: "#0c2461",
+
+  spray: "#82ccdd",
+  dupain: "#60a3bc",
+  goodSamaritan: "#3c6382",
+  forestBlues: "#0a3d62",
+
+  paradiseGreen: "#b8e994",
+  auroraGreen: "#78e08f",
+  waterfall: "#38ada9",
+  reefEncounter: "#079992",
+
   darkBlue: "#284b5e",
   darkMistyBlue: "#385E72",
   blueGrotto: "#6AABD2",

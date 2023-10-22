@@ -346,18 +346,10 @@ function ScannerScreen({ navigation, route }) {
         </FinishContainer>
       )}
       <TypeBarcodeWrapper>
-        <TypeBarcodeButton setModalVisible={setTypeBarcodeModal} />
-        {Object.entries(cartList).length <= 0 &&
-          Object.entries(missingItems).length <= 0 && (
-            <>
-              <AntDesign name="arrowleft" size={32} color={colors.gray} />
-              <IndicatorTextContainer>
-                <IndicatorText>
-                  ou aperte o botão para digitar o cód. de barras
-                </IndicatorText>
-              </IndicatorTextContainer>
-            </>
-          )}
+        <TypeBarcodeButton
+          setModalVisible={setTypeBarcodeModal}
+          showFullButton={Object.entries(cartList).length <= 0}
+        />
       </TypeBarcodeWrapper>
       <Footer />
     </Screen>

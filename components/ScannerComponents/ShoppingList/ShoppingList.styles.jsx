@@ -27,7 +27,7 @@ export const ListsContainer = styled.View`
 
 export const EmptyListText = styled.Text`
   font-family: "montserrat-bold";
-  color: ${colors.gray};
+  color: ${colors.forestBlues};
   font-size: ${FontSizes.title}px;
   text-align: center;
 `;
@@ -35,7 +35,7 @@ export const EmptyListText = styled.Text`
 export const TypeBarcodeWrapper = styled.View`
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0 16px 16px 16px;
   width: 100%;
   background-color: ${colors.white};
@@ -43,12 +43,18 @@ export const TypeBarcodeWrapper = styled.View`
 
 export const IndicatorTextContainer = styled.View`
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  max-width: 260px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 200px;
+  margin-left: 16px;
 `;
 
-export const IndicatorText = styled(EmptyListText)``;
+export const IndicatorText = styled(EmptyListText)`
+  font-size: ${FontSizes.text}px;
+  color: ${colors.white};
+  max-width: 200px;
+  text-align: left;
+`;
 
 export const ListTitle = styled.Text`
   font-family: "montserrat-bold";
@@ -57,7 +63,7 @@ export const ListTitle = styled.Text`
 `;
 
 export const ListImage = styled.Image`
-  height: ${smallDevice ? "50%" : "60%"};
+  height: ${smallDevice ? "60%" : "70%"};
   margin-bottom: 16px;
 `;
 
@@ -65,7 +71,7 @@ export const EmptyTextContainer = styled.View`
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  padding: 16px;
+  padding: 0 16px;
   height: 100%;
 `;
 
