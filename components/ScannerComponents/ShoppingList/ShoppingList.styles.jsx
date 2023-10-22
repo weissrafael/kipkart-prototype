@@ -8,8 +8,8 @@ const smallDevice = Dimensions.get("window").width < 380;
 
 export const Page = styled.View`
   flex: 1;
-  padding-bottom: 50px;
-  background-color: white;
+  margin-top: 16px;
+  background-color: ${colors.white};
 `;
 
 export const ListsContainer = styled.View`
@@ -17,12 +17,6 @@ export const ListsContainer = styled.View`
   justify-content: flex-start;
   align-items: center;
   height: 100%;
-  padding-top: 10px;
-  ${({ empty }) =>
-    !empty &&
-    `
-  padding: ${smallDevice ? 30 : 40}px 10px 40px 10px;
-  justify-content: center;`};
 `;
 
 export const EmptyListText = styled.Text`
@@ -36,7 +30,7 @@ export const TypeBarcodeWrapper = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0 16px 16px 16px;
+  padding: 16px;
   width: 100%;
   background-color: ${colors.white};
 `;
@@ -48,6 +42,11 @@ export const ShoppingListHeader = styled.View`
   padding: 0 16px 0 0;
   width: 100%;
   background-color: ${colors.white};
+  shadow-color: #000;
+  shadow-offset: 0px 4px;
+  shadow-opacity: 0.3;
+  shadow-radius: 5px;
+  elevation: 5;
 `;
 
 export const IndicatorTextContainer = styled.View`

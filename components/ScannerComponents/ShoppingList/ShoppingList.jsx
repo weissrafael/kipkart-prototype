@@ -21,31 +21,29 @@ import { LoadingContainer } from "./ListRow/ListRow.styles";
 const emptyList = require("../../../assets/emptylist.png");
 
 const ShoppingList = ({
-  list,
-  addItem,
-  removeItem,
-  removeItemFromList,
-  missingItems,
-  productIsLoading,
-  keyboardShown,
-  scrollHandler,
-  scrollRef,
-}) => {
+                        list,
+                        addItem,
+                        removeItem,
+                        removeItemFromList,
+                        missingItems,
+                        productIsLoading,
+                        keyboardShown,
+                        scrollHandler,
+                        scrollRef,
+                      }) => {
   const listArray = Object.entries(list).reverse();
   const missingItemsArray = Object.entries(missingItems).reverse();
 
   const renderItem = useCallback(
     ({ item, index }) => {
       return (
-        <>
-          <Line show={index !== 0} />
-          <ListRow
-            item={item[1]}
-            addItem={addItem}
-            removeItem={removeItem}
-            removeItemFromList={removeItemFromList}
-          />
-        </>
+        <ListRow
+          item={item[1]}
+          addItem={addItem}
+          removeItem={removeItem}
+          removeItemFromList={removeItemFromList}
+          index={index}
+        />
       );
     },
     [addItem, removeItem, removeItemFromList]

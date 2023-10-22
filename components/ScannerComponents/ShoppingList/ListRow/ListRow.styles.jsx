@@ -16,6 +16,8 @@ export const ListRowContainer = styled(ContentContainer)`
 
 export const ImageContainer = styled.View`
   flex: 1;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const LoadingContainer = styled.View`
@@ -80,15 +82,15 @@ export const PlusText = styled.Text`
 `;
 
 export const ItemNameBox = styled.TouchableOpacity`
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 16px;
+  padding-right: 8px;
   height: 100%;
   align-items: flex-start;
   justify-content: center;
 `;
 
 export const ItemName = styled.Text`
-  text-align: center;
+  text-align: left;
   font-size: 16px;
   color: ${colors.charcoalGray};
 `;

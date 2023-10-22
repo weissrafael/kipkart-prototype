@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { ActivityIndicator } from "react-native";
 import { useKeepAwake } from "expo-keep-awake";
 import { useSelector, useDispatch } from "react-redux";
-import { AntDesign } from "@expo/vector-icons";
 import Scanner from "../../components/ScannerComponents/Scanner/Scanner";
 import {
   Screen,
@@ -10,7 +9,6 @@ import {
   ButtonText,
   FinishContainer, ShoppingListTotal,
 } from "./ScannerScreen.styles";
-import ScrollToTopButton from "../../components/Common/ScrollToTopButton/ScrollToTopButton";
 import ShoppingList from "../../components/ScannerComponents/ShoppingList/ShoppingList";
 import { colors } from "../../styles/styleGuide";
 import ErrorModal from "../../components/Common/ErrorModal/ErrorModal";
@@ -33,8 +31,7 @@ import useKeyboardIsOpen from "../../hooks/useKeyboardIsOpen";
 import useSound from "../../hooks/useSound";
 import ScannerSwitchButton from "../../components/Common/ScannerSwitchButton/ScannerSwitchButton";
 import {
-  IndicatorText,
-  IndicatorTextContainer, ListTitle, ShoppingListHeader, TitleContainer, TypeBarcodeWrapper,
+  ListTitle, ShoppingListHeader, TitleContainer, TypeBarcodeWrapper,
 } from "../../components/ScannerComponents/ShoppingList/ShoppingList.styles";
 import Footer from "../../components/Common/Footer/Footer";
 
@@ -47,6 +44,21 @@ const mockedItems = {
   7894321722016: {
     name: "Toddynho",
     price: 12.5,
+    isEligibleInPrizePromotion: false,
+  },
+  7892840221843: {
+    name: "Salgadinho Doritos Queijo Nacho",
+    price: 4.58,
+    isEligibleInPrizePromotion: false,
+  },
+  7894900010015: {
+    name: "Coca-Cola lata 350ml",
+    price: 3.19,
+    isEligibleInPrizePromotion: false,
+  },
+  7891000290026: {
+    name: "Biscoito Negresco Nestlé Recheado",
+    price: 8.99,
     isEligibleInPrizePromotion: false,
   },
 };
@@ -356,7 +368,6 @@ function ScannerScreen({ navigation, route }) {
             <FinishButton onPress={finishHandler} isActive={isActive}>
               <ButtonText>Finalizar Compra</ButtonText>
             </FinishButton>
-            {isToTopVisible && <ScrollToTopButton toTopHandler={toTopHandler} />}
           </FinishContainer>
         )}
       </TypeBarcodeWrapper>

@@ -9,6 +9,7 @@ const { height, width } = Dimensions.get("window");
 
 export const Screen = styled.View`
   flex: 1;
+  background-color: ${colors.white};
 `;
 
 export const Container = styled.View`
