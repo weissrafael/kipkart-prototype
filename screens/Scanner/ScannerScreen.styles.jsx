@@ -4,7 +4,7 @@ import FontSizes from "../../constants/FontSizes";
 
 export const Screen = styled.View`
   flex: 1;
-  background-color: ${colors.graySamaritan};
+  background-color: ${({listIsEmpty}) => listIsEmpty ? colors.white : colors.graySamaritan};
 `;
 
 export const Container = styled.View`
@@ -60,6 +60,5 @@ export const ShoppingListTotal = styled.Text`
   font-size: ${FontSizes.largeTitle}px;
   color: ${colors.fifth};
   background-color: ${colors.white};
-  padding: 4px 8px;
   border-radius: 10px;
 `;

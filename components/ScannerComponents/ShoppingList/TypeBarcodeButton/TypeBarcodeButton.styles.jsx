@@ -16,7 +16,7 @@ export const TypeBarcodeFullContainer = styled.TouchableOpacity`
   height: 60px;
   padding: 0 16px;
   border-radius: 30px;
-  background-color: ${colors.forestBlues};
+  background-color: ${colors.goodSamaritan};
   align-items: center;
   justify-content: center;
   flex-direction: row;

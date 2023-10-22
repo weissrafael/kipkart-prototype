@@ -54,8 +54,8 @@ const ShoppingList = ({
   const memoizedValue = useMemo(() => renderItem, [renderItem]);
 
   return (
-    <Page>
-      <ListsContainer empty={listArray.length <= 0}>
+    <Page listIsEmpty={listArray.length <= 0}>
+      <ListsContainer>
         {listArray.length <= 0 && missingItemsArray.length <= 0 && (
           <EmptyTextContainer>
             {productIsLoading ? (

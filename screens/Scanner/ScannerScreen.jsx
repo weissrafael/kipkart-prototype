@@ -272,8 +272,10 @@ function ScannerScreen({ navigation, route }) {
     ]
   );
 
+  const listIsEmpty = Object.keys(cartList).length <= 0;
+
   return (
-    <Screen activeTab={activeTab}>
+    <Screen listIsEmpty={listIsEmpty}>
       <GenericErrorModal
         show={genericError}
         setGenericError={setGenericError}
@@ -337,15 +339,17 @@ function ScannerScreen({ navigation, route }) {
           />
         </Screen>
       )}
-      <ShoppingListHeader>
-        <ScannerSwitchButton setScanner={setScanner} scannerIsOpen={scanner} />
-        <TitleContainer>
-          <ListTitle>Meu Carrinho</ListTitle>
-        </TitleContainer>
-        <ShoppingListTotal>
-          R$ {total.toFixed(2)}
-        </ShoppingListTotal>
-      </ShoppingListHeader>
+      {!listIsEmpty && (
+        <ShoppingListHeader>
+          <ScannerSwitchButton setScanner={setScanner} scannerIsOpen={scanner} />
+          <TitleContainer>
+            <ListTitle>Meu Carrinho</ListTitle>
+          </TitleContainer>
+          <ShoppingListTotal>
+            R$ {total.toFixed(2)}
+          </ShoppingListTotal>
+        </ShoppingListHeader>
+      )}
       <ShoppingList
         list={cartList}
         simultaneousHandlers={scroll}
@@ -358,13 +362,12 @@ function ScannerScreen({ navigation, route }) {
         scrollHandler={scrollHandler}
         productIsLoading={productIsLoading}
       />
-
       <TypeBarcodeWrapper>
         <TypeBarcodeButton
           setModalVisible={setTypeBarcodeModal}
-          showFullButton={Object.entries(cartList).length <= 0}
+          showFullButton={listIsEmpty}
         />
-        {Object.keys(cartList).length > 0 && (
+        {!listIsEmpty && (
           <>
             <Spacing />
             <FinishContainer keyboardShown={keyboardShown}>

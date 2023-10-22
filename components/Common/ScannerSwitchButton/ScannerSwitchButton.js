@@ -14,7 +14,7 @@ const ScannerSwitchButton = ({ setScanner, scannerIsOpen }) => (
       }}
       onPress={() => setScanner((state) => !state)}
     >
-      <MaterialIcons name={scannerIsOpen ? "keyboard-arrow-up" : "keyboard-arrow-down"} size={42} color={colors.forestBlues} />
+      <MaterialIcons name={scannerIsOpen ? "keyboard-arrow-up" : "keyboard-arrow-down"} size={42} color={colors.goodSamaritan} />
     </TouchableOpacity>
 );
 

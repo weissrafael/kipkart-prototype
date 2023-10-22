@@ -10,6 +10,8 @@ export const Page = styled.View`
   flex: 1;
   margin-top: 16px;
   background-color: ${colors.graySamaritan};
+  background-color: ${({listIsEmpty}) => listIsEmpty ? colors.white : colors.graySamaritan};
+  
 `;
 
 export const ListsContainer = styled.View`
@@ -29,9 +31,11 @@ export const TypeBarcodeWrapper = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 16px;
+  padding: 16px 16px 0 16px;
   width: 100%;
-  background-color: ${colors.forestBlues};
+  background-color: ${colors.white};
+  border: 0 solid ${colors.goodSamaritan};
+  border-top-width: 2px;
 `;
 
 export const ShoppingListHeader = styled.View`
@@ -74,7 +78,7 @@ export const ListTitle = styled.Text`
   font-family: "montserrat-bold";
   font-size: ${FontSizes.title}px;
   text-align: center;
-  color: ${colors.forestBlues};
+  color: ${colors.goodSamaritan};
 `;
 
 export const ListImage = styled.Image`

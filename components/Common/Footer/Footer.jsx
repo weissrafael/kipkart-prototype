@@ -1,5 +1,6 @@
 import React from "react";
-import { Entypo } from '@expo/vector-icons';
+import { Entypo, FontAwesome5, FontAwesome, MaterialIcons } from '@expo/vector-icons';
+import { colors } from "../../../styles/styleGuide";
 
 import {
   FooterButton,
@@ -13,7 +14,16 @@ function Footer() {
   return (
     <FooterContainer>
       <FooterButton onPress={() => navigation.navigate("Scanner")}>
-        <Entypo name="shopping-cart" size={24} color="black" />
+        <MaterialIcons name="attach-money" size={34} color={colors.forestBlues} />
+      </FooterButton>
+      <FooterButton onPress={() => navigation.navigate("Scanner")}>
+        <FontAwesome5 name="list-alt" size={34} color={colors.forestBlues} />
+      </FooterButton>
+      <FooterButton onPress={() => navigation.navigate("Scanner")}>
+        <Entypo name="shopping-cart" size={34} color={colors.forestBlues} />
+      </FooterButton>
+      <FooterButton onPress={() => navigation.navigate("Scanner")}>
+        <FontAwesome name="user-circle" size={34} color={colors.forestBlues} />
       </FooterButton>
     </FooterContainer>
   );
