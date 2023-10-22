@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import FontSizes from "../../../constants/FontSizes";
-import { ButtonContainer } from "../MainButton/MainButton.styles";
 
 export const ModalContainer = styled.View`
   flex: 1;

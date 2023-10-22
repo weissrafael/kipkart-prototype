@@ -34,8 +34,9 @@ import useSound from "../../hooks/useSound";
 import ScannerSwitchButton from "../../components/Common/ScannerSwitchButton/ScannerSwitchButton";
 import {
   IndicatorText,
-  IndicatorTextContainer,
+  IndicatorTextContainer, TypeBarcodeWrapper,
 } from "../../components/ScannerComponents/ShoppingList/ShoppingList.styles";
+import Footer from "../../components/Common/Footer/Footer";
 
 const mockedItems = {
   7891035617959: {
@@ -344,16 +345,21 @@ function ScannerScreen({ navigation, route }) {
           <ScannerSwitchButton setScanner={setScanner} />
         </FinishContainer>
       )}
-      <TypeBarcodeButton setModalVisible={setTypeBarcodeModal} />
-      {Object.entries(cartList).length <= 0 &&
-        Object.entries(missingItems).length <= 0 && (
-          <IndicatorTextContainer>
-            <AntDesign name="arrowleft" size={32} color={colors.secondary} />
-            <IndicatorText>
-              ou aperte o botão para digitar o cód. de barras
-            </IndicatorText>
-          </IndicatorTextContainer>
-      )}
+      <TypeBarcodeWrapper>
+        <TypeBarcodeButton setModalVisible={setTypeBarcodeModal} />
+        {Object.entries(cartList).length <= 0 &&
+          Object.entries(missingItems).length <= 0 && (
+            <>
+              <AntDesign name="arrowleft" size={32} color={colors.charcoalGray} />
+              <IndicatorTextContainer>
+                <IndicatorText>
+                  ou aperte o botão para digitar o cód. de barras
+                </IndicatorText>
+              </IndicatorTextContainer>
+            </>
+          )}
+      </TypeBarcodeWrapper>
+      <Footer />
     </Screen>
   );
 }

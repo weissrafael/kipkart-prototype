@@ -12,7 +12,4 @@ export const TypeBarcodeContainer = styled.TouchableOpacity`
   background-color: ${colors.secondary};
   align-items: center;
   justify-content: center;
-  position: absolute;
-  left: ${smallDevice ? 10 : width / 15}px;
-  bottom: 10px;
 `;

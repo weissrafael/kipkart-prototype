@@ -32,14 +32,20 @@ export const EmptyListText = styled.Text`
   text-align: center;
 `;
 
+export const TypeBarcodeWrapper = styled.View`
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px 16px 16px;
+  width: 100%;
+  background-color: ${colors.white};
+`;
+
 export const IndicatorTextContainer = styled.View`
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  width: 65%;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  max-width: 260px;
 `;
 
 export const IndicatorText = styled(EmptyListText)``;
