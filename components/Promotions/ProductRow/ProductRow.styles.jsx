@@ -5,14 +5,11 @@ import { colors } from "../../../styles/styleGuide";
 export const Row = styled.View`
   flex-direction: row;
   width: 100%;
-  height: 100px;
+  height: 86px;
   align-items: center;
   justify-content: space-between;
   padding: 0 16px;
-  border: 1px solid white;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-width: 0;
+  border-radius: 100%;
 `;
 
 export const ProductImage = styled.Image`
@@ -21,20 +18,11 @@ export const ProductImage = styled.Image`
 `;
 
 export const ProductName = styled(RegularText)`
-  color: ${colors.secondary};
+  color: ${colors.forestBlues};
   width: 40%;
 `;
 
 export const ProductPrice = styled(RegularText)`
-  color: ${colors.secondary};
+  color: ${colors.forestBlues};
   font-size: 18px;
-`;
-
-export const AddCartButton = styled.TouchableOpacity`
-  background-color: ${colors.secondary};
-  width: 40px;
-  height: 40px;
-  border-radius: 30px;
-  align-items: center;
-  justify-content: center;
 `;

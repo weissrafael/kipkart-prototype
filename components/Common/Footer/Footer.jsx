@@ -13,10 +13,10 @@ function Footer() {
 
   return (
     <FooterContainer>
-      <FooterButton onPress={() => navigation.navigate("Scanner")}>
+      <FooterButton onPress={() => navigation.navigate("Promotions")}>
         <MaterialIcons name="attach-money" size={34} color={colors.forestBlues} />
       </FooterButton>
-      <FooterButton onPress={() => navigation.navigate("Scanner")}>
+      <FooterButton onPress={() => navigation.navigate("History")}>
         <FontAwesome5 name="list-alt" size={34} color={colors.forestBlues} />
       </FooterButton>
       <FooterButton onPress={() => navigation.navigate("Scanner")}>

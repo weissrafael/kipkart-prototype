@@ -3,14 +3,12 @@ import {
   ProductImage,
   ProductName,
   ProductPrice,
-  AddCartButton,
 } from "./ProductCard.styles";
 import Animated, {
   interpolate,
   useAnimatedStyle,
 } from "react-native-reanimated";
 import { colors } from "../../../styles/styleGuide";
-import { Entypo } from "@expo/vector-icons";
 
 const ITEM_SIZE_WITH_MARGIN = 170;
 
@@ -46,7 +44,7 @@ function ProductCard({ imageUrl, name, price, position, index }) {
     shadowOpacity: 0.34,
     shadowRadius: 6.27,
     marginHorizontal: 10,
-    backgroundColor: colors.primary,
+    backgroundColor: colors.white,
   };
 
   return (
@@ -56,9 +54,6 @@ function ProductCard({ imageUrl, name, price, position, index }) {
         {name}
       </ProductName>
       <ProductPrice>{price}</ProductPrice>
-      {/*<AddCartButton>*/}
-      {/*  <Entypo name="plus" size={32} color={colors.fifth} />*/}
-      {/*</AddCartButton>*/}
     </Animated.View>
   );
 }

@@ -28,6 +28,7 @@ import Button from "../../components/Common/Button/Button";
 import EmptyHistory from "../../components/History/EmptyHistory/EmptyHistory";
 import EmptySearchResult from "../../components/History/EmptySearchResult/EmptySearchResult";
 import { fireEvent, fireSearch } from "../../utils/analytics";
+import Footer from "../../components/Common/Footer/Footer";
 
 const gif = require("../../assets/gifs/bananaLoader.gif");
 const genericErrorImage = require("../../assets/illustrations/generic-error.jpg");
@@ -194,6 +195,7 @@ function History({ navigation }) {
           ))}
         </ListContainer>
       )}
+      <Footer />
     </Page>
   );
 }

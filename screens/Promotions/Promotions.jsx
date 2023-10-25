@@ -14,6 +14,7 @@ import Animated, {
   useSharedValue,
 } from "react-native-reanimated";
 import ProductRow from "../../components/Promotions/ProductRow/ProductRow";
+import Footer from "../../components/Common/Footer/Footer";
 
 const ITEM_SIZE_WITH_MARGIN = 170;
 const { width } = Dimensions.get("window");
@@ -31,18 +32,14 @@ function Promotions({ navigation }) {
     position.value = e.contentOffset.x;
   });
 
-  // GET PRODUCTS FROM API
-
   const DATA = [
     {
       title: "Super Promoções",
-      title1: "As Baratíssimas",
       data: [
-        // INSERT API PRODUCTS IN DATA
         { key: "spacer-begin" },
         {
           barcode: "2030564000018",
-          name: "Pizza Bazinho Fresca Un Boa Sem Formol",
+          name: "Pizza Zona Sul",
           price: 17.98,
           weight: false,
           imageUrl:
@@ -50,7 +47,7 @@ function Promotions({ navigation }) {
         },
         {
           barcode: "2030564000018",
-          name: "Pizza Bazinho",
+          name: "Pizza Zona Sul",
           price: 17.98,
           weight: false,
           imageUrl:
@@ -58,7 +55,7 @@ function Promotions({ navigation }) {
         },
         {
           barcode: "2030564000018",
-          name: "Pizza Bazinho",
+          name: "Pizza Zona Sul",
           price: 17.98,
           weight: false,
           imageUrl:
@@ -66,7 +63,7 @@ function Promotions({ navigation }) {
         },
         {
           barcode: "2030564000018",
-          name: "Pizza Bazinho",
+          name: "Pizza Zona Sul",
           price: 17.98,
           weight: false,
           imageUrl:
@@ -74,7 +71,7 @@ function Promotions({ navigation }) {
         },
         {
           barcode: "2030564000018",
-          name: "Pizza Bazinho",
+          name: "Pizza Zona Sul",
           price: 17.98,
           weight: false,
           imageUrl:
@@ -82,7 +79,7 @@ function Promotions({ navigation }) {
         },
         {
           barcode: "2030564000018",
-          name: "Pizza Bazinho",
+          name: "Pizza Zona Sul",
           price: 17.98,
           weight: false,
           imageUrl:
@@ -90,7 +87,7 @@ function Promotions({ navigation }) {
         },
         {
           barcode: "2030564000018",
-          name: "Pizza Bazinho",
+          name: "Pizza Zona Sul",
           price: 17.98,
           weight: false,
           imageUrl:
@@ -98,7 +95,7 @@ function Promotions({ navigation }) {
         },
         {
           barcode: "2030564000018",
-          name: "Pizza Bazinho",
+          name: "Pizza Zona Sul",
           price: 17.98,
           weight: false,
           imageUrl:
@@ -106,27 +103,12 @@ function Promotions({ navigation }) {
         },
         {
           barcode: "2030564000018",
-          name: "Pizza Bazinho",
+          name: "Pizza Zona Sul",
           price: 17.98,
           weight: false,
           imageUrl:
             "https://imagensemoldes.com.br/wp-content/uploads/2020/04/Pizza-PNG.png",
         },
-        { name: "arroz integral" },
-        { name: "arroz integral" },
-        { name: "arroz integral" },
-        { name: "arroz integral" },
-        { name: "arroz integral" },
-        { name: "arroz integral" },
-        { name: "arroz integral" },
-        { name: "arroz integral" },
-        { name: "arroz integral" },
-        { name: "arroz integral" },
-        { name: "arroz integral" },
-        { name: "arroz integral" },
-        { name: "arroz integral" },
-        { name: "arroz integral" },
-        { name: "arroz integral" },
         { key: "spacer-end" },
       ],
     },
@@ -160,19 +142,9 @@ function Promotions({ navigation }) {
         renderSectionHeader={({ section }) => (
           <>
             <Header>
-              <BackButton
-                styles={{
-                  borderRadius: 30,
-                  position: "absolute",
-                  left: 10,
-                }}
-                backIcon
-                onPress={backNavigation}
-              />
               <Title>{section.title}</Title>
             </Header>
 
-            <Title>{section.title1}</Title>
             <CarrouselContainer>
               <AnimatedFlatList
                 horizontal
@@ -197,6 +169,7 @@ function Promotions({ navigation }) {
           return <ProductRow product={item} />;
         }}
       />
+      <Footer />
     </Screen>
   );
 }
