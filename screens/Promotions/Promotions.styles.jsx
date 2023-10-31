@@ -5,7 +5,7 @@ import { BoldTitle } from "../../styles/common.styles";
 export const Screen = styled.SafeAreaView`
   flex: 1;
   position: relative;
-  background-color: ${colors.graySamaritan};
+  background-color: ${colors.white};
 `;
 
 export const Page = styled.SectionList``;

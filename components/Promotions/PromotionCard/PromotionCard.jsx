@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
 import Animated, { Easing } from 'react-native-reanimated';
-import { PromotionImage } from "./PromotionCard.styles";
+import {PromotionImage, TitleContainer} from "./PromotionCard.styles";
 
 const { Value, timing } = Animated;
 
 const initialHeight = 100;
 const expandedHeight = 300;
 
-const PromotionCard = ({ title, details, image }) => {
+const PromotionCard = ({ title, details, image, bgColor }) => {
   const [expanded, setExpanded] = useState(false);
   const [height, setHeight] = useState(new Value(initialHeight));
   const [opacity, setOpacity] = useState(new Value(0));
@@ -39,7 +39,9 @@ const PromotionCard = ({ title, details, image }) => {
     <TouchableOpacity onPress={toggleExpand}>
       <Container style={{ height }}>
         <PromotionImage source={image} />
-        <Title>{title}</Title>
+        <TitleContainer backgroundColor={bgColor}>
+          <Title>{title}</Title>
+        </TitleContainer>
         <Details style={{ opacity }}>{details}</Details>
       </Container>
     </TouchableOpacity>
@@ -49,7 +51,6 @@ const PromotionCard = ({ title, details, image }) => {
 const Container = styled(Animated.View)`
   background-color: white;
   margin: 10px;
-  padding: 10px;
   border-radius: 5px;
   shadow-color: #000;
   shadow-offset: 0px 4px;
@@ -61,6 +62,7 @@ const Container = styled(Animated.View)`
 const Title = styled(Text)`
   font-size: 18px;
   font-weight: bold;
+  color: white;
 `;
 
 const Details = styled(Animated.Text)`
