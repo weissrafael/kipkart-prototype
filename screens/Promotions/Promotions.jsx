@@ -15,6 +15,8 @@ import Animated, {
 } from "react-native-reanimated";
 import ProductRow from "../../components/Promotions/ProductRow/ProductRow";
 import Footer from "../../components/Common/Footer/Footer";
+import PromotionCard from "../../components/Promotions/PromotionCard/PromotionCard";
+import {CameraSpacing} from "../History/History.styles";
 
 const ITEM_SIZE_WITH_MARGIN = 170;
 const { width } = Dimensions.get("window");
@@ -134,41 +136,8 @@ function Promotions({ navigation }) {
 
   return (
     <Screen>
-      <Page
-        contentContainerStyle={{
-          width: "100%",
-          paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-        }}
-        renderSectionHeader={({ section }) => (
-          <>
-            <Header>
-              <Title>{section.title}</Title>
-            </Header>
-
-            <CarrouselContainer>
-              <AnimatedFlatList
-                horizontal
-                contentContainerStyle={{ alignItems: "center" }}
-                snapToInterval={ITEM_SIZE_WITH_MARGIN}
-                snapToAlignment={"start"}
-                data={section.data}
-                scrollEventThrottle={16}
-                onScroll={scrollHandler}
-                decelerationRate={0}
-                showsHorizontalScrollIndicator={false}
-                renderItem={renderItem}
-                keyExtractor={keyExtractor}
-              />
-            </CarrouselContainer>
-          </>
-        )}
-        sections={DATA}
-        stickySectionHeadersEnabled={false}
-        renderItem={({ item }) => {
-          if (!item.name) return null;
-          return <ProductRow product={item} />;
-        }}
-      />
+      <CameraSpacing />
+      <PromotionCard title={"testing"} details={"details"} />
       <Footer />
     </Screen>
   );
