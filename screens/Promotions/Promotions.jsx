@@ -14,6 +14,7 @@ const breakfastImage = require("../../assets/categories/breakfast.png");
 const barbecueImage = require("../../assets/categories/churrasco.png");
 const cleaningImage = require("../../assets/categories/cleaning.png");
 const frios = require("../../assets/categories/frios.png");
+const dairy = require("../../assets/categories/daity.png");
 
 function Promotions() {
   return (
@@ -47,6 +48,12 @@ function Promotions() {
           details={"details"}
           image={frios}
           bgColor={colors.goodSamaritan}
+        />
+        <PromotionCard
+          title={"Laticínios"}
+          details={"details"}
+          image={dairy}
+          bgColor={colors.dupain}
         />
       </PromotionList>
       <Footer />

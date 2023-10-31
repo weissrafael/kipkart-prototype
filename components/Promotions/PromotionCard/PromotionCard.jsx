@@ -6,8 +6,8 @@ import {PromotionImage, TitleContainer} from "./PromotionCard.styles";
 
 const { Value, timing } = Animated;
 
-const initialHeight = 100;
-const expandedHeight = 300;
+const initialHeight = 120;
+const expandedHeight = 360;
 
 const PromotionCard = ({ title, details, image, bgColor }) => {
   const [expanded, setExpanded] = useState(false);
