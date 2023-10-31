@@ -1,25 +1,14 @@
 import styled from "styled-components/native";
 import { colors } from "../../styles/styleGuide";
-import { BoldTitle, LargeTitle } from "../../styles/common.styles";
+import { BoldTitle } from "../../styles/common.styles";
 
 export const Screen = styled.SafeAreaView`
   flex: 1;
   position: relative;
-  background-color: ${colors.white};
+  background-color: ${colors.graySamaritan};
 `;
 
 export const Page = styled.SectionList``;
-
-export const Header = styled.View`
-  width: 100%;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  height: 100px;
-  border-bottom-color: white;
-  border-bottom-width: 4px;
-`;
 
 export const Title = styled(BoldTitle)`
   color: ${colors.forestBlues};
@@ -27,10 +16,21 @@ export const Title = styled(BoldTitle)`
   margin: 0;
 `;
 
-export const CarrouselContainer = styled.View`
-  height: 250px;
+export const PromotionList = styled.ScrollView`
+  height: 100%;
   width: 100%;
-  align-items: center;
-  justify-content: center;
-  background-color: ${colors.graySamaritan};
+  flex: 1;
+  
 `;
+
+export const PromotionHeader = styled.View`
+  width: 100%;
+  background-color: ${colors.white};
+  margin-bottom: 16px;
+  shadow-color: #000;
+  shadow-offset: 0px 4px;
+  shadow-opacity: 0.3;
+  shadow-radius: 5px;
+  elevation: 5;
+`;
+

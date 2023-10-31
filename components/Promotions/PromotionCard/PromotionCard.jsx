@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
 import Animated, { Easing } from 'react-native-reanimated';
+import { PromotionImage } from "./PromotionCard.styles";
 
 const { Value, timing } = Animated;
 
-const PromotionCard = ({ title, details }) => {
+const initialHeight = 100;
+const expandedHeight = 300;
+
+const PromotionCard = ({ title, details, image }) => {
   const [expanded, setExpanded] = useState(false);
-  const [height, setHeight] = useState(new Value(50));
+  const [height, setHeight] = useState(new Value(initialHeight));
   const [opacity, setOpacity] = useState(new Value(0));
 
   useEffect(() => {
-    const toHeight = expanded ? 100 : 50;
+    const toHeight = expanded ? expandedHeight : initialHeight;
     const toOpacity = expanded ? 1 : 0;
 
     timing(height, {
@@ -34,6 +38,7 @@ const PromotionCard = ({ title, details }) => {
   return (
     <TouchableOpacity onPress={toggleExpand}>
       <Container style={{ height }}>
+        <PromotionImage source={image} />
         <Title>{title}</Title>
         <Details style={{ opacity }}>{details}</Details>
       </Container>

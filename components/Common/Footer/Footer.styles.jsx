@@ -9,6 +9,11 @@ export const FooterContainer = styled.View`
   align-items: center;
   flex-direction: row;
   background-color: ${colors.white};
+  shadow-color: #000;
+  shadow-offset: 0px 4px;
+  shadow-opacity: 0.3;
+  shadow-radius: 5px;
+  elevation: 5;
 `;
 
 export const FooterButton = styled.TouchableOpacity`
