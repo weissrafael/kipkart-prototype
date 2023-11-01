@@ -8,22 +8,22 @@ import {
 } from "./Footer.styles";
 import {useNavigation} from "@react-navigation/native";
 
-function Footer() {
+function Footer({ bgColor }) {
   const navigation = useNavigation();
 
   return (
-    <FooterContainer>
+    <FooterContainer bgColor={bgColor}>
       <FooterButton onPress={() => navigation.navigate("Promotions")}>
-        <MaterialIcons name="attach-money" size={34} color={colors.forestBlues} />
+        <MaterialIcons name="attach-money" size={34} color={bgColor ? colors.white : colors.forestBlues} />
       </FooterButton>
       <FooterButton onPress={() => navigation.navigate("History")}>
-        <FontAwesome5 name="list-alt" size={34} color={colors.forestBlues} />
+        <FontAwesome5 name="list-alt" size={34} color={bgColor ? colors.white : colors.forestBlues} />
       </FooterButton>
       <FooterButton onPress={() => navigation.navigate("Scanner")}>
-        <Feather name="shopping-cart" size={34} color={colors.forestBlues} />
+        <Feather name="shopping-cart" size={34} color={bgColor ? colors.white : colors.forestBlues} />
       </FooterButton>
       <FooterButton onPress={() => navigation.navigate("Scanner")}>
-        <FontAwesome5 name="user" size={34} color={colors.forestBlues} />
+        <FontAwesome5 name="user" size={34} color={bgColor ? colors.white : colors.forestBlues} />
       </FooterButton>
     </FooterContainer>
   );

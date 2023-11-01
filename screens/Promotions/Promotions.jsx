@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 import {
   PromotionHeader,
   PromotionList,
@@ -78,12 +78,24 @@ function Promotions() {
       image: dairyImage,
     },
   ]);
+  const scrollViewRef = useRef(null);
 
   function toggleCategory(id) {
     const newCategories = categories.map((category) => {
       if (category.id === id) {
+        if (category.expanded) {
+          setSelectedBGColor(colors.mandarinRed);
+          if (scrollViewRef.current) {
+            scrollViewRef.current.scrollTo({ y: 0, animated: true });
+          }
+        }
+        else {
+          setSelectedBGColor(category.bgColor);
+          if (scrollViewRef.current) {
+            scrollViewRef.current.scrollTo({ y: (id * 120) - 136 + (id * 16), animated: true });
+          }
+        }
         category.expanded = !category.expanded;
-        setSelectedBGColor(category.bgColor);
       }
       else {
         category.expanded = false;
@@ -100,21 +112,31 @@ function Promotions() {
         <Title>Promoções</Title>
         <Spacing />
       </PromotionHeader>
-      <PromotionList>
-        {categories.map((category) => (
-          <PromotionCard
-            key={category.id}
-            title={category.title}
-            image={category.image}
-            bgColor={category.bgColor}
-            promotions={category.promotions}
-            expanded={category.expanded}
-            onClick={() => toggleCategory(category.id)}
-          />
-        ))}
+      <PromotionList ref={scrollViewRef}>
+        {categories.map((category) => {
+          const itemRef = React.createRef();
+          return (
+            <PromotionCard
+              key={category.id}
+              title={category.title}
+              image={category.image}
+              bgColor={category.bgColor}
+              promotions={category.promotions}
+              expanded={category.expanded}
+              onClick={() => toggleCategory(category.id)}
+              ref={itemRef}
+            />
+          )
+        })}
+        <Spacing />
+        <Spacing />
+        <Spacing />
+        <Spacing />
+        <Spacing />
+        <Spacing />
         <Spacing />
       </PromotionList>
-      <Footer />
+      <Footer bgColor={selectedBGColor} />
     </Screen>
   );
 }

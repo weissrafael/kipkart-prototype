@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import { TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
 import Animated, { EasingNode as Easing } from 'react-native-reanimated';
@@ -81,8 +81,6 @@ const Container = styled(Animated.View)`
   elevation: 5;
   background-color: white;
 `;
-
-
 
 const Details = styled(Animated.View)`
   display: flex;

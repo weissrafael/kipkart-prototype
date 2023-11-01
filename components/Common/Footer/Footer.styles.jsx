@@ -8,7 +8,7 @@ export const FooterContainer = styled.View`
   padding: 16px 16px;
   align-items: center;
   flex-direction: row;
-  background-color: ${colors.white};
+  background-color: ${({bgColor}) => bgColor ? bgColor : colors.white};
   shadow-color: #000;
   shadow-offset: 0px 4px;
   shadow-opacity: 0.3;
