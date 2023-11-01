@@ -11,6 +11,8 @@ function ProductRow({ product, bgColor }) {
   const { name, price, barcode } = product;
   return (
     <Row bgColor={bgColor}>
+      <ProductName numberOfLines={2} ellipsizeMode="tail">{name}</ProductName>
+      <ProductPrice>R$ {price.toFixed(2)}</ProductPrice>
       <ImageContainer>
         <ProductImage
           source={{
@@ -19,8 +21,6 @@ function ProductRow({ product, bgColor }) {
           resizeMode="contain"
         />
       </ImageContainer>
-      <ProductName>{name}</ProductName>
-      <ProductPrice>R$ {price.toFixed(2)}</ProductPrice>
     </Row>
   );
 }

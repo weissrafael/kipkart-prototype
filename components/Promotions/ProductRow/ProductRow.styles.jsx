@@ -8,11 +8,11 @@ export const Row = styled.View`
   height: 104px;
   align-items: center;
   justify-content: space-between;
-  padding: 0 16px 0 8px;
+  padding: 0 8px 0 16px;
   margin-bottom: 8px;
   border-radius: 16px;
-  border-bottom-left-radius: 100px;
-  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border-top-right-radius: 100px;
   background-color: ${({bgColor}) => bgColor};
   shadow-color: #000;
   shadow-offset: 0px 4px;
@@ -38,10 +38,13 @@ export const ProductImage = styled.Image`
 
 export const ProductName = styled(BoldText)`
   color: ${colors.white};
-  flex: 4;
+  flex: 1;
+  word-break: break-word;
+  text-align: left;
 `;
 
 export const ProductPrice = styled(BoldText)`
   color: ${colors.white};
   font-size: 18px;
+  flex: 1.5;
 `;
