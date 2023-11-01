@@ -10,10 +10,9 @@ const { Value, timing } = Animated;
 const initialHeight = 120;
 const initialDetails = 0;
 const expandedHeight = 240;
-const expandedDetails = 340;
+const expandedDetails = 360;
 
-const PromotionCard = ({ title, onClick, image, bgColor, promotions }) => {
-  const [expanded, setExpanded] = useState(false);
+const PromotionCard = ({ title, onClick, image, bgColor, promotions, expanded }) => {
   const [height, setHeight] = useState(new Value(initialHeight));
   const [detailsHeight, setDetailsHeight] = useState(new Value(initialDetails));
   const [opacity, setOpacity] = useState(new Value(0));
@@ -53,14 +52,9 @@ const PromotionCard = ({ title, onClick, image, bgColor, promotions }) => {
     }
   }, [expanded]);
 
-  const toggleExpand = () => {
-    onClick();
-    setExpanded(!expanded);
-  };
-
   return (
     <>
-      <TouchableOpacity onPress={toggleExpand}>
+      <TouchableOpacity onPress={onClick}>
         <Container style={{ height }}>
           <PromotionImage source={image} />
           <TitleContainer backgroundColor={bgColor}>
@@ -93,7 +87,7 @@ const Container = styled(Animated.View)`
 const Details = styled(Animated.View)`
   display: flex;
   flex: 1;
-  padding: 8px;
+  padding: 8px 8px 32px 8px;
 `;
 
 export default PromotionCard;

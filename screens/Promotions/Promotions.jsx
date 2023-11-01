@@ -13,8 +13,8 @@ import { colors } from "../../styles/styleGuide";
 const breakfastImage = require("../../assets/categories/breakfast.png");
 const barbecueImage = require("../../assets/categories/churrasco.png");
 const cleaningImage = require("../../assets/categories/cleaning.png");
-const frios = require("../../assets/categories/frios.png");
-const dairy = require("../../assets/categories/daity.png");
+const salamiImage = require("../../assets/categories/frios.png");
+const dairyImage = require("../../assets/categories/daity.png");
 
 const breakfastPromotions = [
   {
@@ -36,6 +36,63 @@ const breakfastPromotions = [
 
 function Promotions() {
   const [selectedBGColor, setSelectedBGColor] = React.useState(colors.mandarinRed);
+  const [categories, setCategories] = React.useState([
+    {
+      id: 1,
+      expanded: true,
+      title: "Café da Manhã",
+      bgColor: colors.mandarinRed,
+      promotions: breakfastPromotions,
+      image: breakfastImage,
+    },
+    {
+      id: 2,
+      expanded: false,
+      title: "Churrasco",
+      bgColor: colors.jalapenoRed,
+      promotions: breakfastPromotions,
+      image: barbecueImage,
+    },
+    {
+      id: 3,
+      expanded: false,
+      title: "Limpeza",
+      bgColor: colors.waterfall,
+      promotions: breakfastPromotions,
+      image: cleaningImage,
+    },
+    {
+      id: 4,
+      expanded: false,
+      title: "Frios",
+      bgColor: colors.goodSamaritan,
+      promotions: breakfastPromotions,
+      image: salamiImage,
+    },
+    {
+      id: 5,
+      expanded: false,
+      title: "Latícinios",
+      bgColor: colors.dupain,
+      promotions: breakfastPromotions,
+      image: dairyImage,
+    },
+  ]);
+
+  function toggleCategory(id) {
+    const newCategories = categories.map((category) => {
+      if (category.id === id) {
+        category.expanded = !category.expanded;
+        setSelectedBGColor(category.bgColor);
+      }
+      else {
+        category.expanded = false;
+      }
+      return category;
+    });
+    setCategories(newCategories);
+  }
+
   return (
     <Screen>
       <PromotionHeader bgColor={selectedBGColor}>
@@ -44,46 +101,18 @@ function Promotions() {
         <Spacing />
       </PromotionHeader>
       <PromotionList>
-        <PromotionCard
-          title={"Café da Manhã "}
-          details={"details"}
-          image={breakfastImage}
-          bgColor={colors.mandarinRed}
-          promotions={breakfastPromotions}
-          onClick={() => setSelectedBGColor(colors.mandarinRed)}
-        />
-        <PromotionCard
-          title={"Churrasco"}
-          details={"details"}
-          image={barbecueImage}
-          bgColor={colors.jalapenoRed}
-          promotions={breakfastPromotions}
-          onClick={() => setSelectedBGColor(colors.jalapenoRed)}
-        />
-        <PromotionCard
-          title={"Limpeza"}
-          details={"details"}
-          image={cleaningImage}
-          bgColor={colors.waterfall}
-          promotions={breakfastPromotions}
-          onClick={() => setSelectedBGColor(colors.waterfall)}
-        />
-        <PromotionCard
-          title={"Frios"}
-          details={"details"}
-          image={frios}
-          bgColor={colors.goodSamaritan}
-          promotions={breakfastPromotions}
-          onClick={() => setSelectedBGColor(colors.goodSamaritan)}
-        />
-        <PromotionCard
-          title={"Laticínios"}
-          details={"details"}
-          image={dairy}
-          bgColor={colors.dupain}
-          promotions={breakfastPromotions}
-          onClick={() => setSelectedBGColor(colors.dupain)}
-        />
+        {categories.map((category) => (
+          <PromotionCard
+            key={category.id}
+            title={category.title}
+            image={category.image}
+            bgColor={category.bgColor}
+            promotions={category.promotions}
+            expanded={category.expanded}
+            onClick={() => toggleCategory(category.id)}
+          />
+        ))}
+        <Spacing />
       </PromotionList>
       <Footer />
     </Screen>

@@ -22,13 +22,12 @@ export const PromotionList = styled.ScrollView`
   height: 100%;
   width: 100%;
   flex: 1;
-  padding: 0 8px;
+  padding: 8px;
 `;
 
 export const PromotionHeader = styled.View`
   width: 100%;
   background-color: ${({bgColor}) => bgColor};
-  margin-bottom: 8px;
   shadow-color: #000;
   shadow-offset: 0px 0px;
   shadow-opacity: 0.3;
