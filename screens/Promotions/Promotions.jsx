@@ -29,7 +29,7 @@ function Promotions() {
           title={"Café da Manhã "}
           details={"details"}
           image={breakfastImage}
-          bgColor={colors.melonMelody}
+          bgColor={colors.mandarinRed}
         />
         <PromotionCard
           title={"Churrasco"}

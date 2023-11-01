@@ -1,21 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
-import Animated, { Easing } from 'react-native-reanimated';
-import {PromotionImage, TitleContainer} from "./PromotionCard.styles";
+import Animated, { EasingNode as Easing } from 'react-native-reanimated';
+import {HiddenContainer, PromotionImage, Title, TitleContainer} from "./PromotionCard.styles";
 
 const { Value, timing } = Animated;
 
 const initialHeight = 120;
-const expandedHeight = 360;
+const initialDetails = 0;
+const expandedHeight = 240;
+const expandedDetails = 300;
 
 const PromotionCard = ({ title, details, image, bgColor }) => {
   const [expanded, setExpanded] = useState(false);
   const [height, setHeight] = useState(new Value(initialHeight));
+  const [detailsHeight, setDetailsHeight] = useState(new Value(initialDetails));
   const [opacity, setOpacity] = useState(new Value(0));
 
   useEffect(() => {
     const toHeight = expanded ? expandedHeight : initialHeight;
+    const toDetailsHeight = expanded ? expandedDetails : initialDetails;
     const toOpacity = expanded ? 1 : 0;
 
     timing(height, {
@@ -24,11 +28,28 @@ const PromotionCard = ({ title, details, image, bgColor }) => {
       easing: Easing.inOut(Easing.ease),
     }).start();
 
-    timing(opacity, {
-      toValue: toOpacity,
+    timing(detailsHeight, {
+      toValue: toDetailsHeight,
       duration: 500,
       easing: Easing.inOut(Easing.ease),
     }).start();
+
+    if (expanded) {
+      setTimeout(() => {
+        timing(opacity, {
+          toValue: toOpacity,
+          duration: 500,
+          easing: Easing.inOut(Easing.ease),
+        }).start();
+      }, 100);
+    }
+    else {
+      timing(opacity, {
+        toValue: toOpacity,
+        duration: 500,
+        easing: Easing.inOut(Easing.ease),
+      }).start();
+    }
   }, [expanded]);
 
   const toggleExpand = () => {
@@ -36,34 +57,34 @@ const PromotionCard = ({ title, details, image, bgColor }) => {
   };
 
   return (
-    <TouchableOpacity onPress={toggleExpand}>
-      <Container style={{ height }}>
-        <PromotionImage source={image} />
-        <TitleContainer backgroundColor={bgColor}>
-          <Title>{title}</Title>
-        </TitleContainer>
+    <>
+      <TouchableOpacity onPress={toggleExpand}>
+        <Container style={{ height }}>
+          <PromotionImage source={image} />
+          <TitleContainer backgroundColor={bgColor}>
+            <Title>{title}</Title>
+          </TitleContainer>
+        </Container>
+      </TouchableOpacity>
+      <HiddenContainer style={{ height: detailsHeight }}>
         <Details style={{ opacity }}>{details}</Details>
-      </Container>
-    </TouchableOpacity>
+      </HiddenContainer>
+    </>
   );
 };
 
 const Container = styled(Animated.View)`
-  background-color: white;
-  margin: 10px;
+  margin: 8px;
   border-radius: 5px;
   shadow-color: #000;
-  shadow-offset: 0px 4px;
-  shadow-opacity: 0.23;
-  shadow-radius: 2.62;
-  elevation: 4;
+  shadow-offset: 0px 0px;
+  shadow-opacity: 1;
+  shadow-radius: 5px;
+  elevation: 5;
+  background-color: white;
 `;
 
-const Title = styled(Text)`
-  font-size: 18px;
-  font-weight: bold;
-  color: white;
-`;
+
 
 const Details = styled(Animated.Text)`
   font-size: 14px;
