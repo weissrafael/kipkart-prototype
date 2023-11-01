@@ -11,10 +11,10 @@ export const Screen = styled.SafeAreaView`
 export const Page = styled.SectionList``;
 
 export const Title = styled.Text`
-  color: ${colors.forestBlues};
+  color: ${colors.white};
   font-size: 24px;
   margin: 0;
-  font-family: "montserrat-regular";
+  font-family: "montserrat-bold";
   text-align: center;
 `;
 
@@ -27,10 +27,10 @@ export const PromotionList = styled.ScrollView`
 
 export const PromotionHeader = styled.View`
   width: 100%;
-  background-color: ${colors.white};
-  margin-bottom: 16px;
+  background-color: ${({bgColor}) => bgColor};
+  margin-bottom: 8px;
   shadow-color: #000;
-  shadow-offset: 0px 4px;
+  shadow-offset: 0px 0px;
   shadow-opacity: 0.3;
   shadow-radius: 5px;
   elevation: 5;

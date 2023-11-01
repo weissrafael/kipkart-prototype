@@ -12,7 +12,7 @@ const initialDetails = 0;
 const expandedHeight = 240;
 const expandedDetails = 340;
 
-const PromotionCard = ({ title, details, image, bgColor, promotions }) => {
+const PromotionCard = ({ title, onClick, image, bgColor, promotions }) => {
   const [expanded, setExpanded] = useState(false);
   const [height, setHeight] = useState(new Value(initialHeight));
   const [detailsHeight, setDetailsHeight] = useState(new Value(initialDetails));
@@ -54,6 +54,7 @@ const PromotionCard = ({ title, details, image, bgColor, promotions }) => {
   }, [expanded]);
 
   const toggleExpand = () => {
+    onClick();
     setExpanded(!expanded);
   };
 

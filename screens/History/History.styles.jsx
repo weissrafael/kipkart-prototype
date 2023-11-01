@@ -20,7 +20,7 @@ export const Header = styled.View`
 export const CameraSpacing = styled.View`
   width: 100%;
   height: 50px;
-  background-color: ${colors.white};
+  background-color: ${({bgColor}) => bgColor ? bgColor : colors.white};
 `;
 
 export const EmptySpot = styled.View`

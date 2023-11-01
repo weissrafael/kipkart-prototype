@@ -35,10 +35,11 @@ const breakfastPromotions = [
 ];
 
 function Promotions() {
+  const [selectedBGColor, setSelectedBGColor] = React.useState(colors.mandarinRed);
   return (
     <Screen>
-      <PromotionHeader>
-        <CameraSpacing />
+      <PromotionHeader bgColor={selectedBGColor}>
+        <CameraSpacing bgColor={selectedBGColor} />
         <Title>Promoções</Title>
         <Spacing />
       </PromotionHeader>
@@ -49,6 +50,7 @@ function Promotions() {
           image={breakfastImage}
           bgColor={colors.mandarinRed}
           promotions={breakfastPromotions}
+          onClick={() => setSelectedBGColor(colors.mandarinRed)}
         />
         <PromotionCard
           title={"Churrasco"}
@@ -56,6 +58,7 @@ function Promotions() {
           image={barbecueImage}
           bgColor={colors.jalapenoRed}
           promotions={breakfastPromotions}
+          onClick={() => setSelectedBGColor(colors.jalapenoRed)}
         />
         <PromotionCard
           title={"Limpeza"}
@@ -63,6 +66,7 @@ function Promotions() {
           image={cleaningImage}
           bgColor={colors.waterfall}
           promotions={breakfastPromotions}
+          onClick={() => setSelectedBGColor(colors.waterfall)}
         />
         <PromotionCard
           title={"Frios"}
@@ -70,6 +74,7 @@ function Promotions() {
           image={frios}
           bgColor={colors.goodSamaritan}
           promotions={breakfastPromotions}
+          onClick={() => setSelectedBGColor(colors.goodSamaritan)}
         />
         <PromotionCard
           title={"Laticínios"}
@@ -77,6 +82,7 @@ function Promotions() {
           image={dairy}
           bgColor={colors.dupain}
           promotions={breakfastPromotions}
+          onClick={() => setSelectedBGColor(colors.dupain)}
         />
       </PromotionList>
       <Footer />
