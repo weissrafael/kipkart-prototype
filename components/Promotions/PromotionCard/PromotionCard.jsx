@@ -3,15 +3,16 @@ import { TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
 import Animated, { EasingNode as Easing } from 'react-native-reanimated';
 import {HiddenContainer, PromotionImage, Title, TitleContainer} from "./PromotionCard.styles";
+import ProductRow from "../ProductRow/ProductRow";
 
 const { Value, timing } = Animated;
 
 const initialHeight = 120;
 const initialDetails = 0;
 const expandedHeight = 240;
-const expandedDetails = 300;
+const expandedDetails = 340;
 
-const PromotionCard = ({ title, details, image, bgColor }) => {
+const PromotionCard = ({ title, details, image, bgColor, promotions }) => {
   const [expanded, setExpanded] = useState(false);
   const [height, setHeight] = useState(new Value(initialHeight));
   const [detailsHeight, setDetailsHeight] = useState(new Value(initialDetails));
@@ -67,7 +68,9 @@ const PromotionCard = ({ title, details, image, bgColor }) => {
         </Container>
       </TouchableOpacity>
       <HiddenContainer style={{ height: detailsHeight }}>
-        <Details style={{ opacity }}>{details}</Details>
+        <Details style={{ opacity }}>
+          {promotions.map((product) => (<ProductRow product={product} bgColor={bgColor} />))}
+        </Details>
       </HiddenContainer>
     </>
   );
@@ -75,7 +78,7 @@ const PromotionCard = ({ title, details, image, bgColor }) => {
 
 const Container = styled(Animated.View)`
   margin: 8px;
-  border-radius: 5px;
+  border-radius: 10px;
   shadow-color: #000;
   shadow-offset: 0px 0px;
   shadow-opacity: 1;
@@ -86,9 +89,10 @@ const Container = styled(Animated.View)`
 
 
 
-const Details = styled(Animated.Text)`
-  font-size: 14px;
-  margin-top: 5px;
+const Details = styled(Animated.View)`
+  display: flex;
+  flex: 1;
+  padding: 8px;
 `;
 
 export default PromotionCard;

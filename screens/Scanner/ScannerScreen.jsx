@@ -47,19 +47,14 @@ const mockedItems = {
     price: 12.5,
     isEligibleInPrizePromotion: false,
   },
-  7892840221843: {
-    name: "Salgadinho Doritos Queijo Nacho",
-    price: 4.58,
+  7791293022635: {
+    name: "Desodorante Rexona Invisible",
+    price: 12.5,
     isEligibleInPrizePromotion: false,
   },
   7894900010015: {
     name: "Coca-Cola lata 350ml",
     price: 3.19,
-    isEligibleInPrizePromotion: false,
-  },
-  7891000290026: {
-    name: "Biscoito Negresco Nestlé Recheado",
-    price: 8.99,
     isEligibleInPrizePromotion: false,
   },
 };

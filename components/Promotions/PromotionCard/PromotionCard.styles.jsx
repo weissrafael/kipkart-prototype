@@ -7,7 +7,7 @@ export const PromotionImage = styled.Image`
   max-height: 200px;
   width: 100%;
   flex: 1;
-  border-radius: 5px;
+  border-radius: 10px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 `;
@@ -23,8 +23,8 @@ export const TitleContainer = styled.View`
   min-height: 40px;
   max-height: 40px;
   background-color: ${props => props.backgroundColor};
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   justify-content: center;
   padding-left: 16px;
 `;

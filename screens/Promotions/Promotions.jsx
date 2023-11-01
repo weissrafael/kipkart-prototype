@@ -16,6 +16,24 @@ const cleaningImage = require("../../assets/categories/cleaning.png");
 const frios = require("../../assets/categories/frios.png");
 const dairy = require("../../assets/categories/daity.png");
 
+const breakfastPromotions = [
+  {
+    name: "Desodorante Rexona Invisible",
+    price: 6.5,
+    barcode: 7791293022635
+  },
+  {
+    name: "SBP Multi inseticida",
+    price: 12.5,
+    barcode: 7891035617959
+  },
+  {
+    name: "Coca-Cola lata 350ml",
+    price: 4.5,
+    barcode: 7894900010015
+  },
+];
+
 function Promotions() {
   return (
     <Screen>
@@ -30,30 +48,35 @@ function Promotions() {
           details={"details"}
           image={breakfastImage}
           bgColor={colors.mandarinRed}
+          promotions={breakfastPromotions}
         />
         <PromotionCard
           title={"Churrasco"}
           details={"details"}
           image={barbecueImage}
           bgColor={colors.jalapenoRed}
+          promotions={breakfastPromotions}
         />
         <PromotionCard
           title={"Limpeza"}
           details={"details"}
           image={cleaningImage}
           bgColor={colors.waterfall}
+          promotions={breakfastPromotions}
         />
         <PromotionCard
           title={"Frios"}
           details={"details"}
           image={frios}
           bgColor={colors.goodSamaritan}
+          promotions={breakfastPromotions}
         />
         <PromotionCard
           title={"Laticínios"}
           details={"details"}
           image={dairy}
           bgColor={colors.dupain}
+          promotions={breakfastPromotions}
         />
       </PromotionList>
       <Footer />
