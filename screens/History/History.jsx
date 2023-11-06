@@ -63,7 +63,7 @@ function History({ navigation }) {
         {
           id: 1,
           name: "Lista de compras do mês",
-          total: 100,
+          total: 108.90,
           timeSpent: "1 hora e 25 minutos",
           amountOfItems: 10,
           marketLogoImage: 'assets/marketLogos/bazinho.png',
@@ -98,8 +98,8 @@ function History({ navigation }) {
         {
           id: 2,
           name: "Lista da Dona Maria",
-          total: 100,
-          amountOfItems: 10,
+          total: 587.55,
+          amountOfItems: 32,
           timeSpent: "1 hora e 25 minutos",
           marketLogoImage: 'assets/marketLogos/bazinho.png',
           createdAt: "2020-10-10",
@@ -132,9 +132,9 @@ function History({ navigation }) {
         },
         {
           id: 3,
-          name: "Lista da minha netinha querida",
-          total: 100,
-          amountOfItems: 10,
+          name: "Compras do dia 06/04/2023",
+          total: 110.95,
+          amountOfItems: 18,
           timeSpent: "1 hora e 25 minutos",
           marketLogoImage: 'assets/marketLogos/bazinho.png',
           createdAt: "2020-10-10",
@@ -168,8 +168,8 @@ function History({ navigation }) {
         {
           id: 4,
           name: "Churrasco do fim de semana",
-          total: 100,
-          amountOfItems: 10,
+          total: 129.30,
+          amountOfItems: 13,
           timeSpent: "1 hora e 25 minutos",
           marketLogoImage: 'assets/marketLogos/bazinho.png',
           createdAt: "2020-10-10",

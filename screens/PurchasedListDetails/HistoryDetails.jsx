@@ -81,11 +81,11 @@ function HistoryDetails({ navigation, route }) {
       <StatusBar hidden />
       <CameraSpacing />
       <Header>
-        <GoBackButton color={colors.mistyBlue} navigation={navigation} />
+        <GoBackButton color={colors.white} navigation={navigation} />
         <SearchBar
-          bgColor={colors.mistyBlue}
-          textColor={colors.darkBlue}
-          placeHolderTextColor={colors.darkBlue}
+          bgColor={colors.white}
+          textColor={colors.forestBlues}
+          placeHolderTextColor={colors.forestBlues}
           placeholder="Procurar por item"
           value={searchValue}
           onChange={filterOptions}
