@@ -22,6 +22,7 @@ import SearchBar from "../../components/Common/SearchBar/SearchBar";
 import ItemRow from "../../components/MyLists/ItemRow/ItemRow";
 import Icon from "../../components/Common/Icon/Icon";
 import { fireSearch } from "../../utils/analytics";
+import Footer from "../../components/Common/Footer/Footer";
 
 const gif = require("../../assets/gifs/bananaLoader.gif");
 
@@ -129,6 +130,8 @@ function HistoryDetails({ navigation, route }) {
           </MyListItems>
         </ListContainer>
       )}
+      <Footer bgColor={colors.forestBlues}/>
+
     </Page>
   );
 }
