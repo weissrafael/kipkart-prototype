@@ -1,22 +1,20 @@
-import styled, { css } from "styled-components/native";
-import { Dimensions } from "react-native";
+import styled from "styled-components/native";
 import { ContentContainer } from "../../../screens/Scanner/ScannerScreen.styles";
 import { colors } from "../../../styles/styleGuide";
 
-const smallDevice = Dimensions.get("window").width < 380;
-
 export const ListRowContainer = styled(ContentContainer)`
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    border-bottom-width: 1px;
-    border-bottom-color: ${colors.blueGrotto};
-    height: 86px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom-width: 1px;
+  border-bottom-color: ${colors.forestBlues};
+  height: 86px;
+  padding: 0 16px;
 `;
 
 export const ImageContainer = styled.View`
   flex: 1;
-  padding: 5px;
+  padding: 8px;
 `;
 
 export const ItemIcon = styled.Image`
@@ -25,17 +23,18 @@ export const ItemIcon = styled.Image`
 `;
 
 export const ItemQuantityBox = styled.View`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    flex: 1;
-    padding-left: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  padding-left: 32px;
 `;
 
 export const ItemQuantity = styled.Text`
   font-size: 26px;
   width: 100%;
+  color: ${colors.forestBlues};
 `;
 
 export const ReadOnlyNameBox = styled.View`
@@ -49,7 +48,7 @@ export const ReadOnlyItemName = styled.Text`
 `;
 
 export const ItemTotalValue = styled.Text`
-    text-align: right;
-    color: ${colors.green2};
-    font-size: 16px;
+  text-align: right;
+  color: ${colors.forestBlues};
+  font-size: 16px;
 `;

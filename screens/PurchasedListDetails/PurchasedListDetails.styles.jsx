@@ -29,7 +29,7 @@ export const DateTimeHeader = styled.View`
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
-  padding: 8px 16px;
+  padding: 16px 16px 0 16px;
 `;
 
 export const DateTimeItem = styled.View`
@@ -39,11 +39,11 @@ export const DateTimeItem = styled.View`
 
 export const MyListHeader = styled.View`
   width: 100%;
-  height: 60px;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   padding: 0 16px;
+  margin: 32px 0;
 `;
 
 export const LoaderContainer = styled.View`
@@ -60,7 +60,7 @@ export const LoaderImage = styled.Image`
 export const MyListItems = styled.ScrollView`
   width: 100%;
   flex: 1;
-  padding: 0 16px;
+  padding: 0;
 `;
 
 export const Title = styled.Text`
