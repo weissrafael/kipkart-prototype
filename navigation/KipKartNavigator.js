@@ -7,7 +7,7 @@ import Login from "../screens/Login/Login";
 import History from "../screens/History/History";
 import Signup from "../screens/Signup/Signup";
 import SelectMarket from "../screens/SelectMarket/SelectMarket";
-import HistoryDetails from "../screens/PurchasedListDetails/HistoryDetails";
+import HistoryDetails from "../screens/HistoryDetails/HistoryDetails";
 import Promotions from "../screens/Promotions/Promotions";
 
 const StackNavigator = createStackNavigator();
@@ -24,7 +24,7 @@ export const KipKartNavigator = ({ initialRouteName }) => (
     <StackNavigator.Screen name="Login" component={Login} />
     <StackNavigator.Screen name="History" component={History} />
     <StackNavigator.Screen
-      name="PurchasedListDetails"
+      name="HistoryDetails"
       component={HistoryDetails}
     />
     <StackNavigator.Screen name="Signup" component={Signup} />

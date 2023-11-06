@@ -17,11 +17,10 @@ export const CameraSpacing = styled.View`
 
 export const Header = styled.View`
   width: 100%;
-  height: 60px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 16px 16px 16px 16px;
   background-color: ${colors.forestBlues};
 `;
 

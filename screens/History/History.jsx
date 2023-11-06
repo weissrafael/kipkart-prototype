@@ -13,7 +13,7 @@ import PurchaseCard from "../../components/History/ListRow/PurchaseCard";
 import {
   LoaderContainer,
   LoaderImage,
-} from "../PurchasedListDetails/PurchasedListDetails.styles";
+} from "../HistoryDetails/HistoryDetails.styles";
 import {
   ErrorImage,
   ErrorWrapper,
@@ -24,6 +24,7 @@ import Button from "../../components/Common/Button/Button";
 import EmptyHistory from "../../components/History/EmptyHistory/EmptyHistory";
 import EmptySearchResult from "../../components/History/EmptySearchResult/EmptySearchResult";
 import Footer from "../../components/Common/Footer/Footer";
+import {Spacing} from "../../components/Common/Menu/Menu.styles";
 
 const gif = require("../../assets/gifs/bananaLoader.gif");
 const genericErrorImage = require("../../assets/illustrations/generic-error.jpg");
@@ -212,6 +213,11 @@ function History({ navigation }) {
       {myLists.length !== 0 && (
         <SearchContainer>
           <PageTitle color={colors.white}>Histórico</PageTitle>
+          <Spacing />
+          <Spacing />
+          <Spacing />
+          <Spacing />
+          <Spacing />
           <SearchBar
             onChange={filterOptions}
             placeholder="Pesquisar"

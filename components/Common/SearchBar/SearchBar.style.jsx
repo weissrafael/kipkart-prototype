@@ -6,8 +6,7 @@ import Icon from "../Icon/Icon";
 export const SearchBarInputContainer = styled.View`
   ${({ bgColor }) => `
     flex-direction: row;
-    position: relative;
-    width: 50%;
+    flex: 1;
     border-radius: 80px;
     background-color: ${bgColor || colors.coral};
   `}

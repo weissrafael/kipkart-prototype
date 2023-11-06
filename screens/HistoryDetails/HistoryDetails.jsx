@@ -14,7 +14,7 @@ import {
   Page,
   Title,
   Total,
-} from "./PurchasedListDetails.styles";
+} from "./HistoryDetails.styles";
 
 import GoBackButton from "../../components/Common/GoBackButton/GoBackButton";
 import { colors } from "../../styles/styleGuide";
@@ -82,18 +82,18 @@ function HistoryDetails({ navigation, route }) {
       <CameraSpacing />
       <Header>
         <GoBackButton color={colors.white} navigation={navigation} />
+        <View
+          style={{
+            width: 100,
+          }}
+        />
         <SearchBar
           bgColor={colors.white}
           textColor={colors.forestBlues}
           placeHolderTextColor={colors.forestBlues}
-          placeholder="Procurar por item"
+          placeholder="Pesquisar por item"
           value={searchValue}
           onChange={filterOptions}
-        />
-        <View
-          style={{
-            width: 32,
-          }}
         />
       </Header>
       {loading ? (

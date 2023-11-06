@@ -20,7 +20,7 @@ function PurchaseCard({ navigation, list }) {
   const { name, amountOfItems, total, createdAt } = list;
 
   function handleListRowPress() {
-    navigation.navigate("PurchasedListDetails", { list });
+    navigation.navigate("HistoryDetails", { list });
   }
 
   return (
