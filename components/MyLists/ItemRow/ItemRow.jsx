@@ -2,33 +2,22 @@ import React from "react";
 import {
   ImageContainer,
   ItemIcon,
-  ItemName,
-  ItemNameBox,
   ItemQuantity,
   ItemQuantityBox,
   ItemTotalValue,
   ListRowContainer,
-  MinusButton,
-  MinusText,
-  PlusButton,
-  PlusText,
   ReadOnlyItemName,
   ReadOnlyNameBox,
 } from "./ItemRow.styles";
 
 function ItemRow({
   item,
-  addItem,
-  removeItem,
   barcode,
-  selectItem,
-  notOnList,
-  readOnly,
 }) {
   if (item) {
-    const total = notOnList ? item.price : item.price * item.quantity;
+    const total = item.price * item.quantity;
     return (
-      <ListRowContainer readOnly={readOnly} notOnList={notOnList}>
+      <ListRowContainer>
         <ImageContainer>
           <ItemIcon
             resizeMode="contain"
@@ -37,35 +26,13 @@ function ItemRow({
             }}
           />
         </ImageContainer>
-        <ItemQuantityBox readOnly={readOnly} notOnList={notOnList}>
-          {removeItem &&
-            !readOnly(
-              <MinusButton>
-                <MinusText onPress={() => removeItem(barcode)}>-</MinusText>
-              </MinusButton>
-            )}
-          {!notOnList && <ItemQuantity>{item.quantity}</ItemQuantity>}
-
-          {!readOnly && (
-            <PlusButton>
-              <PlusText notOnList={notOnList} onPress={() => addItem(item)}>
-                +
-              </PlusText>
-            </PlusButton>
-          )}
+        <ItemQuantityBox>
+          <ItemQuantity>{item.quantity}</ItemQuantity>
         </ItemQuantityBox>
-        {readOnly ? (
-          <ReadOnlyNameBox>
+        <ReadOnlyNameBox>
             <ReadOnlyItemName numberOfLines={1}>{item.name}</ReadOnlyItemName>
           </ReadOnlyNameBox>
-        ) : (
-          <ItemNameBox onPress={selectItem ? () => selectItem(item) : null}>
-            <ItemName notOnList={notOnList} numberOfLines={1}>
-              {item.name}
-            </ItemName>
-          </ItemNameBox>
-        )}
-        <ItemTotalValue notOnList={notOnList}>
+        <ItemTotalValue>
           {total.toFixed(2)}
         </ItemTotalValue>
       </ListRowContainer>

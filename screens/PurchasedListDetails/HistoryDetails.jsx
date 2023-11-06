@@ -121,8 +121,7 @@ function HistoryDetails({ navigation, route }) {
           <MyListItems>
             {filteredSelectedItems.map((item) => (
               <ItemRow
-                readOnly
-                key={item.name}
+                key={item.barcode}
                 item={item}
                 barcode={item.barcode}
               />
