@@ -1,6 +1,4 @@
 import React from "react";
-import { LinearGradient } from "expo-linear-gradient";
-import { Image } from "react-native";
 import {
   IconBox,
   LeftWrapper,
@@ -37,7 +35,7 @@ function PurchaseCard({ navigation, list }) {
         <NumbersContainer>
           <NumberOfItemsRow>
             <IconBox>
-              <Icon name="food-apple" color={colors.blueGrotto} size={20} />
+              <Icon name="food-apple" color={colors.spray} size={20} />
             </IconBox>
             <NumberOfItems>{amountOfItems}</NumberOfItems>
           </NumberOfItemsRow>
@@ -46,7 +44,7 @@ function PurchaseCard({ navigation, list }) {
               <Icon
                 name="money-bill-wave"
                 fontAwesome
-                color={colors.blueGrotto}
+                color={colors.spray}
                 size={20}
               />
             </IconBox>

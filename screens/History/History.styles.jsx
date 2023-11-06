@@ -4,7 +4,7 @@ import { ErrorContainer } from "../../components/Common/Modals/GenericErrorModal
 
 export const Page = styled.View`
   flex: 1;
-  background-color: ${colors.darkMistyBlue};
+  background-color: ${colors.goodSamaritan};
 `;
 
 export const Header = styled.View`
@@ -14,28 +14,17 @@ export const Header = styled.View`
   align-items: center;
   justify-content: space-between;
   padding: 10px 16px 10px 16px;
-  background-color: ${colors.mistyBlue};
+  background-color: ${colors.white};
 `;
 
 export const CameraSpacing = styled.View`
   width: 100%;
-  height: 50px;
+  height: 38px;
   background-color: ${({bgColor}) => bgColor ? bgColor : colors.white};
 `;
 
 export const EmptySpot = styled.View`
   width: 50px;
-`;
-
-export const TransparentFooter = styled.View`
-  background-color: ${colors.blueGrottoTransparent};
-  position: absolute;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 70px;
-  bottom: 0;
-  flex-direction: row;
 `;
 
 export const ListContainer = styled.ScrollView`
@@ -45,19 +34,6 @@ export const ListContainer = styled.ScrollView`
 
 export const StyledErrorContainer = styled(ErrorContainer)`
   justify-content: center;
-  background-color: ${colors.mistyBlue};
+  background-color: ${colors.white};
   padding: 0 16px;
-`;
-
-export const AddNewList = styled.TouchableOpacity`
-  width: 50px;
-  height: 50px;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const FooterButton = styled.TouchableOpacity`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
 `;

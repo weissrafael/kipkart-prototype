@@ -144,7 +144,7 @@ function History({ navigation }) {
       <StatusBar hidden />
       <CameraSpacing />
       <Header>
-        <GoBackButton navigation={navigation} color={colors.darkMistyBlue} />
+        <GoBackButton navigation={navigation} color={colors.forestBlues} />
         {error ? (
           <EmptySpot />
         ) : (
@@ -152,9 +152,9 @@ function History({ navigation }) {
             <SearchBar
               onChange={filterOptions}
               placeholder="Pesquisar"
-              textColor={colors.mistyBlue}
-              bgColor={colors.darkMistyBlue}
-              placeHolderTextColor={colors.mistyBlue}
+              textColor={colors.white}
+              bgColor={colors.goodSamaritan}
+              placeHolderTextColor={colors.white}
             />
           )
         )}

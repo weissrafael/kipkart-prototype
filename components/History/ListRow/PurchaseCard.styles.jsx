@@ -19,7 +19,7 @@ export const Wrapper = styled.View`
   background-color: transparent;
   padding-right: 16px;
   border-bottom-width: 2px;
-  border-bottom-color: ${colors.darkBlue};
+  border-bottom-color: ${colors.forestBlues};
 `;
 
 export const LeftWrapper = styled.View`
@@ -31,7 +31,7 @@ export const LeftWrapper = styled.View`
 
 export const MarketName = styled.Text`
   font-size: 16px;
-  color: ${colors.mistyBlue};
+  color: ${colors.white};
   font-weight: bold;
   letter-spacing: 0.4px;
   max-width: ${smallDevice ? 180 : 240}px;
@@ -39,18 +39,18 @@ export const MarketName = styled.Text`
 
 export const PurchaseDate = styled.Text`
   font-size: 12px;
-  color: ${colors.mistyBlue};
+  color: ${colors.white};
 `;
 
 export const NumberOfItems = styled.Text`
   font-size: 16px;
-  color: ${colors.blueGrotto};
+  color: ${colors.spray};
   margin-left: 8px;
 `;
 
 export const PurchaseValue = styled.Text`
   font-size: 16px;
-  color: ${colors.blueGrotto};
+  color: ${colors.spray};
   margin-left: 8px;
 `;
 
