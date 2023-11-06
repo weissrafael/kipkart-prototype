@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { StatusBar } from "react-native";
 import {
-    CameraSpacing,
-    EmptySpot,
-    Header,
-    ListContainer,
-    Page,
-    StyledErrorContainer,
+  CameraSpacing,
+  EmptySpot,
+  Header,
+  ListContainer,
+  Page,
+  StyledErrorContainer,
 } from "./History.styles";
 import GoBackButton from "../../components/Common/GoBackButton/GoBackButton";
 import { colors } from "../../styles/styleGuide";
@@ -64,73 +64,145 @@ function History({ navigation }) {
     setTimeout(() => {
       const lists = [
         {
-            id: 1,
-            name: "Lista de compras do mês",
-            total: 100,
-            timeSpent: "1 hora e 25 minutos",
-            amountOfItems: 10,
-            marketLogoImage: 'assets/marketLogos/bazinho.png',
-            createdAt: "2020-10-10",
-            items: [
-                {
-                    name: "Toddynho",
-                    quantity: 2,
-                    price: 10.7,
-                    barcode: 7894321722016,
-                },
+          id: 1,
+          name: "Lista de compras do mês",
+          total: 100,
+          timeSpent: "1 hora e 25 minutos",
+          amountOfItems: 10,
+          marketLogoImage: 'assets/marketLogos/bazinho.png',
+          createdAt: "2020-10-10",
+          items: [
+            {
+              name: "Toddynho",
+              quantity: 2,
+              price: 10.7,
+              barcode: 7894321722016,
+            },
+            {
+              name: "Desodorante Rexona Invisible",
+              price: 6.5,
+              quantity: 3,
+              barcode: 7791293022635
+            },
+            {
+              name: "SBP Multi inseticida",
+              price: 12.5,
+              quantity: 1,
+              barcode: 7891035617959
+            },
+            {
+              name: "Coca-Cola lata 350ml",
+              price: 4.5,
+              quantity: 6,
+              barcode: 7894900010015
+            },
           ],
         },
         {
-              id: 2,
-              name: "Lista da Dona Maria",
-              total: 100,
-              amountOfItems: 10,
-              timeSpent: "1 hora e 25 minutos",
-              marketLogoImage: 'assets/marketLogos/bazinho.png',
-              createdAt: "2020-10-10",
-              items: [
-                  {
-                      name: "Toddynho",
-                      quantity: 2,
-                      price: 10.7,
-                      barcode: 7894321722016,
-                  },
-              ],
-          },
+          id: 2,
+          name: "Lista da Dona Maria",
+          total: 100,
+          amountOfItems: 10,
+          timeSpent: "1 hora e 25 minutos",
+          marketLogoImage: 'assets/marketLogos/bazinho.png',
+          createdAt: "2020-10-10",
+          items: [
+            {
+              name: "Toddynho",
+              quantity: 2,
+              price: 10.7,
+              barcode: 7894321722016,
+            },
+            {
+              name: "Desodorante Rexona Invisible",
+              price: 6.5,
+              quantity: 3,
+              barcode: 7791293022635
+            },
+            {
+              name: "SBP Multi inseticida",
+              price: 12.5,
+              quantity: 1,
+              barcode: 7891035617959
+            },
+            {
+              name: "Coca-Cola lata 350ml",
+              price: 4.5,
+              quantity: 6,
+              barcode: 7894900010015
+            },
+          ],
+        },
         {
-              id: 3,
-              name: "Lista da minha netinha querida",
-              total: 100,
-              amountOfItems: 10,
-              timeSpent: "1 hora e 25 minutos",
-              marketLogoImage: 'assets/marketLogos/bazinho.png',
-              createdAt: "2020-10-10",
-              items: [
-                  {
-                      name: "Toddynho",
-                      quantity: 2,
-                      price: 10.7,
-                      barcode: 7894321722016,
-                  },
-              ],
-          },
+          id: 3,
+          name: "Lista da minha netinha querida",
+          total: 100,
+          amountOfItems: 10,
+          timeSpent: "1 hora e 25 minutos",
+          marketLogoImage: 'assets/marketLogos/bazinho.png',
+          createdAt: "2020-10-10",
+          items: [
+            {
+              name: "Toddynho",
+              quantity: 2,
+              price: 10.7,
+              barcode: 7894321722016,
+            },
+            {
+              name: "Desodorante Rexona Invisible",
+              price: 6.5,
+              quantity: 3,
+              barcode: 7791293022635
+            },
+            {
+              name: "SBP Multi inseticida",
+              price: 12.5,
+              quantity: 1,
+              barcode: 7891035617959
+            },
+            {
+              name: "Coca-Cola lata 350ml",
+              price: 4.5,
+              quantity: 6,
+              barcode: 7894900010015
+            },
+          ],
+        },
         {
-              id: 4,
-              name: "Churrasco do fim de semana",
-              total: 100,
-              amountOfItems: 10,
-              timeSpent: "1 hora e 25 minutos",
-              marketLogoImage: 'assets/marketLogos/bazinho.png',
-              createdAt: "2020-10-10",
-              items: [
-                  {
-                      name: "Toddynho",
-                      quantity: 2,
-                      price: 10.7,
-                      barcode: 7894321722016,
-                  },
-              ],
-          }
+          id: 4,
+          name: "Churrasco do fim de semana",
+          total: 100,
+          amountOfItems: 10,
+          timeSpent: "1 hora e 25 minutos",
+          marketLogoImage: 'assets/marketLogos/bazinho.png',
+          createdAt: "2020-10-10",
+          items: [
+            {
+              name: "Toddynho",
+              quantity: 2,
+              price: 10.7,
+              barcode: 7894321722016,
+            },
+            {
+              name: "Desodorante Rexona Invisible",
+              price: 6.5,
+              quantity: 3,
+              barcode: 7791293022635
+            },
+            {
+              name: "SBP Multi inseticida",
+              price: 12.5,
+              quantity: 1,
+              barcode: 7891035617959
+            },
+            {
+              name: "Coca-Cola lata 350ml",
+              price: 4.5,
+              quantity: 6,
+              barcode: 7894900010015
+            },
+          ],
+        }
       ]
       setMyLists(lists);
       setMyFilteredLists(lists);

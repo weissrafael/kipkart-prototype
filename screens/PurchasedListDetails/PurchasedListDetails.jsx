@@ -40,7 +40,6 @@ function PurchasedListDetails({ navigation, route }) {
     if (route.params) {
       setTimeout(() => {
         const { list } = route.params;
-
         const { name, timeSpent, items, createdAt } = list;
         setSelectedItems(items);
         setFilteredSelectedItems(Object.values(items));
@@ -93,7 +92,7 @@ function PurchasedListDetails({ navigation, route }) {
         />
         <View
           style={{
-            width: 50,
+            width: 32,
           }}
         />
       </Header>
