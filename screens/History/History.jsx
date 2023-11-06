@@ -13,7 +13,6 @@ import GoBackButton from "../../components/Common/GoBackButton/GoBackButton";
 import { colors } from "../../styles/styleGuide";
 import SearchBar from "../../components/Common/SearchBar/SearchBar";
 import PurchaseCard from "../../components/History/ListRow/PurchaseCard";
-import api from "../../api/api";
 import {
   LoaderContainer,
   LoaderImage,
@@ -27,7 +26,6 @@ import Colors from "../../constants/Colors";
 import Button from "../../components/Common/Button/Button";
 import EmptyHistory from "../../components/History/EmptyHistory/EmptyHistory";
 import EmptySearchResult from "../../components/History/EmptySearchResult/EmptySearchResult";
-import { fireEvent, fireSearch } from "../../utils/analytics";
 import Footer from "../../components/Common/Footer/Footer";
 
 const gif = require("../../assets/gifs/bananaLoader.gif");
@@ -45,7 +43,6 @@ function History({ navigation }) {
   }, [token]);
 
   function filterOptions(value) {
-    fireSearch(value);
     if (value.length > 0) {
       const newList = myLists.filter(
         (list) =>

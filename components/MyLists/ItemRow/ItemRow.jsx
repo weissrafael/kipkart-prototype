@@ -37,7 +37,6 @@ function ItemRow({
             }}
           />
         </ImageContainer>
-
         <ItemQuantityBox readOnly={readOnly} notOnList={notOnList}>
           {removeItem &&
             !readOnly(

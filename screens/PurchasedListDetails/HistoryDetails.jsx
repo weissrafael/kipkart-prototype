@@ -25,7 +25,7 @@ import { fireSearch } from "../../utils/analytics";
 
 const gif = require("../../assets/gifs/bananaLoader.gif");
 
-function PurchasedListDetails({ navigation, route }) {
+function HistoryDetails({ navigation, route }) {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
@@ -134,4 +134,4 @@ function PurchasedListDetails({ navigation, route }) {
   );
 }
 
-export default PurchasedListDetails;
+export default HistoryDetails;
