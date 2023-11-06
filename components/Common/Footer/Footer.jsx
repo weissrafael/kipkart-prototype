@@ -17,7 +17,7 @@ function Footer({ bgColor }) {
         <MaterialIcons name="attach-money" size={34} color={bgColor ? colors.white : colors.forestBlues} />
       </FooterButton>
       <FooterButton onPress={() => navigation.navigate("History")}>
-        <FontAwesome5 name="list-alt" size={34} color={bgColor ? colors.white : colors.forestBlues} />
+        <MaterialIcons name="history" size={34} color={bgColor ? colors.white : colors.forestBlues} />
       </FooterButton>
       <FooterButton onPress={() => navigation.navigate("Scanner")}>
         <Feather name="shopping-cart" size={34} color={bgColor ? colors.white : colors.forestBlues} />

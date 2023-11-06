@@ -7,7 +7,7 @@ export const SearchBarInputContainer = styled.View`
   ${({ bgColor }) => `
     flex-direction: row;
     position: relative;
-    width: 200px;
+    width: 50%;
     border-radius: 80px;
     background-color: ${bgColor || colors.coral};
   `}

@@ -19,7 +19,7 @@ export const Wrapper = styled.View`
   background-color: transparent;
   padding-right: 16px;
   border-bottom-width: 2px;
-  border-bottom-color: ${colors.forestBlues};
+  border-bottom-color: ${colors.spray};
 `;
 
 export const LeftWrapper = styled.View`

@@ -47,8 +47,9 @@ export const colors = {
   spray: "#82ccdd",
   dupain: "#60a3bc",
   goodSamaritan: "#3c6382",
-  graySamaritan: "#e0e3e5",
   forestBlues: "#0a3d62",
+
+  graySamaritan: "#e0e3e5",
 
   paradiseGreen: "#b8e994",
   auroraGreen: "#78e08f",

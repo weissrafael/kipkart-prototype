@@ -3,13 +3,10 @@ import { useSelector } from "react-redux";
 import { StatusBar } from "react-native";
 import {
   CameraSpacing,
-  EmptySpot,
-  Header,
   ListContainer,
-  Page,
+  Page, PageTitle, SearchContainer,
   StyledErrorContainer,
 } from "./History.styles";
-import GoBackButton from "../../components/Common/GoBackButton/GoBackButton";
 import { colors } from "../../styles/styleGuide";
 import SearchBar from "../../components/Common/SearchBar/SearchBar";
 import PurchaseCard from "../../components/History/ListRow/PurchaseCard";
@@ -21,7 +18,7 @@ import {
   ErrorImage,
   ErrorWrapper,
 } from "../../components/Common/Modals/GenericErrorModal/GenericErrorModal.styles";
-import { BoldTitle, ErrorSubtitle } from "../../styles/common.styles";
+import {BoldTitle, ErrorSubtitle, Title} from "../../styles/common.styles";
 import Colors from "../../constants/Colors";
 import Button from "../../components/Common/Button/Button";
 import EmptyHistory from "../../components/History/EmptyHistory/EmptyHistory";
@@ -67,7 +64,7 @@ function History({ navigation }) {
           timeSpent: "1 hora e 25 minutos",
           amountOfItems: 10,
           marketLogoImage: 'assets/marketLogos/bazinho.png',
-          createdAt: "2020-10-10",
+          createdAt: "08 / 02 / 2023",
           items: [
             {
               name: "Toddynho",
@@ -102,7 +99,7 @@ function History({ navigation }) {
           amountOfItems: 32,
           timeSpent: "1 hora e 25 minutos",
           marketLogoImage: 'assets/marketLogos/bazinho.png',
-          createdAt: "2020-10-10",
+          createdAt: "08 / 01 / 2023",
           items: [
             {
               name: "Toddynho",
@@ -132,12 +129,12 @@ function History({ navigation }) {
         },
         {
           id: 3,
-          name: "Compras do dia 06/04/2023",
+          name: "Compras do Natal",
           total: 110.95,
           amountOfItems: 18,
           timeSpent: "1 hora e 25 minutos",
           marketLogoImage: 'assets/marketLogos/bazinho.png',
-          createdAt: "2020-10-10",
+          createdAt: "20 / 12 / 2022",
           items: [
             {
               name: "Toddynho",
@@ -172,7 +169,7 @@ function History({ navigation }) {
           amountOfItems: 13,
           timeSpent: "1 hora e 25 minutos",
           marketLogoImage: 'assets/marketLogos/bazinho.png',
-          createdAt: "2020-10-10",
+          createdAt: "13 / 12 / 2022",
           items: [
             {
               name: "Toddynho",
@@ -212,23 +209,18 @@ function History({ navigation }) {
     <Page>
       <StatusBar hidden />
       <CameraSpacing />
-      <Header>
-        <GoBackButton navigation={navigation} color={colors.forestBlues} />
-        {error ? (
-          <EmptySpot />
-        ) : (
-          myLists.length !== 0 && (
-            <SearchBar
-              onChange={filterOptions}
-              placeholder="Pesquisar"
-              textColor={colors.white}
-              bgColor={colors.goodSamaritan}
-              placeHolderTextColor={colors.white}
-            />
-          )
-        )}
-        <EmptySpot />
-      </Header>
+      {myLists.length !== 0 && (
+        <SearchContainer>
+          <PageTitle color={colors.white}>Histórico</PageTitle>
+          <SearchBar
+            onChange={filterOptions}
+            placeholder="Pesquisar"
+            textColor={colors.forestBlues}
+            bgColor={colors.white}
+            placeHolderTextColor={colors.forestBlues}
+          />
+        </SearchContainer>
+      )}
       {loading ? (
         <LoaderContainer>
           <LoaderImage source={gif} />

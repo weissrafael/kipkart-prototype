@@ -4,27 +4,31 @@ import { ErrorContainer } from "../../components/Common/Modals/GenericErrorModal
 
 export const Page = styled.View`
   flex: 1;
-  background-color: ${colors.goodSamaritan};
+  background-color: ${colors.forestBlues};
 `;
 
-export const Header = styled.View`
+export const SearchContainer = styled.View`
   width: 100%;
-  height: 60px;
+  padding: 16px;
+  background-color: ${colors.forestBlues};
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
-  padding: 10px 16px 10px 16px;
-  background-color: ${colors.white};
+  align-items: center;
+  border-bottom-width: 4px;
+  border-bottom-color: ${colors.spray};
+`;
+
+export const PageTitle = styled.Text`
+  font-family: "montserrat-bold";
+  font-size: 22px;
+  color: ${colors.white};
+  text-align: left;
 `;
 
 export const CameraSpacing = styled.View`
   width: 100%;
   height: 38px;
-  background-color: ${({bgColor}) => bgColor ? bgColor : colors.white};
-`;
-
-export const EmptySpot = styled.View`
-  width: 50px;
+  background-color: ${colors.forestBlues};
 `;
 
 export const ListContainer = styled.ScrollView`
