@@ -6,14 +6,6 @@ import Colors from "../../../../constants/Colors";
 
 const smallDevice = Dimensions.get("window").width < 380;
 
-export const ListRowContainer = styled(ContentContainer)`
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  height: 100px;
-  padding: 0 16px;
-`;
-
 export const ImageContainer = styled.View`
   flex: 1;
   justify-content: center;
@@ -67,18 +59,7 @@ export const PlusButton = styled.TouchableOpacity`
 
 export const ItemQuantity = styled.Text`
   font-size: ${smallDevice ? 18 : 26}px;
-  color: ${Colors.secondary};
-`;
-
-export const MinusText = styled.Text`
-  color: ${colors.red};
-  font-size: 48px;
-  font-weight: bold;
-`;
-export const PlusText = styled.Text`
-  color: ${colors.blue};
-  font-weight: bold;
-  font-size: 32px;
+  color: ${colors.forestBlues};
 `;
 
 export const ItemNameBox = styled.TouchableOpacity`
@@ -92,7 +73,7 @@ export const ItemNameBox = styled.TouchableOpacity`
 export const ItemName = styled.Text`
   text-align: left;
   font-size: 16px;
-  color: ${colors.charcoalGray};
+  color: ${colors.forestBlues};
 `;
 
 export const ItemTotalValue = styled.Text`
