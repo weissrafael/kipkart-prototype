@@ -41,7 +41,7 @@ export const FinishContainer = styled.View`
 export const FinishButton = styled.TouchableOpacity`
   padding: 0 16px;
   height: 50px;
-  background-color: ${colors.goodSamaritan};
+  background-color: ${colors.forestBlues};
   border-radius: 8px;
   justify-content: center;
   align-items: center;

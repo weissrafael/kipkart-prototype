@@ -8,7 +8,6 @@ const smallDevice = Dimensions.get("window").width < 380;
 
 export const Page = styled.View`
   flex: 1;
-  margin-top: 16px;
   background-color: ${colors.graySamaritan};
   background-color: ${({listIsEmpty}) => listIsEmpty ? colors.white : colors.graySamaritan};
   
@@ -33,7 +32,12 @@ export const TypeBarcodeWrapper = styled.View`
   justify-content: space-between;
   padding: 16px 16px 16px 16px;
   width: 100%;
-  background-color: ${colors.forestBlues};
+  background-color: ${colors.white};
+  shadow-color: #000;
+  shadow-offset: 0px 4px;
+  shadow-opacity: 0.3;
+  shadow-radius: 5px;
+  elevation: 5;
 `;
 
 export const ShoppingListHeader = styled.View`

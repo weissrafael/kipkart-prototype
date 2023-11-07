@@ -81,7 +81,6 @@ function ScannerScreen({ navigation, route }) {
 
   const cartList = useSelector((state) => state.cartReducer.cartList);
   const limit = useSelector((state) => state.cartReducer.limit);
-  const missingItems = useSelector((state) => state.cartReducer.missingItems);
   const user = useSelector((state) => state.userReducer.user);
   const market = useSelector((state) => state.cartReducer.market);
   const dispatch = useDispatch();
@@ -131,13 +130,6 @@ function ScannerScreen({ navigation, route }) {
     };
   }, []);
 
-  const scroll = useRef();
-
-  const toTopHandler = useCallback(
-    () => scroll.current.scrollToOffset({ offset: 0, animated: true }),
-    []
-  );
-
   const finishHandler = useCallback(() => {
     if (total !== 0) {
       const itemsArray = Object.values(cartList);
@@ -155,35 +147,21 @@ function ScannerScreen({ navigation, route }) {
     return null;
   }, [user, total, cartList, navigation, timeCount]);
 
-  const scrollHandler = useCallback((event) => {
-    if (event.nativeEvent.contentOffset.y > 150) {
-      setIsToTopVisible(true);
-    } else {
-      setIsToTopVisible(false);
-    }
-  }, []);
-
   const addToList = useCallback(
     async (product) => {
       setActiveTab("list");
       dispatch(addNewProduct(product));
       setProductIsLoading(false);
-      if (missingItems[product.barcode]) {
-        dispatch(removeFromMissing(product));
-      }
     },
-    [dispatch, missingItems]
+    [dispatch]
   );
 
   const addItem = useCallback(
     (item) => {
       const { barcode } = item;
       dispatch(addProduct(barcode));
-      if (missingItems[barcode]) {
-        dispatch(removeFromMissing(barcode));
-      }
     },
-    [dispatch, missingItems]
+    [dispatch]
   );
 
   const removeItem = useCallback(
@@ -348,14 +326,10 @@ function ScannerScreen({ navigation, route }) {
       )}
       <ShoppingList
         list={cartList}
-        simultaneousHandlers={scroll}
         addItem={addItem}
         removeItem={removeItem}
         removeItemFromList={removeItemFromList}
-        missingItems={missingItems}
         keyboardShown={keyboardShown}
-        scrollRef={scroll}
-        scrollHandler={scrollHandler}
         productIsLoading={productIsLoading}
       />
       <TypeBarcodeWrapper>
@@ -374,7 +348,7 @@ function ScannerScreen({ navigation, route }) {
           </>
         )}
       </TypeBarcodeWrapper>
-      <Footer />
+      <Footer bgColor={colors.forestBlues} />
     </Screen>
   );
 }

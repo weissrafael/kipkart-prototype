@@ -25,14 +25,10 @@ const ShoppingList = ({
                         addItem,
                         removeItem,
                         removeItemFromList,
-                        missingItems,
                         productIsLoading,
                         keyboardShown,
-                        scrollHandler,
-                        scrollRef,
                       }) => {
-  const listArray = Object.entries(list).reverse();
-  const missingItemsArray = Object.entries(missingItems).reverse();
+  const listArray = [...Object.entries(list).reverse(), ["", {}]];
 
   const renderItem = useCallback(
     ({ item, index }) => {
@@ -56,7 +52,7 @@ const ShoppingList = ({
   return (
     <Page listIsEmpty={listArray.length <= 0}>
       <ListsContainer>
-        {listArray.length <= 0 && missingItemsArray.length <= 0 && (
+        {listArray.length <= 0 && (
           <EmptyTextContainer>
             {productIsLoading ? (
               <LoadingContainer>
@@ -83,11 +79,9 @@ const ShoppingList = ({
           )}
           <FlatList
             data={listArray}
-            style={{ width: "100%", height: "100%" }}
+            style={{ width: "100%", height: "100%", paddingTop: 8 }}
             renderItem={memoizedValue}
             keyExtractor={keyExtractor}
-            onScroll={scrollHandler}
-            ref={scrollRef}
             alwaysBounceVertical={false}
             bounces={false}
             scrollEventThrottle={1000}

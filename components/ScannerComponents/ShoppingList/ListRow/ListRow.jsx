@@ -56,7 +56,6 @@ const ListRow = ({
                    item,
                    addItem,
                    removeItem,
-                   index,
                  }) => {
   const itemHeight = useSharedValue(86);
   const containerOpacity = useSharedValue(1);
@@ -137,11 +136,12 @@ const ListRow = ({
     alignItems: "center",
     justifyContent: "space-between",
     height: 86,
-    paddingHorizontal: 8,
+    paddingLeft: 0,
+    paddingRight: 12,
     marginHorizontal: 16,
     overflow: "hidden",
     backgroundColor: colors.white,
-    marginBottom: 8,
+    marginTop: 8,
     borderRadius: 10,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 4 },
@@ -150,8 +150,8 @@ const ListRow = ({
     elevation: 5,
   };
 
-  if (item) {
-    const { price, quantity, imageUrl, name, weight } = item;
+  if (item.name) {
+    const { price, quantity, imageUrl, name } = item;
     const total = price * quantity;
     return (
       <>
@@ -193,13 +193,12 @@ const ListRow = ({
             R$ {total.toFixed(2)}
           </ItemTotalValue>
         </Animated.View>
-        {/* </PanGestureHandler> */}
       </>
     );
   }
   return (
     <LoadingContainer>
-      <ActivityIndicator size="large" color={colors.primary} />
+      {/*<ActivityIndicator size="large" color={colors.primary} />*/}
     </LoadingContainer>
   );
 };
