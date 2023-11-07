@@ -22,9 +22,10 @@ import {
 } from "./Overview.styles";
 import FinalList from "../../components/Overview/FinalList/FinalList";
 import GenericErrorModal from "../../components/Common/Modals/GenericErrorModal/GenericErrorModal";
-import Colors from "../../constants/Colors";
 import { ActivityIndicatorContainer } from "../../components/SelectMarket/OutsideMarketPage/OutsideMarketPage.styles";
 import { resetAll } from "../../store/actions/cart";
+import Icon from "../../components/Common/Icon/Icon";
+import {colors} from "../../styles/styleGuide";
 
 const purchaseSuccessImage = require("../../assets/illustrations/successfulPurchase.png");
 
@@ -55,9 +56,19 @@ function Overview({ navigation, route }) {
 
   function timeConversion() {
     if (timeCount < 60) {
-      return <InfoText>Tempo: {timeCount} segundos</InfoText>;
+      return (
+        <InfoText>
+          <Icon size={14} color={colors.forestBlues} name="clock" />
+          {` `}{timeCount} segundos
+        </InfoText>
+      );
     }
-    return <InfoText>Tempo: {(timeCount / 60).toFixed(0)} minutos</InfoText>;
+    return (
+      <InfoText>
+        <Icon size={14} color={colors.forestBlues} name="clock" />
+        {` `}{(timeCount / 60).toFixed(0)} minutos
+      </InfoText>
+    );
   }
 
   return (
@@ -75,7 +86,10 @@ function Overview({ navigation, route }) {
           <>
             <InfoContainer>
               {timeConversion()}
-              <InfoText>Volume: {itemCount} itens</InfoText>
+              <InfoText>
+                {itemCount} itens{` `}
+                <Icon name="food-apple" color={colors.forestBlues} size={20} />
+              </InfoText>
             </InfoContainer>
             <ButtonsContainer>
               <FinishButton

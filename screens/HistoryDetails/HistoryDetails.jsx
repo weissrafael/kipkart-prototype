@@ -105,11 +105,11 @@ function HistoryDetails({ navigation, route }) {
         <ListContainer>
           <DateTimeHeader>
             <DateTimeItem>
-              <Icon size={14} color={colors.darkBlue} name="clock" />
+              <Icon size={14} color={colors.forestBlues} name="clock" />
               <DateTimeText>{time}</DateTimeText>
             </DateTimeItem>
             <DateTimeItem>
-              <Icon size={14} color={colors.darkBlue} name="calendar" />
+              <Icon size={14} color={colors.forestBlues} name="calendar" />
               <DateTimeText>{date}</DateTimeText>
             </DateTimeItem>
           </DateTimeHeader>

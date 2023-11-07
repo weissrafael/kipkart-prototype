@@ -44,7 +44,7 @@ export const ReadOnlyNameBox = styled.View`
 
 export const ReadOnlyItemName = styled.Text`
   font-size: 16px;
-  color: ${colors.darkBlue};
+  color: ${colors.forestBlues};
 `;
 
 export const ItemTotalValue = styled.Text`
