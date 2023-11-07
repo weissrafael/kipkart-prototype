@@ -7,7 +7,8 @@ import {
   Screen,
   FinishButton,
   ButtonText,
-  FinishContainer, ShoppingListTotal,
+  FinishContainer,
+  ShoppingListTotal,
 } from "./ScannerScreen.styles";
 import ShoppingList from "../../components/ScannerComponents/ShoppingList/ShoppingList";
 import { colors } from "../../styles/styleGuide";
@@ -335,7 +336,7 @@ function ScannerScreen({ navigation, route }) {
         </Screen>
       )}
       {!listIsEmpty && (
-        <ShoppingListHeader>
+        <ShoppingListHeader scannerIsOpen={scanner}>
           <ScannerSwitchButton setScanner={setScanner} scannerIsOpen={scanner} />
           <TitleContainer>
             <ListTitle>Meu Carrinho</ListTitle>

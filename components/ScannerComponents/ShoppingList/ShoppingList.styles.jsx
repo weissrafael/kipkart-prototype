@@ -44,12 +44,13 @@ export const ShoppingListHeader = styled.View`
   justify-content: space-between;
   padding: 0 16px 0 0;
   width: 100%;
-  background-color: ${colors.white};
   shadow-color: #000;
   shadow-offset: 0px 4px;
   shadow-opacity: 0.3;
   shadow-radius: 5px;
   elevation: 5;
+  background-color: ${colors.white};
+  padding-top: ${({ scannerIsOpen }) => (scannerIsOpen ? "0px" : "32px")}
 `;
 
 export const IndicatorTextContainer = styled.View`
