@@ -77,22 +77,11 @@ export const ButtonsContainer = styled.View`
 `;
 
 export const PurchaseSuccessContainer = styled.View`
-  flex: 1;
   align-items: center;
 `;
 
 export const PurchaseSuccessImage = styled.Image`
-  height: 70%;
-  margin-top: 32px;
-`;
-
-export const PurchaseSuccessText = styled.Text`
-  font-family: "montserrat-bold";
-  font-size: 16px;
-  color: ${colors.secondary};
-  text-align: center;
-  margin-bottom: 16px;
-  margin-top: 32px;
+  width: 450px;
 `;
 
 export const MainButton = styled.TouchableOpacity`

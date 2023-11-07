@@ -17,7 +17,6 @@ import {
   FinishButtonText,
   TitleContainer,
   PurchaseSuccessContainer,
-  PurchaseSuccessText,
   PurchaseSuccessImage,
 } from "./Overview.styles";
 import FinalList from "../../components/Overview/FinalList/FinalList";
@@ -27,7 +26,7 @@ import { resetAll } from "../../store/actions/cart";
 import Icon from "../../components/Common/Icon/Icon";
 import {colors} from "../../styles/styleGuide";
 
-const purchaseSuccessImage = require("../../assets/illustrations/successfulPurchase.png");
+const purchaseSuccessImage = require("../../assets/undraw/shopsuccess.png");
 
 function Overview({ navigation, route }) {
   const [genericError, setGenericError] = useState(false);
@@ -75,7 +74,7 @@ function Overview({ navigation, route }) {
     <Page>
       <GreenBlock>
         <TitleContainer>
-          <PageTitle>Revise suas compras!</PageTitle>
+          <PageTitle>{success ? 'Compra finalizada!' : 'Revise suas compras!'}</PageTitle>
         </TitleContainer>
         <CircleContainer>
           <TotalTitle>R$ {total.toFixed(2)}</TotalTitle>
@@ -107,7 +106,6 @@ function Overview({ navigation, route }) {
               <FinalList list={cartList} />
             </ScrollView>
           </>
-
         )}
         {!loading && success && (
           <PurchaseSuccessContainer>
@@ -115,10 +113,6 @@ function Overview({ navigation, route }) {
               source={purchaseSuccessImage}
               resizeMode="contain"
             />
-            <PurchaseSuccessText>
-              Compra finalizada com sucesso!
-            </PurchaseSuccessText>
-            {/* <Button onPress={() => navigation.navigate('Scanner')}>Comprar mais</Button> */}
           </PurchaseSuccessContainer>
         )}
         {loading && (
