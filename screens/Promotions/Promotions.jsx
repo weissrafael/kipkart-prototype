@@ -108,9 +108,7 @@ function Promotions() {
   return (
     <Screen>
       <PromotionHeader bgColor={selectedBGColor}>
-        <CameraSpacing bgColor={selectedBGColor} />
         <Title>Promoções</Title>
-        <Spacing />
       </PromotionHeader>
       <PromotionList ref={scrollViewRef}>
         {categories.map((category) => {

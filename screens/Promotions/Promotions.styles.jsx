@@ -28,6 +28,8 @@ export const PromotionList = styled.ScrollView`
 export const PromotionHeader = styled.View`
   width: 100%;
   background-color: ${({bgColor}) => bgColor};
+  padding-top: 42px;
+  padding-bottom: 12px;
   shadow-color: #000;
   shadow-offset: 0px 0px;
   shadow-opacity: 0.3;
