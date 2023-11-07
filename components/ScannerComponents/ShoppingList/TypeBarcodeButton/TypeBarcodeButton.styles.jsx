@@ -2,13 +2,13 @@ import styled from "styled-components/native";
 import { colors } from "../../../../styles/styleGuide";
 
 export const TypeBarcodeContainer = styled.TouchableOpacity`
-  border-radius: 10px;
+  border-radius: 8px;
   background-color: ${colors.goodSamaritan};
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  padding: 0 16px;
   height: 50px;
+  flex: 1;
 `;
 
 export const TypeBarcodeFullContainer = styled.TouchableOpacity`

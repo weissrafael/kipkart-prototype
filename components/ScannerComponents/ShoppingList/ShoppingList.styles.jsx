@@ -31,11 +31,9 @@ export const TypeBarcodeWrapper = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 16px 0 16px;
+  padding: 16px 16px 16px 16px;
   width: 100%;
-  background-color: ${colors.white};
-  border: 0 solid ${colors.goodSamaritan};
-  border-top-width: 2px;
+  background-color: ${colors.forestBlues};
 `;
 
 export const ShoppingListHeader = styled.View`

@@ -27,7 +27,6 @@ const TypeBarcodeButton = ({ setModalVisible, showFullButton }) => {
       <IndicatorTextSmall>
         digitar cód. de barras
       </IndicatorTextSmall>
-      <Spacing />
     </TypeBarcodeContainer>
   );
 }

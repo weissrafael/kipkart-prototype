@@ -41,8 +41,8 @@ export const FinishContainer = styled.View`
 export const FinishButton = styled.TouchableOpacity`
   padding: 0 16px;
   height: 50px;
-  background-color: ${({ isActive }) => (isActive ? colors.goodSamaritan : "grey")};
-  border-radius: 10px;
+  background-color: ${colors.goodSamaritan};
+  border-radius: 8px;
   justify-content: center;
   align-items: center;
   flex: 1;
@@ -52,7 +52,7 @@ export const FinishButton = styled.TouchableOpacity`
 export const ButtonText = styled.Text`
   font-family: "montserrat-bold";
   font-size: ${FontSizes.text}px;
-  color: white;
+  color: ${colors.white};
 `;
 
 export const ShoppingListTotal = styled.Text`
