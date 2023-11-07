@@ -33,7 +33,7 @@ function ItemRow({
             <ReadOnlyItemName numberOfLines={1}>{item.name}</ReadOnlyItemName>
           </ReadOnlyNameBox>
         <ItemTotalValue>
-          {total.toFixed(2)}
+          R$ {total.toFixed(2)}
         </ItemTotalValue>
       </ListRowContainer>
     );

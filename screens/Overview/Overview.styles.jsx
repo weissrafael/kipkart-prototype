@@ -4,7 +4,6 @@ import Colors from "../../constants/Colors";
 import { MainTextTitle } from "../../styles/common.styles";
 import { colors } from "../../styles/styleGuide";
 
-const { height } = Dimensions.get("window");
 const smallDevice = Dimensions.get("window").width < 380;
 
 export const Page = styled.View`
@@ -14,32 +13,34 @@ export const Page = styled.View`
 export const GreenBlock = styled.View`
   flex: 1;
   align-items: center;
-  background-color: ${Colors.secondary};
+  background-color: ${colors.forestBlues};
   position: relative;
   z-index: 11;
 `;
 
 export const TitleContainer = styled.View`
   width: 100%;
-  height: ${height / 4}px;
+  margin-top: 58px;
   justify-content: center;
   align-items: center;
 `;
 
-export const PageTitle = styled(MainTextTitle)`
-  font-size: ${smallDevice ? 28 : 34}px;
+export const PageTitle = styled.Text`
+  font-family: "montserrat-bold";
+  font-size: 24px;
   color: ${Colors.white};
 `;
 
 export const CircleContainer = styled.View`
-  width: ${smallDevice ? 200 : 250}px;
-  height: ${smallDevice ? 200 : 250}px;
-  background-color: ${Colors.darkSecondary};
+  width: 220px;
+  height: 220px;
+  background-color: ${colors.goodSamaritan};
   border-radius: 150px;
+  border: 12px solid ${colors.forestBlues};
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: -30px;
+  bottom: -32px;
 `;
 
 export const TotalTitle = styled(MainTextTitle)`
@@ -48,8 +49,8 @@ export const TotalTitle = styled(MainTextTitle)`
 `;
 
 export const DarkGreenBlock = styled.View`
-  flex: 1;
-  background-color: ${Colors.white};
+  flex: 2.1;
+  background-color: ${colors.white};
 `;
 
 export const InfoContainer = styled.View`
@@ -57,19 +58,22 @@ export const InfoContainer = styled.View`
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
-  padding: 20px;
+  padding: 0 16px;
+  margin: 32px 0 24px 0;
 `;
 
 export const InfoText = styled(MainTextTitle)`
-  color: ${Colors.secondary};
+  color: ${colors.forestBlues};
+  font-size: 14px;
 `;
 
 export const ButtonsContainer = styled.View`
   width: 100%;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-direction: row;
-  height: 80px;
+  padding: 0 16px 24px 16px;
+  border-bottom-width: 1px;
+  border-bottom-color: ${colors.forestBlues};
 `;
 
 export const PurchaseSuccessContainer = styled.View`
@@ -93,22 +97,23 @@ export const PurchaseSuccessText = styled.Text`
 
 export const MainButton = styled.TouchableOpacity`
   width: 150px;
-  background-color: ${Colors.secondary};
+  background-color: ${colors.forestBlues};
   justify-content: center;
   align-items: center;
   height: 40px;
-  border-radius: 100px;
+  border-radius: 8px;
 `;
 
 export const ButtonText = styled(MainTextTitle)`
-  color: ${Colors.white};
+  color: ${colors.forestBlues};
 `;
 
 export const FinishButton = styled(MainButton)`
   background-color: transparent;
-  border: 2px solid ${Colors.secondary};
+  border: 2px solid ${colors.forestBlues};
 `;
 
 export const FinishButtonText = styled(MainTextTitle)`
-  color: ${Colors.secondary};
+  color: ${colors.white};
+  font-family: "montserrat-bold";
 `;

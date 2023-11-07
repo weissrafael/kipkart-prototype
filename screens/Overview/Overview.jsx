@@ -25,7 +25,6 @@ import GenericErrorModal from "../../components/Common/Modals/GenericErrorModal/
 import Colors from "../../constants/Colors";
 import { ActivityIndicatorContainer } from "../../components/SelectMarket/OutsideMarketPage/OutsideMarketPage.styles";
 import { resetAll } from "../../store/actions/cart";
-import { fireEvent } from "../../utils/analytics";
 
 const purchaseSuccessImage = require("../../assets/illustrations/successfulPurchase.png");
 
@@ -65,7 +64,7 @@ function Overview({ navigation, route }) {
     <Page>
       <GreenBlock>
         <TitleContainer>
-          <PageTitle>Compra Finalizada</PageTitle>
+          <PageTitle>Revise suas compras!</PageTitle>
         </TitleContainer>
         <CircleContainer>
           <TotalTitle>R$ {total.toFixed(2)}</TotalTitle>
@@ -73,25 +72,28 @@ function Overview({ navigation, route }) {
       </GreenBlock>
       <DarkGreenBlock>
         {!loading && !success && (
-          <ScrollView contentContainerStyle={{ justifyContent: "center" }}>
+          <>
             <InfoContainer>
               {timeConversion()}
-              <InfoText>Total: {itemCount} itens</InfoText>
+              <InfoText>Volume: {itemCount} itens</InfoText>
             </InfoContainer>
             <ButtonsContainer>
-              <MainButton
+              <FinishButton
                 onPress={() => {
                   navigation.pop(1);
                 }}
               >
                 <ButtonText>Voltar</ButtonText>
-              </MainButton>
-              <FinishButton onPress={purchaseList}>
-                <FinishButtonText>Concluir</FinishButtonText>
               </FinishButton>
+              <MainButton onPress={purchaseList}>
+                <FinishButtonText>Finalizar</FinishButtonText>
+              </MainButton>
             </ButtonsContainer>
-            <FinalList list={cartList} />
-          </ScrollView>
+            <ScrollView contentContainerStyle={{ justifyContent: "center" }}>
+              <FinalList list={cartList} />
+            </ScrollView>
+          </>
+
         )}
         {!loading && success && (
           <PurchaseSuccessContainer>
@@ -107,7 +109,7 @@ function Overview({ navigation, route }) {
         )}
         {loading && (
           <ActivityIndicatorContainer>
-            <ActivityIndicator size="large" color={Colors.primary} />
+            <ActivityIndicator size="large" color={colors.forestBlues} />
           </ActivityIndicatorContainer>
         )}
       </DarkGreenBlock>
