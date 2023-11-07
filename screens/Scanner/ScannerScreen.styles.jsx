@@ -58,7 +58,5 @@ export const ButtonText = styled.Text`
 export const ShoppingListTotal = styled.Text`
   font-family: "montserrat-regular";
   font-size: ${FontSizes.largeTitle}px;
-  color: ${colors.fifth};
-  background-color: ${colors.white};
-  border-radius: 10px;
+  color: ${colors.white};
 `;

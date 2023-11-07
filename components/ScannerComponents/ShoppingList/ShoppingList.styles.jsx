@@ -8,9 +8,7 @@ const smallDevice = Dimensions.get("window").width < 380;
 
 export const Page = styled.View`
   flex: 1;
-  background-color: ${colors.graySamaritan};
   background-color: ${({listIsEmpty}) => listIsEmpty ? colors.white : colors.graySamaritan};
-  
 `;
 
 export const ListsContainer = styled.View`
@@ -32,7 +30,7 @@ export const TypeBarcodeWrapper = styled.View`
   justify-content: space-between;
   padding: 16px 16px 16px 16px;
   width: 100%;
-  background-color: ${colors.white};
+  background-color: ${colors.goodSamaritan};
   shadow-color: #000;
   shadow-offset: 0px 4px;
   shadow-opacity: 0.3;
@@ -51,7 +49,7 @@ export const ShoppingListHeader = styled.View`
   shadow-opacity: 0.3;
   shadow-radius: 5px;
   elevation: 5;
-  background-color: ${colors.white};
+  background-color: ${colors.forestBlues};
   padding-top: ${({ scannerIsOpen }) => (scannerIsOpen ? "0px" : "32px")}
 `;
 
@@ -81,7 +79,7 @@ export const ListTitle = styled.Text`
   font-family: "montserrat-bold";
   font-size: ${FontSizes.title}px;
   text-align: center;
-  color: ${colors.goodSamaritan};
+  color: ${colors.white};
 `;
 
 export const ListImage = styled.Image`
@@ -126,7 +124,7 @@ export const MissingItems = styled(CartItems)`
 `;
 
 export const TitleContainer = styled.View`
-  background-color: white;
+  background-color: transparent;
   align-items: center;
   justify-content: center;
 `;
