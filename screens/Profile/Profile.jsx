@@ -1,5 +1,4 @@
 import React from "react";
-import { Text } from "react-native";
 import {
   Header,
   HeaderTitle, InfoContainer, InfoLabel, InfoRow,
@@ -8,14 +7,8 @@ import {
 import Footer from "../../components/Common/Footer/Footer";
 import {colors} from "../../styles/styleGuide";
 import {FontAwesome5} from "@expo/vector-icons";
-import { FontAwesome } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
-import Icon from "../../components/Common/Icon/Icon";
-
-
-
 
 function Profile({ navigation }) {
   return (
@@ -46,7 +39,7 @@ function Profile({ navigation }) {
           <Feather name="unlock" size={14} color={colors.white} />
           <SettingLabel>{'  '}Trocar senha</SettingLabel>
         </SettingRow>
-        <SettingRow>
+        <SettingRow onPress={() => navigation.navigate("Login")}>
           <MaterialCommunityIcons name="logout" size={14} color={colors.white} />
           <SettingLabel>{'  '}Sair</SettingLabel>
         </SettingRow>

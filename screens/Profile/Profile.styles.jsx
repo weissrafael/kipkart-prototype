@@ -29,7 +29,7 @@ export const InfoContainer = styled.View`
   margin-bottom: 8px;
 `;
 
-export const SettingRow = styled.View`
+export const SettingRow = styled.TouchableOpacity`
   width: 100%;
   padding: 8px 16px;
   margin-top: 8px;
