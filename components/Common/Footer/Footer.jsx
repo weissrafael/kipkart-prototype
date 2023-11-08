@@ -22,7 +22,7 @@ function Footer({ bgColor }) {
       <FooterButton onPress={() => navigation.navigate("Scanner")}>
         <Feather name="shopping-cart" size={34} color={bgColor ? colors.white : colors.forestBlues} />
       </FooterButton>
-      <FooterButton onPress={() => navigation.navigate("Scanner")}>
+      <FooterButton onPress={() => navigation.navigate("Profile")}>
         <FontAwesome5 name="user" size={34} color={bgColor ? colors.white : colors.forestBlues} />
       </FooterButton>
     </FooterContainer>

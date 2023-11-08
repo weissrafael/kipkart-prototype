@@ -6,7 +6,7 @@ import Overview from "../screens/Overview/Overview";
 import Login from "../screens/Login/Login";
 import History from "../screens/History/History";
 import Signup from "../screens/Signup/Signup";
-import SelectMarket from "../screens/SelectMarket/SelectMarket";
+import Profile from "../screens/Profile/Profile";
 import HistoryDetails from "../screens/HistoryDetails/HistoryDetails";
 import Promotions from "../screens/Promotions/Promotions";
 
@@ -18,7 +18,6 @@ export const KipKartNavigator = ({ initialRouteName }) => (
     screenOptions={{ headerShown: false }}
   >
     <StackNavigator.Screen name="Scanner" component={ScannerScreen} />
-    <StackNavigator.Screen name="SelectMarket" component={SelectMarket} />
     <StackNavigator.Screen name="Tutorial" component={Tutorial} />
     <StackNavigator.Screen name="Overview" component={Overview} />
     <StackNavigator.Screen name="Login" component={Login} />
@@ -29,5 +28,6 @@ export const KipKartNavigator = ({ initialRouteName }) => (
     />
     <StackNavigator.Screen name="Signup" component={Signup} />
     <StackNavigator.Screen name="Promotions" component={Promotions} />
+    <StackNavigator.Screen name="Profile" component={Profile} />
   </StackNavigator.Navigator>
 );
