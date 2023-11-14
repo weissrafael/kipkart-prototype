@@ -24,7 +24,6 @@ const Input = ({
   ...props
 }) => {
   const [isFocused, setIsFocused] = useState(false);
-  // const [secureText, setSecureText] = useState(true);
   const _animetedIsFocused = useRef(
     new Animated.Value(value === "" ? 0 : 1)
   ).current;
@@ -43,17 +42,17 @@ const Input = ({
       position: "absolute",
       left: 8,
       color: isFocused
-        ? labelColor || colors.primary
+        ? labelColor || colors.spray
         : error
         ? colors.red
         : success
         ? colors.green
-        : labelColor || colors.primary,
+        : labelColor || colors.white,
       top: _animetedIsFocused.interpolate({
         inputRange: [0, 1],
         outputRange: [13.5, -10],
       }),
-      backgroundColor: inputBgColor || colors.secondary,
+      backgroundColor: inputBgColor || colors.forestBlues,
       paddingLeft: 8,
       paddingRight: 8,
     },

@@ -42,7 +42,6 @@ export const NoGPSTitle = styled.Text`
 export const Divider = styled.View`
   justify-content: center;
   align-items: center;
-  height: 5%;
   border: 1px solid black;
 `;
 

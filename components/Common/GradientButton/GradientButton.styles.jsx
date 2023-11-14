@@ -10,7 +10,6 @@ export const ButtonContainer = styled.TouchableOpacity`
 
 export const ActivityContainer = styled.View`
   height: ${smallDevice ? 40 : 50}px;
-  margin: 2px;
 `;
 
 export const ButtonView = styled.View`
@@ -26,7 +25,7 @@ export const ButtonView = styled.View`
 
 export const ButtonText = styled.Text`
   font-family: "montserrat-bold";
-  font-size: ${({ textSize }) => textSize || 14}px;
+  font-size: ${({ textSize }) => textSize || 16}px;
   color: ${({ textColor }) => textColor || colors.white};
   text-align: center;
 `;

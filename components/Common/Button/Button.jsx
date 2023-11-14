@@ -1,8 +1,6 @@
 import React from "react";
-import { ActivityIndicator } from "react-native";
 import { ButtonContainer, ButtonText } from "./Button.styles";
-import { ActivityContainer } from "../GradientButton/GradientButton.styles";
-import Colors from "../../../constants/Colors";
+import {Spacing} from "../Menu/Menu.styles";
 
 function Button({
   textColor,
@@ -11,17 +9,12 @@ function Button({
   children,
   styles,
   textSize,
-  loading,
+  icon
 }) {
-  if (loading) {
-    return (
-      <ActivityContainer>
-        <ActivityIndicator size="large" color={Colors.primary} />
-      </ActivityContainer>
-    );
-  }
   return (
     <ButtonContainer color={color} onPress={onPress} style={styles}>
+      {icon}
+      {icon ? (<Spacing />) : null}
       <ButtonText textSize={textSize} textColor={textColor}>
         {children}
       </ButtonText>

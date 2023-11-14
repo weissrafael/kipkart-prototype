@@ -13,7 +13,7 @@ function MovingClouds({ size, duration }) {
     playAnimation();
     const timer = setTimeout(
       () => setValue(value === 1 ? 0 : 1),
-      duration + 50 || 10050
+      duration + 50 || 20050
     );
     return () => {
       clearTimeout(timer);
@@ -23,7 +23,7 @@ function MovingClouds({ size, duration }) {
   function playAnimation() {
     Animated.timing(cloudsValue, {
       toValue: value,
-      duration: duration || 10000,
+      duration: duration || 20000,
       useNativeDriver: false,
       easing: Easing.linear,
     }).start();

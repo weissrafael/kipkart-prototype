@@ -9,12 +9,12 @@ export const ContainerTextInputStyle = styled.View`
     background: transparent;
     border: 2px solid
       ${isFocused
-        ? colors.primary
+        ? colors.spray
         : error
         ? colors.red
         : success
         ? colors.white
-        : colors.primary};
+        : colors.white};
   `}
 `;
 
@@ -26,7 +26,7 @@ export const TextInputStyle = styled.TextInput`
   padding-right: 16px;
   font-size: 16px;
   border-radius: 9px;
-  color: ${({ textColor }) => textColor || colors.primary};
+  color: ${({ textColor }) => textColor || colors.white};
   height: 50px;
 `;
 

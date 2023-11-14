@@ -1,78 +1,33 @@
 import React, { useState } from "react";
-import { Platform, StatusBar } from "react-native";
+import { Platform } from "react-native";
 import {
   Page,
   LogoImage,
   Ground,
   MarketImage,
-  ForgotRow,
-  ForgotButton,
-  ForgotButtonText,
   Sky,
-  WomanImage,
-  ErrorMessageWrapper,
-  ErrorSmallMessage,
+  Divider,
+  DividerText, SocialRow,
 } from "./Login.styles";
 import { colors } from "../../styles/styleGuide";
-import MovingClouds from "../../components/Common/MovingClouds/MovingClouds";
 import useKeyboardIsOpen from "../../hooks/useKeyboardIsOpen";
 import GradientButton from "../../components/Common/GradientButton/GradientButton";
 import Input from "../../components/Common/Input/Input";
-import TokenConfirmationModal from "../../components/Login/TokenConfirmationModal/TokenConfirmationModal";
-import api from "../../api/api";
-import GenericErrorModal from "../../components/Common/Modals/GenericErrorModal/GenericErrorModal";
-import BackButton from "../../components/Common/BackButton/BackButton";
-import { fireEvent } from "../../utils/analytics";
+import Button from "../../components/Common/Button/Button";
+import { AntDesign } from '@expo/vector-icons';
+import {Spacing} from "../../components/Common/Menu/Menu.styles";
+
 
 const logo = require("../../assets/logokip.png");
-const market = require("../../assets/tutorial-market.png");
-const women = require("../../assets/women-with-cart-transparent.png");
+const market = require("../../assets/undraw/logindraw.png");
 
 function Login({ navigation }) {
   const [phone, setPhone] = useState("");
-  const [confirmToken, setConfirmToken] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [userNotFound, setUserNotFound] = useState(false);
-  const [genericError, setGenericError] = useState(false);
   const keyboardShown = useKeyboardIsOpen();
 
   function submitCellphone() {
     setLoading(true);
-    const reformattedPhone = phone.replace(/[^\d]/g, "");
-    api
-      .post("/api/v1/users/request-access-token", {
-        phoneNumber: reformattedPhone,
-      })
-      .then(() => {
-        setLoading(false);
-        setConfirmToken(true);
-        fireEvent(
-          "cellphone_successfully_submitted",
-          "Login",
-          "success",
-          "Login via Cellphone successfully submitted, confirmation token sent"
-        );
-      })
-      .catch((err) => {
-        if (err.response.data.result === "User Not Found") {
-          setUserNotFound(true);
-          fireEvent(
-            "cellphone_login_failed_user_not_Found",
-            "Login",
-            "user error",
-            "Login via Cellphone failed, user cellphone was not found"
-          );
-        } else {
-          setGenericError(true);
-          fireEvent(
-            "cellphone_login_failed_API_error",
-            "Login",
-            "system error",
-            "Login via Cellphone failed, API error"
-          );
-        }
-        setLoading(false);
-      });
   }
 
   function maskPhone(cellphone) {
@@ -85,19 +40,10 @@ function Login({ navigation }) {
 
   return (
     <Page>
-      {!confirmToken && (
-        <BackButton
-          backIcon
-          styles={{ top: 20, left: 20 }}
-          onPress={() => navigation.pop()}
-        />
-      )}
       {!keyboardShown && (
         <Sky>
           <LogoImage source={logo} resizeMode="contain" />
           <MarketImage source={market} resizeMode="contain" />
-          <WomanImage source={women} resizeMode="contain" />
-          <MovingClouds />
         </Sky>
       )}
       <Ground
@@ -106,42 +52,34 @@ function Login({ navigation }) {
       >
         <Input
           value={phone}
-          label="Digite o seu celular"
+          label="Digite o seu e-mail ou celular"
           onChangeText={(value) => maskPhone(value)}
           style={{ width: "100%" }}
           keyboardType="numeric"
         />
-        <ErrorMessageWrapper>
-          <ErrorSmallMessage show={userNotFound}>
-            Celular nao cadastrado
-          </ErrorSmallMessage>
-        </ErrorMessageWrapper>
         <GradientButton
           onPress={submitCellphone}
-          color1={colors.primary}
-          color2={colors.blueGrotto}
-          textColor={colors.secondary}
-          style={{ marginBottom: 10 }}
+          color1={colors.white}
+          color2={colors.white}
+          textColor={colors.forestBlues}
+          style={{ marginTop: 20 }}
           loading={loading}
         >
           Entrar
         </GradientButton>
-        <ForgotRow keyboardShown={keyboardShown}>
-          <ForgotButton onPress={() => navigation.navigate("Signup")}>
-            <ForgotButtonText>Criar nova conta</ForgotButtonText>
-          </ForgotButton>
-        </ForgotRow>
+        <Divider>
+          <DividerText>ou, entrar com</DividerText>
+        </Divider>
+        <SocialRow>
+          <Button icon={<AntDesign name="facebook-square" size={24} color={colors.forestBlues} />}>
+            Facebook
+          </Button>
+          <Spacing />
+          <Button icon={<AntDesign name="chrome" size={24} color={colors.forestBlues} />}>
+            Google
+          </Button>
+        </SocialRow>
       </Ground>
-      <GenericErrorModal
-        show={genericError}
-        setGenericError={setGenericError}
-      />
-      <TokenConfirmationModal
-        isOpen={confirmToken}
-        setIsOpen={setConfirmToken}
-        navigation={navigation}
-        phone={phone}
-      />
     </Page>
   );
 }

@@ -46,7 +46,7 @@ function GradientButton({
       <LinearGradient
         start={[0, 0.5]}
         end={[1, 0.5]}
-        colors={[color1 || colors.secondary, color2 || colors.tertiary]}
+        colors={[color1 || colors.white, color2 || colors.spray]}
         style={{ borderRadius: 11 }}
       >
         <ButtonView icon={icon} bgColor={bgColor} style={styles}>
