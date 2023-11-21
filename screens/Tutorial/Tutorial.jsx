@@ -103,7 +103,7 @@ const Tutorial = ({ navigation }) => {
             style={{ marginTop: 32 }}
             onPress={() => {
               alreadyReadTutorialStorage();
-              navigation.navigate("SelectMarket");
+              navigation.navigate("Scanner");
             }}
           >
             Vamos lá

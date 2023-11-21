@@ -83,7 +83,7 @@ export const ListTitle = styled.Text`
 `;
 
 export const ListImage = styled.Image`
-  height: ${smallDevice ? "60%" : "70%"};
+  height: 264px;
   margin-bottom: 16px;
 `;
 

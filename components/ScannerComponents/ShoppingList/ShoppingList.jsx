@@ -28,7 +28,7 @@ const ShoppingList = ({
                         productIsLoading,
                         keyboardShown,
                       }) => {
-  const listArray = [...Object.entries(list).reverse(), ["", {}]];
+  const listArray = [...Object.entries(list).reverse()];
 
   const renderItem = useCallback(
     ({ item, index }) => {
@@ -52,44 +52,36 @@ const ShoppingList = ({
   return (
     <Page listIsEmpty={listArray.length <= 0}>
       <ListsContainer>
-        {listArray.length <= 0 && (
+        {listArray.length <= 0 ? (
           <EmptyTextContainer>
-            {productIsLoading ? (
-              <LoadingContainer>
-                <ActivityIndicator size="large" color={colors.primary} />
-              </LoadingContainer>
-            ) : (
-              <>
-                <ListImage source={emptyList} resizeMode="contain" />
-                <EmptyListText>
-                  Para adicionar itens no seu carrinho, escaneie o
-                  código de barras do produto
-                </EmptyListText>
-              </>
-            )}
+            <ListImage source={emptyList} resizeMode="contain" />
+            <EmptyListText>
+              Para adicionar itens no seu carrinho, escaneie o
+              código de barras do produto
+            </EmptyListText>
           </EmptyTextContainer>
+        ) : (
+          <CartItems show={listArray.length > 0} keyboardShown={keyboardShown}>
+            {productIsLoading && (
+              <ListContainer>
+                <ListRow />
+                <Line show={listArray.length > 0} />
+              </ListContainer>
+            )}
+            <FlatList
+              data={listArray}
+              style={{ width: "100%", height: "100%", paddingTop: 8 }}
+              renderItem={memoizedValue}
+              keyExtractor={keyExtractor}
+              alwaysBounceVertical={false}
+              bounces={false}
+              scrollEventThrottle={1000}
+              keyboardShouldPersistTaps="handled"
+              maxToRenderPerBatch={16}
+              windowSize={17}
+            />
+          </CartItems>
         )}
-
-        <CartItems show={listArray.length > 0} keyboardShown={keyboardShown}>
-          {productIsLoading && (
-            <ListContainer>
-              <ListRow />
-              <Line show={listArray.length > 0} />
-            </ListContainer>
-          )}
-          <FlatList
-            data={listArray}
-            style={{ width: "100%", height: "100%", paddingTop: 8 }}
-            renderItem={memoizedValue}
-            keyExtractor={keyExtractor}
-            alwaysBounceVertical={false}
-            bounces={false}
-            scrollEventThrottle={1000}
-            keyboardShouldPersistTaps="handled"
-            maxToRenderPerBatch={16}
-            windowSize={17}
-          />
-        </CartItems>
       </ListsContainer>
     </Page>
   );

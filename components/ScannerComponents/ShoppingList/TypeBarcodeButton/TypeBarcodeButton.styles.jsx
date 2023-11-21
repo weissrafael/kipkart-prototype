@@ -20,5 +20,4 @@ export const TypeBarcodeFullContainer = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  margin-bottom: 16px;
 `;

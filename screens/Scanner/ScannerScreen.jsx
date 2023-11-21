@@ -17,7 +17,6 @@ import {
   addNewProduct,
   addProduct,
   removeFromList,
-  removeFromMissing,
   removeProduct,
   resetCart,
   resetLimit,
