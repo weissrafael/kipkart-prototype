@@ -18,19 +18,91 @@ const dairyImage = require("../../assets/categories/daity.png");
 
 const breakfastPromotions = [
   {
-    name: "Desodorante Rexona Invisible",
-    price: 6.5,
-    barcode: 7791293022635
+    name: "Nescau 2.0 400g",
+    price: 6.58,
+    barcode: 7891000061190
   },
   {
-    name: "SBP Multi inseticida",
-    price: 12.5,
-    barcode: 7891035617959
+    name: "Requeijão Itambé Tradicional 400g",
+    price: 7.99,
+    barcode: 7896051164661
   },
   {
-    name: "Coca-Cola lata 350ml",
+    name: "Pão de Forma Wickbold 500g",
     price: 4.5,
-    barcode: 7894900010015
+    barcode: 7896066301778
+  },
+];
+
+const barbecuePromotions = [
+  {
+    name: "Molho Inglês Worcestershire",
+    price: 12.19,
+    barcode: 7896007811403
+  },
+  {
+    name: "Sal Grosso Kitano 1Kg",
+    price: 10.99,
+    barcode: 7891095010158
+  },
+  {
+    name: "Coração de Frango Congelado Perdigão",
+    price: 23.5,
+    barcode: 7891515977412
+  },
+];
+
+const cleaningPromotions = [
+  {
+    name: "Detergente Líquido Maçã Ypê",
+    price: 12.19,
+    barcode: 7896098900215
+  },
+  {
+    name: "Lã de Aço Bombril 60g",
+    price: 10.99,
+    barcode: 7891022101119
+  },
+  {
+    name: "Limpador Veja Multiuso Tradicional 500ml",
+    price: 23.5,
+    barcode: 7891035800214
+  },
+];
+
+const cheesePromotions = [
+  {
+    name: "Mortadela Sadia 1kg",
+    price: 12.19,
+    barcode: 7893000340107
+  },
+  {
+    name: "Azeitona Verde Vidro Rivoli",
+    price: 10.99,
+    barcode: 7896183001025
+  },
+  {
+    name: "Salame tipo Italiano Sadia",
+    price: 23.5,
+    barcode: 7893000290259
+  },
+];
+
+const dairyPromotions = [
+  {
+    name: "Iogurte Integral Morango Danone",
+    price: 12.19,
+    barcode: 7891025101376
+  },
+  {
+    name: "Requeijão Itambé Tradicional 400g",
+    price: 7.99,
+    barcode: 7896051164661
+  },
+  {
+    name: "Creme de Leite Piracanjuba",
+    price: 23.5,
+    barcode: 7898215151784
   },
 ];
 
@@ -50,7 +122,7 @@ function Promotions() {
       expanded: false,
       title: "Churrasco",
       bgColor: colors.jalapenoRed,
-      promotions: breakfastPromotions,
+      promotions: barbecuePromotions,
       image: barbecueImage,
     },
     {
@@ -58,7 +130,7 @@ function Promotions() {
       expanded: false,
       title: "Limpeza",
       bgColor: colors.waterfall,
-      promotions: breakfastPromotions,
+      promotions: cleaningPromotions,
       image: cleaningImage,
     },
     {
@@ -66,7 +138,7 @@ function Promotions() {
       expanded: false,
       title: "Frios",
       bgColor: colors.goodSamaritan,
-      promotions: breakfastPromotions,
+      promotions: cheesePromotions,
       image: salamiImage,
     },
     {
@@ -74,7 +146,7 @@ function Promotions() {
       expanded: false,
       title: "Latícinios",
       bgColor: colors.dupain,
-      promotions: breakfastPromotions,
+      promotions: dairyPromotions,
       image: dairyImage,
     },
   ]);
