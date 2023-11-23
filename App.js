@@ -52,11 +52,8 @@ export default function App() {
           "montserrat-regular": require("./assets/fonts/Montserrat-Regular.ttf"),
           "montserrat-bold": require("./assets/fonts/Montserrat-Bold.ttf"),
         })
-        const { alreadyReadTutorial } = await getCredentials();
         await setClientId("dev-123");
-        if (alreadyReadTutorial) {
-          setFirstPage("Scanner");
-        }
+        setFirstPage("Scanner");
         await new Promise((resolve) => setTimeout(resolve, 2000));
       } catch (e) {
         console.warn(e)

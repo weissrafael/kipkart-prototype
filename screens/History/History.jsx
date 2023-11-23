@@ -15,7 +15,6 @@ import {
   LoaderImage,
 } from "../HistoryDetails/HistoryDetails.styles";
 import {
-  ErrorImage,
   ErrorWrapper,
 } from "../../components/Common/Modals/GenericErrorModal/GenericErrorModal.styles";
 import {BoldTitle, ErrorSubtitle, Title} from "../../styles/common.styles";
@@ -27,7 +26,6 @@ import Footer from "../../components/Common/Footer/Footer";
 import {Spacing} from "../../components/Common/Menu/Menu.styles";
 
 const gif = require("../../assets/gifs/bananaLoader.gif");
-const genericErrorImage = require("../../assets/illustrations/generic-error.jpg");
 
 function History({ navigation }) {
   const [loading, setLoading] = useState(false);
@@ -232,7 +230,6 @@ function History({ navigation }) {
       ) : error ? (
         <StyledErrorContainer>
           <ErrorWrapper>
-            <ErrorImage source={genericErrorImage} resizeMode="contain" />
             <BoldTitle color={Colors.tertiary}>
               Ops, Não foi possível se conectar
             </BoldTitle>

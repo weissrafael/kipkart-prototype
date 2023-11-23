@@ -9,7 +9,6 @@ import {
   ErrorWrapper,
 } from "./GenericErrorModal.styles";
 
-const genericErrorImage = require("../../../../assets/illustrations/generic-error.jpg");
 
 function GenericErrorModal({ show, setGenericError }) {
   return (
@@ -25,7 +24,6 @@ function GenericErrorModal({ show, setGenericError }) {
     >
       <ErrorContainer>
         <ErrorWrapper>
-          <ErrorImage source={genericErrorImage} resizeMode="contain" />
           <BoldTitle color={Colors.tertiary}>
             Ops, Não foi possível se conectar
           </BoldTitle>
