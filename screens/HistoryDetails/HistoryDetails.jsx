@@ -21,7 +21,6 @@ import { colors } from "../../styles/styleGuide";
 import SearchBar from "../../components/Common/SearchBar/SearchBar";
 import ItemRow from "../../components/MyLists/ItemRow/ItemRow";
 import Icon from "../../components/Common/Icon/Icon";
-import { fireSearch } from "../../utils/analytics";
 import Footer from "../../components/Common/Footer/Footer";
 
 const gif = require("../../assets/gifs/bananaLoader.gif");
@@ -57,7 +56,6 @@ function HistoryDetails({ navigation, route }) {
   }, [filteredSelectedItems]);
 
   function filterOptions(input) {
-    fireSearch(input);
     setSearchValue(input);
     if (input.length <= 0) {
       setFilteredSelectedItems(Object.values(selectedItems));

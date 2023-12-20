@@ -16,7 +16,6 @@ import {
 } from "../../../screens/Login/Login.styles";
 import GenericErrorModal from "../../Common/Modals/GenericErrorModal/GenericErrorModal";
 import { login } from "../../../store/actions/user";
-import { fireEvent, fireLogin, fireUser } from "../../../utils/analytics";
 
 function TokenConfirmationModal({ isOpen, setIsOpen, navigation, phone }) {
   const [loading, setLoading] = useState(false);
@@ -35,8 +34,6 @@ function TokenConfirmationModal({ isOpen, setIsOpen, navigation, phone }) {
       })
       .then(async (resp) => {
         dispatch(login(resp.data.result, accessToken));
-        await fireUser(resp.data.result);
-        fireLogin();
         setLoading(false);
         setIsOpen(false);
         if (marketSelected) {
@@ -44,14 +41,6 @@ function TokenConfirmationModal({ isOpen, setIsOpen, navigation, phone }) {
         } else {
           navigation.navigate("SelectMarket");
         }
-      })
-      .catch(() => {
-        fireEvent(
-          "get_user_information_failed",
-          "Login",
-          "system error",
-          "Get user information failed after token confirmation success, API error"
-        );
       });
   }
 
@@ -65,30 +54,12 @@ function TokenConfirmationModal({ isOpen, setIsOpen, navigation, phone }) {
       })
       .then(async ({ data }) => {
         getUserInfo(data.result.access_token);
-        fireEvent(
-          "cellphone_login_token_confirmed",
-          "Login",
-          "success",
-          "Cellphone Confirmation Token successfully submitted, user Access Token sent"
-        );
       })
       .catch((err) => {
         if (err.response.data.result === "Invalid Token") {
           setInvalidToken(true);
-          fireEvent(
-            "cellphone_login_token_invalid",
-            "Login",
-            "user error",
-            "Cellphone Confirmation Token failed to confirm, token is not valid"
-          );
         } else {
           setError(true);
-          fireEvent(
-            "cellphone_login_token_API_error",
-            "Login",
-            "system error",
-            "Cellphone Confirmation Token failed to confirm, API error "
-          );
         }
         setLoading(false);
       });

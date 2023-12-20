@@ -22,7 +22,6 @@ import MarketCard from "../MarketCard/MarketCard";
 import api from "../../../api/api";
 import Button from "../../Common/Button/Button";
 import { selectMarket } from "../../../store/actions/cart";
-import { fireEvent } from "../../../utils/analytics";
 
 function OutsideMarketPage({ userLocation, coordinates, markerImage }) {
   const [markets, setMarkets] = useState([]);
@@ -48,24 +47,11 @@ function OutsideMarketPage({ userLocation, coordinates, markerImage }) {
       .catch(() => {
         setGenericError(true);
         setLoading(false);
-        fireEvent(
-          "user_outside_market_selection_failed",
-          "SelectMarket",
-          "system error",
-          "Markets list based on user lat-long didnt load, API error"
-        );
       });
   }
 
   function goToScanner(market) {
     dispatch(selectMarket(market));
-    fireEvent(
-      "user_outside_market_selection_success",
-      "SelectMarket",
-      "success",
-      "User clicked on a market from list based on his lat-long",
-      market
-    );
     navigation.navigate("Scanner");
   }
 

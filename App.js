@@ -1,19 +1,17 @@
 import React, {useCallback, useEffect, useRef, useState} from "react";
-import { createStore } from "redux";
-import { enableScreens } from "react-native-screens";
-import { Provider } from "react-redux";
-import { persistStore, persistReducer } from "redux-persist";
-import { PersistGate } from "redux-persist/integration/react";
-import { NavigationContainer } from "@react-navigation/native";
+import {createStore} from "redux";
+import {enableScreens} from "react-native-screens";
+import {Provider} from "react-redux";
+import {persistReducer, persistStore} from "redux-persist";
+import {PersistGate} from "redux-persist/integration/react";
+import {NavigationContainer} from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { Platform, StatusBar, Text, View } from "react-native";
+import {Platform, StatusBar, Text, View} from "react-native";
 import * as SplashScreen from 'expo-splash-screen';
 import * as Fonts from "expo-font";
 
 import rootReducer from "./store/reducers/rootReducer";
-import { KipKartNavigator } from "./navigation/KipKartNavigator";
-import getCredentials from "./utils/getCredentials";
-import { fireCurrentScreen, setClientId } from "./utils/analytics";
+import {KipKartNavigator} from "./navigation/KipKartNavigator";
 
 StatusBar.setBarStyle("dark-content");
 
@@ -52,7 +50,6 @@ export default function App() {
           "montserrat-regular": require("./assets/fonts/Montserrat-Regular.ttf"),
           "montserrat-bold": require("./assets/fonts/Montserrat-Bold.ttf"),
         })
-        await setClientId("dev-123");
         setFirstPage("Scanner");
         await new Promise((resolve) => setTimeout(resolve, 2000));
       } catch (e) {
@@ -87,12 +84,7 @@ export default function App() {
             }}
             onStateChange={async () => {
               const previousRouteName = routeNameRef.current;
-              const currentRouteName =
-                navigationRef.current.getCurrentRoute().name;
-              if (previousRouteName !== currentRouteName) {
-                await fireCurrentScreen(currentRouteName);
-              }
-              routeNameRef.current = currentRouteName;
+              routeNameRef.current = navigationRef.current.getCurrentRoute().name;
             }}
           >
 

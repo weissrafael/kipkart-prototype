@@ -17,8 +17,6 @@ import {
   NoGPSTitle,
   FooterImage,
   IndicatorContainer,
-  Divider,
-  DividerText,
 } from "./NoGPSPage.styles";
 
 import CityRow from "./CityRow/CityRow";
@@ -30,7 +28,6 @@ import { selectMarket } from "../../../store/actions/cart";
 import MarketCard from "../MarketCard/MarketCard";
 import Colors from "../../../constants/Colors";
 import GenericErrorModal from "../../Common/Modals/GenericErrorModal/GenericErrorModal";
-import { fireEvent } from "../../../utils/analytics";
 
 const noLocationImage = require("../../../assets/locationNotFound.png");
 const footerCity = require("../../../assets/citybg2.png");
@@ -73,12 +70,6 @@ const NoGPSPage = ({ resetMarketSelectionSettings, market }) => {
         setLoading(false);
         setGenericError(true);
         setMarketModalIsOpen(false);
-        fireEvent(
-          "user_no_GPS_market_selection_failed",
-          "SelectMarket",
-          "system error",
-          "Markets list based on city id (when the user has no GPS) didnt load, API error"
-        );
       });
   }
 
@@ -86,13 +77,6 @@ const NoGPSPage = ({ resetMarketSelectionSettings, market }) => {
     <MarketCard
       onPress={() => {
         dispatch(selectMarket(item));
-        fireEvent(
-          "user_no_GPS_market_selection_success",
-          "SelectMarket",
-          "success",
-          "Market successfully selected from list based on city id (when the user has no GPS)",
-          item
-        );
         setMarketModalIsOpen(false);
         navigation.navigate("Scanner");
       }}

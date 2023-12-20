@@ -2,7 +2,7 @@
   "expo": {
     "name": "KipKart",
     "slug": "kipkart",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "ios": {
@@ -10,7 +10,7 @@
       "supportsTablet": false,
       "bundleIdentifier": "br.com.kipkart.kipkart",
       "googleServicesFile": "./GoogleService-Info.plist",
-      "buildNumber": "1.0.9",
+      "buildNumber": "1.0.10",
       "config": {
         "usesNonExemptEncryption": false
       },
@@ -20,16 +20,22 @@
         "NSLocationWhenInUseUsageDescription": "O KipKart usa sua localização para achar os supermercados mais próximos de você"
       }
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "android": {
       "package": "br.com.kipkart.kipkart",
       "googleServicesFile": "./google-services.json",
-      "versionCode": 16,
+      "versionCode": 20,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptiveIcon.png",
         "backgroundColor": "#A7E4F2"
       },
-      "permissions": ["CAMERA", "ACCESS_FINE_LOCATION", "INTERNET"],
+      "permissions": [
+        "CAMERA",
+        "ACCESS_FINE_LOCATION",
+        "INTERNET"
+      ],
       "config": {
         "googleMaps": {
           "apiKey": "AIzaSyCkWADEkYTRbjqcQj5JWyoZXBI5uq_qdf0"
@@ -45,6 +51,24 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "description": ""
+    "description": "",
+    "extra": {
+      "eas": {
+        "projectId": "ac04c0fb-7020-4b36-a662-cb8e0640ab8a"
+      }
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "targetSdkVersion": 33,
+            "blockedPermissions": [
+              "com.google.android.gms.permission.AD_ID"
+            ]
+          }
+        }
+      ]
+    ]
   }
 }

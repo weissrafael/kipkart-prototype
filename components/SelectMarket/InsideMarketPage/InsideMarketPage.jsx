@@ -14,8 +14,7 @@ import {
 import { selectMarket } from "../../../store/actions/cart";
 import GradientButton from "../../Common/GradientButton/GradientButton";
 import { colors } from "../../../styles/styleGuide";
-import { fireEvent } from "../../../utils/analytics";
-import { BoldTitle } from "../../../styles/common.styles";
+
 /* setInsideMarketError */
 const InsideMarketPage = ({ market }) => {
   const dispatch = useDispatch();
@@ -40,13 +39,6 @@ const InsideMarketPage = ({ market }) => {
           color1={colors.primary}
           textColor={colors.secondary}
           onPress={() => {
-            fireEvent(
-              "user_inside_market_selection_success",
-              "SelectMarket",
-              "success",
-              "User successfully automatically selected market, GPS on, Inside Polygon",
-              market
-            );
             dispatch(selectMarket(market));
             navigation.navigate("Scanner");
           }}
@@ -54,23 +46,6 @@ const InsideMarketPage = ({ market }) => {
         >
           Confirmar
         </GradientButton>
-        {/* <GradientButton */}
-        {/*  bgColor="white" */}
-        {/*  color1={colors.primary} */}
-        {/*  textColor={colors.secondary} */}
-        {/*  onPress={() => { */}
-        {/*    fireEvent( */}
-        {/*      'user_inside_market_selection_failed', */}
-        {/*      'SelectMarket', */}
-        {/*      'system error', */}
-        {/*      'User is telling us that he is not on the market we thought he was, GPS was wrong', */}
-        {/*      market, */}
-        {/*    ); */}
-        {/*    setInsideMarketError(); */}
-        {/*  }} */}
-        {/* > */}
-        {/*  Não estou neste supermercado */}
-        {/* </GradientButton> */}
       </ButtonsCol>
     </WelcomeContainer>
   );
