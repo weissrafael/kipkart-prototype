@@ -83,8 +83,9 @@ export const ListTitle = styled.Text`
 `;
 
 export const ListImage = styled.Image`
-  height: 264px;
+  height: 210px;
   margin-bottom: 16px;
+  margin-top: 16px;
 `;
 
 export const EmptyTextContainer = styled.View`

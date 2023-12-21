@@ -100,10 +100,6 @@ const Scanner = ({
       }
       playSound("bip");
       setProductLoading(true);
-      // const marketId = market.id;
-      // api
-      //   .get(`/api/v1/products/${barcode.data}?marketId=${marketId}`)
-      //   .then((resp) => {
       const { name, price, isEligibleInPrizePromotion, weight } =
         mockedItems[barcode.data];
       if (isEligibleInPrizePromotion) {
@@ -118,12 +114,6 @@ const Scanner = ({
         imageUrl: `https://kipkart-images-db.s3.sa-east-1.amazonaws.com/${barcode.data}.png`,
       });
       setTimeout(() => setScanned(false), 1500);
-      // })
-      // .catch(() => {
-      //   setModalVisible(true);
-      //   setScanned(false);
-      //   setProductLoading(false);
-      // });
     },
     [
       addItemOnList,
@@ -227,7 +217,7 @@ const Scanner = ({
                 : handleBarCodeScanned
             }
             style={styles.camera}
-            ratio="16:9"
+            ratio="4:3"
             barCodeScannerSettings={{
               barCodeTypes: readQR
                 ? [
