@@ -41,7 +41,10 @@
           "apiKey": "AIzaSyCkWADEkYTRbjqcQj5JWyoZXBI5uq_qdf0"
         }
       },
-      "jsEngine": "hermes"
+      "jsEngine": "hermes",
+      "blockedPermissions": [
+        "com.google.android.gms.permission.AD_ID"
+      ]
     },
     "splash": {
       "image": "./assets/splash.png",
