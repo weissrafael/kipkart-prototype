@@ -204,7 +204,6 @@ function History({ navigation }) {
 
   return (
     <Page>
-      <StatusBar hidden />
       <CameraSpacing />
       {myLists.length !== 0 && (
         <SearchContainer>

@@ -77,7 +77,6 @@ function HistoryDetails({ navigation, route }) {
 
   return (
     <Page>
-      <StatusBar hidden />
       <CameraSpacing />
       <Header>
         <GoBackButton color={colors.white} navigation={navigation} />
