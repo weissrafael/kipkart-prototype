@@ -8,7 +8,7 @@ import {
   SubTitle,
 } from "./ErrorModal.styles";
 import MainButton from "../MainButton/MainButton";
-import Colors from "../../../constants/Colors";
+import { colors } from "../../../styles/styleGuide.js";
 
 function ErrorModal({ isOpen, closeModal, title, text }) {
   return (
@@ -20,10 +20,10 @@ function ErrorModal({ isOpen, closeModal, title, text }) {
             <SubTitle>{text}</SubTitle>
             <MainButton
               textColor="white"
-              color={Colors.fifth}
+              color={colors.forestBlues}
               onPress={closeModal}
             >
-              OK
+              Fechar
             </MainButton>
           </Content>
         </ContentContainer>

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import FontSizes from "../../../constants/FontSizes";
+import {colors} from "../../../styles/styleGuide";
 
 export const ModalContainer = styled.View`
   flex: 1;
@@ -18,7 +19,7 @@ export const ContentContainer = styled.View`
 export const Content = styled.View`
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 24px 16px 16px 16px;
   width: 75%;
   background-color: white;
   border-radius: 20px;
@@ -27,9 +28,11 @@ export const Content = styled.View`
 
 export const Title = styled.Text`
   font-size: ${FontSizes.largeTitle}px;
+  color: ${colors.forestBlues};
 `;
 
 export const SubTitle = styled.Text`
   font-size: ${FontSizes.title}px;
+  color: ${colors.forestBlues};
   text-align: center;
 `;
