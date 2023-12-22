@@ -12,13 +12,13 @@ export const Container = styled.View`
   width: 100%;
   align-items: center;
   flex: 1;
-  background-color: white;
-  padding: 32px 16px 16px 16px;
-  justify-content: space-between;
+  background-color: ${colors.forestBlues};
+  padding: 16px;
 `;
 
 export const ModalText = styled(BoldTitle)`
-  color: ${colors.secondary};
+  color: ${colors.white};
+  margin-bottom: 32px;
 `;
 
 export const InputContainer = styled.View`

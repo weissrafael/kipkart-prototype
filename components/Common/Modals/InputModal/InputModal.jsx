@@ -23,26 +23,25 @@ function InputModal({
   barcodeError,
 }) {
   return (
-    <FullScreenModal height={`${300}px`} backdrop modalVisible={isOpen}>
+    <FullScreenModal height={`${246}px`} backdrop modalVisible={isOpen}>
       <ModalContainer onPress={() => Keyboard.dismiss()}>
         <Container>
           <ModalText>{text}</ModalText>
           <InputContainer>
             <Input
-              textColor={colors.secondary}
+              textColor={colors.white}
               value={inputValue}
               label="Código de barras"
-              inputBgColor="white"
-              labelColor={colors.secondary}
+              inputBgColor={colors.forestBlues}
+              labelColor={colors.white}
               onChangeText={(val) => setInputValue(val.replace(/[^0-9]/g, ""))}
-              style={{ marginTop: 16 }}
               keyboardType="numeric"
               maxLength={20}
             />
             <ErrorSmallMessage>{barcodeError}</ErrorSmallMessage>
           </InputContainer>
 
-          <ButtonsRow style={{ marginTop: 32 }}>{children}</ButtonsRow>
+          <ButtonsRow>{children}</ButtonsRow>
         </Container>
       </ModalContainer>
     </FullScreenModal>

@@ -28,6 +28,10 @@ function Login({ navigation }) {
 
   function submitCellphone() {
     setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      navigation.navigate("Scanner");
+    }, 2000);
   }
 
   function maskPhone(cellphone) {

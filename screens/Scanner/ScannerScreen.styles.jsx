@@ -49,6 +49,14 @@ export const FinishButton = styled.TouchableOpacity`
   width: 100%;
 `;
 
+export const CancelButton = styled(FinishButton)`
+  background-color: ${colors.goodSamaritan};
+`;
+
+export const ConfirmButton = styled(FinishButton)`
+  background-color: ${colors.dupain};
+`;
+
 export const ButtonText = styled.Text`
   font-family: "montserrat-bold";
   font-size: 14px;

@@ -47,7 +47,7 @@ export const ErrorSubtitle = styled.Text`
 
 export const ErrorSmallMessage = styled.Text`
   font-size: 14px;
-  color: ${({ color }) => color || colors.red};
+  color: ${({ color }) => color || colors.melonMelody};
   font-family: "montserrat-regular";
   margin: 5px 0 10px 10px;
 `;

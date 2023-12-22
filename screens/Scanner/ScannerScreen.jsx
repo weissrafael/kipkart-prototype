@@ -8,7 +8,7 @@ import {
   FinishButton,
   ButtonText,
   FinishContainer,
-  ShoppingListTotal,
+  ShoppingListTotal, CancelButton, ConfirmButton,
 } from "./ScannerScreen.styles";
 import ShoppingList from "../../components/ScannerComponents/ShoppingList/ShoppingList";
 import { colors } from "../../styles/styleGuide";
@@ -270,39 +270,32 @@ function ScannerScreen({ navigation, route }) {
       {/* TYPEBARCODE MODAL */}
       <InputModal
         setModalVisible={setTypeBarcodeModal}
-        text="Digite abaixo o codigo de barras do produto:"
+        text="Digite o codigo de barras do produto:"
         isOpen={typeBarcodeModal}
         inputValue={barcodeValue}
         setInputValue={setBarcodeValue}
         barcodeError={barcodeError}
       >
-        <GradientButton
-          color1={colors.primary}
-          color2={colors.blueGrotto}
-          textColor={colors.secondary}
-          disabled={disabledButton}
+        <CancelButton
           onPress={() => {
             setTypeBarcodeModal(false);
             setBarcodeValue("");
             setBarcodeError("");
           }}
-          style={{ marginRight: 16, flex: 1 }}
+          disabled={disabledButton}
         >
-          Cancelar
-        </GradientButton>
-        <GradientButton
-          color1={colors.primary}
-          color2={colors.blueGrotto}
-          textColor={colors.secondary}
+          <ButtonText>Cancelar</ButtonText>
+        </CancelButton>
+        <Spacing />
+        <ConfirmButton
           onPress={() => addItemByBarcode(barcodeValue, setDisabledButton)}
-          style={{ flex: 1 }}
         >
           {barcodeButtonLoading ? (
             <ActivityIndicator size="large" color={Colors.secondary} />
           ) : (
-            "Confirmar"
+            <ButtonText>Confirmar</ButtonText>
           )}
-        </GradientButton>
+        </ConfirmButton>
       </InputModal>
       {scanner && (
         <Screen>
