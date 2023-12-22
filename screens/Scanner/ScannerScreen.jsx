@@ -210,7 +210,7 @@ function ScannerScreen({ navigation, route }) {
         setDisabledButton(false);
       }, 2000);
       if (!mockedItems[barcode]) {
-        setBarcodeError("Product not found.");
+        setBarcodeError("Produto não encontrado");
         setBarcodeButtonLoading(false);
         return;
       }
@@ -253,10 +253,10 @@ function ScannerScreen({ navigation, route }) {
 
   return (
     <Screen listIsEmpty={listIsEmpty}>
-      <InitialModal
-        show={initialModal}
-        closeModal={() => setInitialModal(false)}
-      />
+      {/*<InitialModal*/}
+      {/*  show={initialModal}*/}
+      {/*  closeModal={() => setInitialModal(false)}*/}
+      {/*/>*/}
       <GenericErrorModal
         show={genericError}
         setGenericError={setGenericError}
