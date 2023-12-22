@@ -17,7 +17,7 @@ export const ModalContent = styled.View`
 `;
 
 export const TitleText = styled.Text`
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
   margin-bottom: 16px;
   font-family: "montserrat-regular";
@@ -42,7 +42,7 @@ export const BarcodeItem = styled.View`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 8px;
-  padding: 8px;
+  padding: 12px;
   border-radius: 6px;
   background-color: ${colors.goodSamaritan};
 `;
@@ -62,14 +62,22 @@ export const ItemBarcode = styled.Text`
 `;
 
 export const ButtonText = styled.Text`
-  font-size: 20px;
+  font-size: 16px;
   color: ${colors.white};
   font-weight: bold;
   font-family: "montserrat-regular";
 `;
 
+export const LogoImage = styled.Image`
+  height: 60px;
+  margin-bottom: 16px;
+  margin-top: 8px;
+`;
+
 export const GotItButton = styled.TouchableOpacity`
-  background-color: ${colors.dupain};
-  padding: 16px 24px;
+  background-color: ${colors.jalapenoRed};
+  padding: 16px;
   border-radius: 8px;
+  width: 100%;
+  align-items: center;
 `;

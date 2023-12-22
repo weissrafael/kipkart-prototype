@@ -10,8 +10,11 @@ import {
   DescriptionText,
   BarcodeList,
   BarcodeItem,
-  GotItButton, ItemName, ItemBarcode, ButtonText
+  GotItButton, ItemName, ItemBarcode, ButtonText, LogoImage
 } from "./InitialModal.styles";
+import {} from "../../../../screens/Login/Login.styles";
+import logo from "../../../../assets/logokip.png";
+
 
 function InitialModal({ show, closeModal }) {
   const [copied, setCopied] = useState({
@@ -61,17 +64,18 @@ function InitialModal({ show, closeModal }) {
 
   return (
     <FullScreenModal
-      height="640px"
+      height="636px"
       backdrop
       modalVisible={show}
       setModalVisible={closeModal}
     >
       <ModalContainer>
         <ModalContent>
+          <LogoImage source={logo} resizeMode="contain" />
+
           <TitleText>Welcome to Kipkart</TitleText>
-          {/* Include your logo here */}
           <DescriptionText>Since Kipkart is not connected to a market near you, this is a demonstration version.</DescriptionText>
-          <DescriptionText>Products from your city will not appear on the list, but you can still check that scanner.</DescriptionText>
+          <DescriptionText>Products from your city will not appear on the list, but you can still use the scanner.</DescriptionText>
           <DescriptionText>Copy one of the barcodes bellow, they are from a local supermarket in Rio, Brazil.</DescriptionText>
           <BarcodeList>
             {mockedItems.map((item, index) => {
