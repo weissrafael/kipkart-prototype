@@ -9,6 +9,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import {Platform, StatusBar, Text, View} from "react-native";
 import * as SplashScreen from 'expo-splash-screen';
 import * as Fonts from "expo-font";
+import './i18n/i18n.js';
 
 import rootReducer from "./store/reducers/rootReducer";
 import {KipKartNavigator} from "./navigation/KipKartNavigator";

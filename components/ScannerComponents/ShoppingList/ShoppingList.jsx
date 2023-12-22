@@ -1,33 +1,29 @@
 import React, { useMemo, useCallback } from "react";
-import { ActivityIndicator, FlatList } from "react-native";
+import { FlatList } from "react-native";
 import {
   ListsContainer,
   EmptyListText,
   EmptyTextContainer,
   ListContainer,
   ListImage,
-  MissingItemsTitle,
-  MissingItems,
   Page,
-  ListTitle,
   CartItems,
-  TitleContainer,
   Line,
 } from "./ShoppingList.styles";
 import ListRow from "./ListRow/ListRow";
-import { colors } from "../../../styles/styleGuide";
-import { LoadingContainer } from "./ListRow/ListRow.styles";
+import {useTranslation} from "react-i18next";
 
 const emptyList = require("../../../assets/emptylist.png");
 
 const ShoppingList = ({
-                        list,
-                        addItem,
-                        removeItem,
-                        removeItemFromList,
-                        productIsLoading,
-                        keyboardShown,
-                      }) => {
+  list,
+  addItem,
+  removeItem,
+  removeItemFromList,
+  productIsLoading,
+  keyboardShown,
+}) => {
+  const { t } = useTranslation();
   const listArray = [...Object.entries(list).reverse()];
 
   const renderItem = useCallback(
@@ -56,8 +52,7 @@ const ShoppingList = ({
           <EmptyTextContainer>
             <ListImage source={emptyList} resizeMode="contain" />
             <EmptyListText>
-              Para adicionar itens no seu carrinho, escaneie o
-              código de barras do produto
+              {t('toAddItemsToYourCartScanTheBarcode')}
             </EmptyListText>
           </EmptyTextContainer>
         ) : (
