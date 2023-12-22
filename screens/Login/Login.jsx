@@ -17,19 +17,36 @@ import Button from "../../components/Common/Button/Button";
 import { AntDesign } from '@expo/vector-icons';
 import {Spacing} from "../../components/Common/Menu/Menu.styles";
 
-
 const logo = require("../../assets/logokip.png");
 const market = require("../../assets/undraw/logindraw.png");
 
 function Login({ navigation }) {
   const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
+  const [loadingGoogle, setLoadingGoogle] = useState(false);
+  const [loadingFacebook, setLoadingFacebook] = useState(false);
   const keyboardShown = useKeyboardIsOpen();
 
   function submitCellphone() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
+      navigation.navigate("Scanner");
+    }, 2000);
+  }
+
+  function submitFacebook() {
+    setLoadingFacebook(true);
+    setTimeout(() => {
+      setLoadingFacebook(false);
+      navigation.navigate("Scanner");
+    }, 2000);
+  }
+
+  function submitGoogle() {
+    setLoadingGoogle(true);
+    setTimeout(() => {
+      setLoadingGoogle(false);
       navigation.navigate("Scanner");
     }, 2000);
   }
@@ -75,11 +92,20 @@ function Login({ navigation }) {
           <DividerText>ou, entrar com</DividerText>
         </Divider>
         <SocialRow>
-          <Button icon={<AntDesign name="facebook-square" size={24} color={colors.forestBlues} />}>
+          <Button
+            icon={<AntDesign name="facebook-square" size={24} color={colors.forestBlues} />}
+            onPress={submitFacebook}
+            loading={loadingFacebook}
+          >
             Facebook
           </Button>
           <Spacing />
-          <Button icon={<AntDesign name="chrome" size={24} color={colors.forestBlues} />}>
+          <Button
+            icon={<AntDesign name="chrome" size={24} color={colors.forestBlues} />}
+            onPress={submitGoogle}
+            loading={loadingGoogle}
+            disable
+          >
             Google
           </Button>
         </SocialRow>

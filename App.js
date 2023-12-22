@@ -50,7 +50,7 @@ export default function App() {
           "montserrat-regular": require("./assets/fonts/Montserrat-Regular.ttf"),
           "montserrat-bold": require("./assets/fonts/Montserrat-Bold.ttf"),
         })
-        setFirstPage("Scanner");
+        setFirstPage("Login");
         await new Promise((resolve) => setTimeout(resolve, 2000));
       } catch (e) {
         console.warn(e)

@@ -12,7 +12,6 @@ function Footer({ bgColor }) {
   const navigation = useNavigation();
   const route = useRoute();
   const [active, setActive] = React.useState(0);
-  console.log(route.name)
   useEffect(() => {
     if (route.name === "Promotions") {
       setActive(0);
