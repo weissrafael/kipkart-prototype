@@ -51,7 +51,7 @@ export const FinishButton = styled.TouchableOpacity`
 
 export const ButtonText = styled.Text`
   font-family: "montserrat-bold";
-  font-size: ${FontSizes.text}px;
+  font-size: 14px;
   color: ${colors.white};
 `;
 
