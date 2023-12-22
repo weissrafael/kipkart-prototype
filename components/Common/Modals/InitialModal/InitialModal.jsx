@@ -12,7 +12,6 @@ import {
   BarcodeItem,
   GotItButton, ItemName, ItemBarcode, ButtonText, LogoImage
 } from "./InitialModal.styles";
-import {} from "../../../../screens/Login/Login.styles";
 import logo from "../../../../assets/logokip.png";
 
 

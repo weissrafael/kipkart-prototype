@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { ActivityIndicator } from "react-native";
 import { useKeepAwake } from "expo-keep-awake";
 import { useSelector, useDispatch } from "react-redux";
@@ -35,7 +35,7 @@ import {
 } from "../../components/ScannerComponents/ShoppingList/ShoppingList.styles";
 import Footer from "../../components/Common/Footer/Footer";
 import {Spacing} from "../../components/Common/Menu/Menu.styles";
-import InitialModal from "../../components/Common/Modals/InitialModal/InitialModal";
+// import InitialModal from "../../components/Common/Modals/InitialModal/InitialModal";
 
 const mockedItems = {
   7891035617959: {
@@ -65,9 +65,8 @@ function ScannerScreen({ navigation, route }) {
   const [total, setTotal] = useState(0);
   const [timeCount, setTimeCount] = useState(0); // in seconds
   const [modalVisible, setModalVisible] = useState(false);
-  const [initialModal, setInitialModal] = useState(true);
+  // const [initialModal, setInitialModal] = useState(true);
   const [limitAlertVisible, setLimitAlertVisible] = useState(false);
-  const [confirmLogoutModal, setConfirmLogoutModal] = useState(false);
   const [genericError, setGenericError] = useState(false);
   const [typeBarcodeModal, setTypeBarcodeModal] = useState(false);
   const [barcodeValue, setBarcodeValue] = useState("");
@@ -313,7 +312,6 @@ function ScannerScreen({ navigation, route }) {
             limitAlertVisible={limitAlertVisible}
             winningModalVisible={winningModal}
             setWinningModalVisible={setWinningModal}
-            confirmLogoutModal={confirmLogoutModal}
             setProductLoading={setProductIsLoading}
             weightFormat={weightFormat}
           />

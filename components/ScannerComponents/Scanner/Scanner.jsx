@@ -44,7 +44,6 @@ const Scanner = ({
   setWinningModalVisible,
   winningModalVisible,
   limitAlertVisible,
-  confirmLogoutModal,
   setProductLoading,
 }) => {
   const [hasPermission, setHasPermission] = useState("asking");
@@ -212,7 +211,6 @@ const Scanner = ({
             onBarCodeScanned={
               limitAlertVisible ||
               winningModalVisible ||
-              confirmLogoutModal ||
               scanned
                 ? undefined
                 : handleBarCodeScanned
