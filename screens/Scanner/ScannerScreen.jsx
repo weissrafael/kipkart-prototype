@@ -35,6 +35,7 @@ import {
 } from "../../components/ScannerComponents/ShoppingList/ShoppingList.styles";
 import Footer from "../../components/Common/Footer/Footer";
 import {Spacing} from "../../components/Common/Menu/Menu.styles";
+import InitialModal from "../../components/Common/Modals/InitialModal/InitialModal";
 
 const mockedItems = {
   7891035617959: {
@@ -64,6 +65,7 @@ function ScannerScreen({ navigation, route }) {
   const [total, setTotal] = useState(0);
   const [timeCount, setTimeCount] = useState(0); // in seconds
   const [modalVisible, setModalVisible] = useState(false);
+  const [initialModal, setInitialModal] = useState(true);
   const [limitAlertVisible, setLimitAlertVisible] = useState(false);
   const [confirmLogoutModal, setConfirmLogoutModal] = useState(false);
   const [genericError, setGenericError] = useState(false);
@@ -251,6 +253,10 @@ function ScannerScreen({ navigation, route }) {
 
   return (
     <Screen listIsEmpty={listIsEmpty}>
+      <InitialModal
+        show={initialModal}
+        closeModal={() => setInitialModal(false)}
+      />
       <GenericErrorModal
         show={genericError}
         setGenericError={setGenericError}
