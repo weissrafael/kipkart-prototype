@@ -12,7 +12,6 @@ import {
 import Input from "../../Input/Input";
 import { colors } from "../../../../styles/styleGuide";
 import { ErrorSmallMessage } from "../../../../styles/common.styles";
-import useKeyboardIsOpen from "../../../../hooks/useKeyboardIsOpen";
 
 function InputModal({
   isOpen,

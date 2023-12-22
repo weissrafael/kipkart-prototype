@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Animated } from "react-native";
 import { TextInputStyle, ContainerTextInputStyle } from "./Input.style";
-import { colors, text } from "../../../styles/styleGuide";
+import { colors } from "../../../styles/styleGuide";
 
 const Input = ({
   size,
@@ -44,7 +44,7 @@ const Input = ({
       color: isFocused
         ? labelColor || colors.spray
         : error
-        ? colors.red
+        ? colors.redClear
         : success
         ? colors.green
         : labelColor || colors.white,

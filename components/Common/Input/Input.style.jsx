@@ -11,7 +11,7 @@ export const ContainerTextInputStyle = styled.View`
       ${isFocused
         ? colors.spray
         : error
-        ? colors.red
+        ? colors.redClear
         : success
         ? colors.white
         : colors.white};
@@ -29,23 +29,3 @@ export const TextInputStyle = styled.TextInput`
   color: ${({ textColor }) => textColor || colors.white};
   height: 50px;
 `;
-
-export const InputLabel = styled.Text`
-  width: 100%;
-`;
-
-// export const EyeIcon = styled(Icon)`
-//   font-size: 20px;
-//   color: ${colors.black3};
-//   margin-right: 8px;
-// `;
-
-// export const ButtonEye = styled.TouchableOpacity`
-//   width: 40px;
-//   height: ${sizes.inputSizes.large}px;
-//   align-items: center;
-//   justify-content: center;
-//   position: absolute;
-//   right: 0;
-//   z-index: 9;
-// `;

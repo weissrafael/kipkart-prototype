@@ -15,7 +15,8 @@ import GradientButton from "../../components/Common/GradientButton/GradientButto
 import Input from "../../components/Common/Input/Input";
 import Button from "../../components/Common/Button/Button";
 import { AntDesign } from '@expo/vector-icons';
-import {Spacing} from "../../components/Common/Menu/Menu.styles";
+import { Spacing } from "../../components/Common/Menu/Menu.styles";
+import { Keyboard } from 'react-native';
 
 const logo = require("../../assets/logokip.png");
 const market = require("../../assets/undraw/logindraw.png");
@@ -25,9 +26,16 @@ function Login({ navigation }) {
   const [loading, setLoading] = useState(false);
   const [loadingGoogle, setLoadingGoogle] = useState(false);
   const [loadingFacebook, setLoadingFacebook] = useState(false);
+  const [emptyError, setEmptyError] = useState(false);
   const keyboardShown = useKeyboardIsOpen();
 
   function submitCellphone() {
+    if (loadingGoogle || loadingFacebook) return;
+    if(phone.length <= 6) {
+      setEmptyError(true);
+      Keyboard.dismiss();
+      return;
+    }
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
@@ -36,6 +44,7 @@ function Login({ navigation }) {
   }
 
   function submitFacebook() {
+    if (loading || loadingGoogle) return;
     setLoadingFacebook(true);
     setTimeout(() => {
       setLoadingFacebook(false);
@@ -44,6 +53,7 @@ function Login({ navigation }) {
   }
 
   function submitGoogle() {
+    if (loading || loadingFacebook) return;
     setLoadingGoogle(true);
     setTimeout(() => {
       setLoadingGoogle(false);
@@ -73,10 +83,14 @@ function Login({ navigation }) {
       >
         <Input
           value={phone}
-          label="Digite o seu e-mail ou celular"
-          onChangeText={(value) => maskPhone(value)}
+          label="Digite o seu celular"
+          onChangeText={(value) => {
+            maskPhone(value)
+            setEmptyError(false);
+          }}
           style={{ width: "100%" }}
           keyboardType="numeric"
+          error={emptyError}
         />
         <GradientButton
           onPress={submitCellphone}
