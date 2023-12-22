@@ -210,6 +210,11 @@ function ScannerScreen({ navigation, route }) {
       setTimeout(() => {
         setDisabledButton(false);
       }, 2000);
+      if (!mockedItems[barcode]) {
+        setBarcodeError("Product not found.");
+        setBarcodeButtonLoading(false);
+        return;
+      }
       const { name, price, weight, isEligibleInPrizePromotion } =
         mockedItems[barcode];
       if (isEligibleInPrizePromotion) {

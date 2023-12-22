@@ -14,9 +14,8 @@ export const Page = styled.View`
 
 export const Sky = styled.View`
   background-color: ${colors.white};
-  flex: 1.4;
+  flex: 1.5;
   align-items: center;
-  padding-top: 120px;
   justify-content: space-between;
 `;
 
@@ -42,6 +41,8 @@ export const Title = styled.Text`
 
 export const LogoImage = styled.Image`
   height: ${smallDevice ? 65 : 90}px;
+  position: relative;
+  top: 87px;
 `;
 
 export const MarketImage = styled.Image`
