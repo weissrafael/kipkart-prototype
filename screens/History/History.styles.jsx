@@ -34,6 +34,10 @@ export const CameraSpacing = styled.View`
 export const ListContainer = styled.ScrollView`
   width: 100%;
   flex: 1;
+  border: 4px solid ${colors.spray};
+  border-top-width: 0;
+  border-right-width: 0;
+  border-left-width: 0;
 `;
 
 export const StyledErrorContainer = styled(ErrorContainer)`
