@@ -100,12 +100,13 @@ const Scanner = ({
       }
       playSound("bip");
       setProductLoading(true);
-      const { name, price, isEligibleInPrizePromotion, weight } =
-        mockedItems[barcode.data];
-      if (isEligibleInPrizePromotion) {
-        setWinningModalVisible(true);
-        playSound("prize");
+      if(!mockedItems[barcode.data]) {
+        setModalVisible(true);
+        setTimeout(() => setScanned(false), 1500);
+        return;
       }
+      const { name, price, weight } =
+        mockedItems[barcode.data];
       addItemOnList({
         barcode: barcode.data,
         name,

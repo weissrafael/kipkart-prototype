@@ -63,8 +63,6 @@ function ScannerScreen({ navigation, route }) {
   const [isActive, setIsActive] = useState(false);
   const [total, setTotal] = useState(0);
   const [timeCount, setTimeCount] = useState(0); // in seconds
-  const [activeTab, setActiveTab] = useState("list");
-  const [isToTopVisible, setIsToTopVisible] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
   const [limitAlertVisible, setLimitAlertVisible] = useState(false);
   const [confirmLogoutModal, setConfirmLogoutModal] = useState(false);
@@ -148,7 +146,6 @@ function ScannerScreen({ navigation, route }) {
 
   const addToList = useCallback(
     async (product) => {
-      setActiveTab("list");
       dispatch(addNewProduct(product));
       setProductIsLoading(false);
     },
@@ -311,7 +308,6 @@ function ScannerScreen({ navigation, route }) {
             winningModalVisible={winningModal}
             setWinningModalVisible={setWinningModal}
             confirmLogoutModal={confirmLogoutModal}
-            isScrolledDown={isToTopVisible}
             setProductLoading={setProductIsLoading}
             weightFormat={weightFormat}
           />
